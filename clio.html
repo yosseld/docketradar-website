@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clio Integration — DocketRadar</title>
+  <meta name="description" content="Connect DocketRadar to Clio practice management. Auto-sync hearings, docket entries, and party information. OAuth 2.0, local-only tokens, zero data collection.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Clio Integration — DocketRadar">
+  <meta property="og:description" content="Connect DocketRadar to Clio practice management. Auto-sync hearings, docket entries, and party information. OAuth 2.0, local-only tokens, zero data collection.">
+  <meta property="og:image" content="/assets/logo/docketradar-icon.svg">
+  <meta property="og:url" content="https://docketradar-website.vercel.app/clio">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Clio Integration — DocketRadar">
+  <meta name="twitter:description" content="Connect DocketRadar to Clio practice management. Auto-sync hearings, docket entries, and party information. OAuth 2.0, local-only tokens, zero data collection.">
+  <link rel="canonical" href="https://docketradar-website.vercel.app/clio">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo/docketradar-icon-simplified.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/layout.css">
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <header class="nav" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="DocketRadar home">
+        <img src="assets/logo/docketradar-icon.svg" alt="" width="36" height="36">
+        <span class="nav-logo-text"><span>Docket</span>Radar</span>
+      </a>
+      <div class="nav-links">
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="#" class="btn btn-primary btn-sm nav-cta" aria-label="Add DocketRadar to Chrome">Add to Chrome</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="pricing.html" class="nav-link">Pricing</a>
+      <a href="#" class="btn btn-primary">Add to Chrome</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== Clio Hero ========== -->
+    <section class="hero" style="padding-bottom: var(--space-12);" aria-labelledby="clio-hero-heading">
+      <div class="container" style="text-align: center;">
+        <p class="text-overline" style="color: var(--color-teal-light); margin-bottom: var(--space-3);">Integration</p>
+        <h1 id="clio-hero-heading" class="display" style="color: #ffffff; max-width: 640px; margin: 0 auto var(--space-4);">Clio Integration</h1>
+        <p class="hero-subtitle" style="max-width: 560px; margin: 0 auto;">Eliminate double data entry. DocketRadar syncs court data directly to Clio so your practice management records stay current automatically.</p>
+      </div>
+    </section>
+
+    <!-- ========== Why Clio ========== -->
+    <section class="section section-white" aria-labelledby="why-clio-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="text-overline">Why Clio</p>
+          <h2 id="why-clio-heading">Your cases, always in sync</h2>
+          <p>Clio is the practice management platform of choice for thousands of law firms. DocketRadar's integration means court data flows directly from the clerk portal into your Clio matters — no manual re-entry, no copy-paste, no stale records.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10"></path><path d="M20.49 15a9 9 0 0 1-14.85 3.36L1 14"></path></svg>
+            </div>
+            <h3>Automatic sync</h3>
+            <p>Once connected, DocketRadar pushes new hearings, docket entries, and party information to Clio automatically. No manual steps required after initial setup.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Privacy-first</h3>
+            <p>Your Clio OAuth tokens are stored locally in your browser. DocketRadar never proxies, stores, or relays your credentials through any external server. All communication is direct: your browser to Clio's API.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <h3>Time saved</h3>
+            <p>Legal professionals who manually enter court updates into Clio spend 30-60 minutes per day on data entry alone. DocketRadar reduces that to zero by syncing changes as they're detected.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== What Syncs ========== -->
+    <section class="section section-cloud" aria-labelledby="what-syncs-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="text-overline">Data</p>
+          <h2 id="what-syncs-heading">What syncs to Clio</h2>
+        </div>
+        <div class="grid-3">
+          <div class="text-center">
+            <h4 style="color: var(--color-navy); margin-bottom: var(--space-2);">Hearings</h4>
+            <p class="text-sm text-slate">Hearing dates, times, judges, and courtrooms are synced to the corresponding Clio matter as calendar events. When a hearing is rescheduled on the court portal, the Clio event updates automatically.</p>
+          </div>
+          <div class="text-center">
+            <h4 style="color: var(--color-navy); margin-bottom: var(--space-2);">Docket entries</h4>
+            <p class="text-sm text-slate">New filings, motions, orders, and other docket entries are synced as activity entries on the Clio matter. Each entry includes the filing date, description, and type.</p>
+          </div>
+          <div class="text-center">
+            <h4 style="color: var(--color-navy); margin-bottom: var(--space-2);">Party information</h4>
+            <p class="text-sm text-slate">Party names, roles (plaintiff, defendant, attorney of record), and related contact information are synced to the Clio matter's relationships. New parties added to a case appear in Clio automatically.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== How to Connect ========== -->
+    <section class="section section-white" aria-labelledby="connect-heading">
+      <div class="container" style="max-width: 768px; margin: 0 auto;">
+        <div style="text-align: left;">
+          <h2 id="connect-heading" style="color: var(--color-navy); margin-bottom: var(--space-6);">How to connect</h2>
+          <p style="color: var(--color-slate-700); line-height: 1.8; margin-bottom: var(--space-6);">Connecting DocketRadar to Clio takes about 30 seconds. The integration uses OAuth 2.0, the industry-standard authorization protocol — the same secure flow used by every major Clio integration.</p>
+
+          <ol style="list-style: decimal; padding-left: var(--space-6); color: var(--color-slate-700); line-height: 1.8;">
+            <li style="margin-bottom: var(--space-4);">
+              <strong>Open DocketRadar Settings.</strong> Click the gear icon in the DocketRadar sidebar toolbar.
+            </li>
+            <li style="margin-bottom: var(--space-4);">
+              <strong>Click "Connect Clio."</strong> This opens a new browser window with Clio's authorization page.
+            </li>
+            <li style="margin-bottom: var(--space-4);">
+              <strong>Authorize DocketRadar.</strong> Log into your Clio account (if not already logged in) and click "Authorize" to grant DocketRadar access. You'll see the specific permissions being requested.
+            </li>
+            <li style="margin-bottom: var(--space-4);">
+              <strong>Return to DocketRadar.</strong> The authorization window closes automatically and the DocketRadar sidebar shows a "Connected" status. Your OAuth tokens are stored locally in your browser's extension storage.
+            </li>
+            <li style="margin-bottom: var(--space-4);">
+              <strong>Start syncing.</strong> DocketRadar will begin syncing case data to Clio on the next check cycle. You can also trigger a manual sync from the sidebar.
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Permissions ========== -->
+    <section class="section section-cloud" aria-labelledby="permissions-heading">
+      <div class="container" style="max-width: 768px; margin: 0 auto;">
+        <div style="text-align: left;">
+          <h2 id="permissions-heading" style="color: var(--color-navy); margin-bottom: var(--space-6);">What permissions DocketRadar requests</h2>
+          <p style="color: var(--color-slate-700); line-height: 1.8; margin-bottom: var(--space-6);">DocketRadar requests the minimum Clio permissions necessary to sync court data:</p>
+          <ul style="list-style: disc; padding-left: var(--space-6); color: var(--color-slate-700); line-height: 1.8; margin-bottom: var(--space-6);">
+            <li style="margin-bottom: var(--space-3);"><strong>Read/write access to matters:</strong> Required to create and update matter records, associate hearings and docket entries, and manage party relationships on your Clio matters.</li>
+          </ul>
+          <p style="color: var(--color-slate-700); line-height: 1.8;">DocketRadar does not request access to your Clio billing, documents, contacts outside of matter relationships, or any other Clio data. The integration is scoped to matters only.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== How to Disconnect ========== -->
+    <section class="section section-white" aria-labelledby="disconnect-heading">
+      <div class="container" style="max-width: 768px; margin: 0 auto;">
+        <div style="text-align: left;">
+          <h2 id="disconnect-heading" style="color: var(--color-navy); margin-bottom: var(--space-6);">How to disconnect</h2>
+          <p style="color: var(--color-slate-700); line-height: 1.8; margin-bottom: var(--space-4);">You can disconnect Clio at any time:</p>
+          <ol style="list-style: decimal; padding-left: var(--space-6); color: var(--color-slate-700); line-height: 1.8; margin-bottom: var(--space-6);">
+            <li style="margin-bottom: var(--space-3);">Open DocketRadar Settings from the sidebar.</li>
+            <li style="margin-bottom: var(--space-3);">Click "Disconnect Clio."</li>
+            <li style="margin-bottom: var(--space-3);">Confirm the disconnection when prompted.</li>
+          </ol>
+          <p style="color: var(--color-slate-700); line-height: 1.8;">When you disconnect, DocketRadar immediately deletes your stored OAuth tokens from local storage. No further syncing occurs. Data already synced to Clio remains in your Clio account — DocketRadar does not delete Clio records upon disconnection.</p>
+          <p style="color: var(--color-slate-700); line-height: 1.8;">For additional security, you can also revoke DocketRadar's access from within Clio's settings under "Connected Apps."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Sync Frequency ========== -->
+    <section class="section section-cloud" aria-labelledby="frequency-heading">
+      <div class="container" style="max-width: 768px; margin: 0 auto;">
+        <div style="text-align: left;">
+          <h2 id="frequency-heading" style="color: var(--color-navy); margin-bottom: var(--space-6);">Sync frequency</h2>
+          <p style="color: var(--color-slate-700); line-height: 1.8;">Clio syncing happens automatically whenever DocketRadar detects a change on one of your monitored cases. Since DocketRadar checks your cases every 15 minutes, new court data typically appears in Clio within 15 minutes of being posted to the clerk portal.</p>
+          <p style="color: var(--color-slate-700); line-height: 1.8;">You can also trigger a manual sync at any time by clicking the sync button in the DocketRadar sidebar. This immediately pushes any pending changes to Clio without waiting for the next scheduled check.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Troubleshooting ========== -->
+    <section class="section section-white" aria-labelledby="clio-troubleshoot-heading">
+      <div class="container" style="max-width: 768px; margin: 0 auto;">
+        <div style="text-align: left;">
+          <h2 id="clio-troubleshoot-heading" style="color: var(--color-navy); margin-bottom: var(--space-6);">Troubleshooting sync issues</h2>
+
+          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">Changes aren't appearing in Clio</h4>
+          <ul style="list-style: disc; padding-left: var(--space-6); color: var(--color-slate-700); line-height: 1.8; margin-bottom: var(--space-4);">
+            <li style="margin-bottom: var(--space-2);">Check that the Clio connection is active in DocketRadar Settings. If the status shows "Disconnected," re-authorize by clicking "Connect Clio."</li>
+            <li style="margin-bottom: var(--space-2);">Verify the case is on your DocketRadar watch list. Only monitored cases sync to Clio.</li>
+            <li style="margin-bottom: var(--space-2);">Try a manual sync from the sidebar to push pending changes immediately.</li>
+            <li style="margin-bottom: var(--space-2);">Check your Clio account to confirm the matter exists. DocketRadar syncs to existing matters — it does not create new matters automatically.</li>
+          </ul>
+
+          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">OAuth authorization fails</h4>
+          <ul style="list-style: disc; padding-left: var(--space-6); color: var(--color-slate-700); line-height: 1.8; margin-bottom: var(--space-4);">
+            <li style="margin-bottom: var(--space-2);">Ensure you're logged into the correct Clio account before authorizing.</li>
+            <li style="margin-bottom: var(--space-2);">Disable popup blockers temporarily — the OAuth flow opens a new window that may be blocked.</li>
+            <li style="margin-bottom: var(--space-2);">Clear your browser cookies for clio.com and try again.</li>
+            <li style="margin-bottom: var(--space-2);">If the issue persists, contact us at <a href="mailto:cleo@docketradar.com">cleo@docketradar.com</a> with your Chrome version and a screenshot of any error message.</li>
+          </ul>
+
+          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">Duplicate entries appearing in Clio</h4>
+          <ul style="list-style: disc; padding-left: var(--space-6); color: var(--color-slate-700); line-height: 1.8; margin-bottom: var(--space-4);">
+            <li style="margin-bottom: var(--space-2);">DocketRadar uses unique identifiers to prevent duplicates. If you're seeing duplicate entries, the Clio matter may have been matched incorrectly.</li>
+            <li style="margin-bottom: var(--space-2);">Check the matter mapping in DocketRadar Settings to ensure the correct Clio matter is linked to each case.</li>
+            <li style="margin-bottom: var(--space-2);">Contact us if duplicates persist — this may indicate a sync issue we need to investigate.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Bottom CTA ========== -->
+    <section class="section-dark" aria-labelledby="clio-cta-heading">
+      <div class="container cta-banner">
+        <h2 id="clio-cta-heading" class="display" style="color: #ffffff;">Eliminate double data entry</h2>
+        <p>Connect DocketRadar to Clio and keep your practice management records current automatically.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="#" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 12 L11 15 L16 9"></path></svg>
+            Add to Chrome — Free to Start
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="DocketRadar home">
+            <img src="assets/logo/docketradar-icon-mono-light.svg" alt="" width="32" height="32">
+            <span class="footer-logo-text"><span>Docket</span>Radar</span>
+          </a>
+          <p>Automated court monitoring for Florida legal professionals. One Chrome sidebar. Eight counties. Instant notifications. Clio sync.</p>
+          <div class="footer-social" style="margin-top: var(--space-5);">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+            </a>
+            <a href="#" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Product</h4>
+          <div class="footer-links">
+            <a href="features.html">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#">Chrome Web Store</a>
+            <a href="changelog">Changelog</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Resources</h4>
+          <div class="footer-links">
+            <a href="docs">Documentation</a>
+            <a href="clio">Clio Integration</a>
+            <a href="docs#counties">County Guides</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <div class="footer-links">
+            <a href="about">About</a>
+            <a href="contact">Contact</a>
+            <a href="privacy">Privacy Policy</a>
+            <a href="terms">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Docket Radar. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="privacy">Privacy Policy</a>
+          <a href="terms">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile nav toggle script -->
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const toggle = document.querySelector('.nav-toggle');
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    }
+  </script>
+
+</body>
+</html>

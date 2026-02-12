@@ -6,6 +6,17 @@
   <title>DocketRadar — Stop refreshing. Start practicing.</title>
   <meta name="description" content="DocketRadar monitors court cases across eight Florida counties from a single Chrome sidebar — auto-checking every 15 minutes and notifying you the moment something changes.">
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="DocketRadar — Stop refreshing. Start practicing.">
+  <meta property="og:description" content="DocketRadar monitors court cases across eight Florida counties from a single Chrome sidebar — auto-checking every 15 minutes and notifying you the moment something changes.">
+  <meta property="og:image" content="/assets/logo/docketradar-icon.svg">
+  <meta property="og:url" content="https://docketradar-website.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DocketRadar — Stop refreshing. Start practicing.">
+  <meta name="twitter:description" content="DocketRadar monitors court cases across eight Florida counties from a single Chrome sidebar — auto-checking every 15 minutes and notifying you the moment something changes.">
+  <link rel="canonical" href="https://docketradar-website.vercel.app/">
+
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,6 +30,22 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/components.css">
   <link rel="stylesheet" href="styles/layout.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DocketRadar",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Chrome",
+    "description": "Court docket monitoring Chrome extension for Florida legal professionals",
+    "offers": [
+      {"@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free"},
+      {"@type": "Offer", "price": "19", "priceCurrency": "USD", "name": "Pro", "billingPeriod": "month"}
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -64,10 +91,70 @@
           </div>
         </div>
         <div class="hero-image">
-          <div class="hero-placeholder" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
-            <span>Product screenshot</span>
-          </div>
+          <svg viewBox="0 0 520 390" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DocketRadar sidebar panel illustration" style="width: 100%; max-width: 520px; height: auto;">
+            <!-- Browser window frame -->
+            <rect x="2" y="2" width="516" height="386" rx="16" ry="16" fill="#1e3a5f" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+            <!-- Title bar -->
+            <rect x="2" y="2" width="516" height="44" rx="16" ry="0" fill="#142842"/>
+            <rect x="2" y="30" width="516" height="16" fill="#142842"/>
+            <!-- Window control dots -->
+            <circle cx="26" cy="24" r="6" fill="#e11d48" opacity="0.7"/>
+            <circle cx="46" cy="24" r="6" fill="#d97706" opacity="0.7"/>
+            <circle cx="66" cy="24" r="6" fill="#059669" opacity="0.7"/>
+            <!-- Address bar -->
+            <rect x="90" y="14" width="340" height="20" rx="4" fill="rgba(255,255,255,0.08)"/>
+            <text x="110" y="28" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.35)">clerk.miamidade.gov/cases</text>
+            <!-- Main content area (left side) -->
+            <rect x="14" y="56" width="320" height="320" rx="8" fill="rgba(255,255,255,0.04)"/>
+            <!-- Content placeholder lines -->
+            <rect x="30" y="76" width="180" height="10" rx="3" fill="rgba(255,255,255,0.08)"/>
+            <rect x="30" y="96" width="280" height="8" rx="3" fill="rgba(255,255,255,0.05)"/>
+            <rect x="30" y="112" width="240" height="8" rx="3" fill="rgba(255,255,255,0.05)"/>
+            <rect x="30" y="128" width="260" height="8" rx="3" fill="rgba(255,255,255,0.05)"/>
+            <rect x="30" y="156" width="160" height="10" rx="3" fill="rgba(255,255,255,0.08)"/>
+            <rect x="30" y="176" width="290" height="8" rx="3" fill="rgba(255,255,255,0.05)"/>
+            <rect x="30" y="192" width="250" height="8" rx="3" fill="rgba(255,255,255,0.05)"/>
+            <!-- DocketRadar sidebar panel -->
+            <rect x="346" y="56" width="162" height="320" rx="8" fill="rgba(255,255,255,0.07)" stroke="#0d9488" stroke-width="1.5"/>
+            <!-- Sidebar header -->
+            <rect x="358" y="68" width="138" height="28" rx="6" fill="#0d9488" opacity="0.9"/>
+            <text x="386" y="86" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#ffffff">DocketRadar</text>
+            <!-- Radar blip indicator -->
+            <circle cx="488" cy="82" r="5" fill="#2dd4bf" opacity="0.9"/>
+            <circle cx="488" cy="82" r="9" fill="none" stroke="#2dd4bf" stroke-width="1" opacity="0.4"/>
+            <circle cx="488" cy="82" r="13" fill="none" stroke="#2dd4bf" stroke-width="0.7" opacity="0.2"/>
+            <!-- Case list items -->
+            <!-- Case 1 - has update indicator -->
+            <rect x="358" y="108" width="138" height="44" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(45,212,191,0.3)" stroke-width="1"/>
+            <circle cx="370" cy="122" r="4" fill="#2dd4bf"/>
+            <rect x="380" y="117" width="80" height="7" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="380" y="130" width="100" height="5" rx="2" fill="rgba(255,255,255,0.1)"/>
+            <rect x="380" y="140" width="60" height="5" rx="2" fill="rgba(255,255,255,0.1)"/>
+            <!-- Case 2 -->
+            <rect x="358" y="160" width="138" height="44" rx="5" fill="rgba(255,255,255,0.04)"/>
+            <circle cx="370" cy="174" r="4" fill="rgba(255,255,255,0.15)"/>
+            <rect x="380" y="169" width="70" height="7" rx="2" fill="rgba(255,255,255,0.15)"/>
+            <rect x="380" y="182" width="90" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
+            <rect x="380" y="192" width="50" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
+            <!-- Case 3 - has update indicator -->
+            <rect x="358" y="212" width="138" height="44" rx="5" fill="rgba(255,255,255,0.06)" stroke="rgba(45,212,191,0.3)" stroke-width="1"/>
+            <circle cx="370" cy="226" r="4" fill="#2dd4bf"/>
+            <rect x="380" y="221" width="90" height="7" rx="2" fill="rgba(255,255,255,0.25)"/>
+            <rect x="380" y="234" width="75" height="5" rx="2" fill="rgba(255,255,255,0.1)"/>
+            <rect x="380" y="244" width="55" height="5" rx="2" fill="rgba(255,255,255,0.1)"/>
+            <!-- Case 4 -->
+            <rect x="358" y="264" width="138" height="44" rx="5" fill="rgba(255,255,255,0.04)"/>
+            <circle cx="370" cy="278" r="4" fill="rgba(255,255,255,0.15)"/>
+            <rect x="380" y="273" width="85" height="7" rx="2" fill="rgba(255,255,255,0.15)"/>
+            <rect x="380" y="286" width="95" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
+            <rect x="380" y="296" width="65" height="5" rx="2" fill="rgba(255,255,255,0.08)"/>
+            <!-- Sidebar footer - county count -->
+            <rect x="358" y="320" width="138" height="24" rx="5" fill="rgba(13,148,136,0.15)"/>
+            <text x="390" y="336" font-family="Inter, sans-serif" font-size="9" fill="#2dd4bf">8 counties monitored</text>
+            <!-- Notification badge -->
+            <rect x="450" y="56" width="30" height="16" rx="8" fill="#2dd4bf"/>
+            <text x="460" y="67" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#1e3a5f">2</text>
+          </svg>
         </div>
       </div>
     </section>
@@ -287,33 +374,33 @@
             <a href="features.html">Features</a>
             <a href="pricing.html">Pricing</a>
             <a href="#">Chrome Web Store</a>
-            <a href="#">Changelog</a>
+            <a href="changelog">Changelog</a>
           </div>
         </div>
         <div>
           <h4 class="footer-heading">Resources</h4>
           <div class="footer-links">
-            <a href="#">Documentation</a>
-            <a href="#">Clio Integration</a>
-            <a href="#">County Guides</a>
+            <a href="docs">Documentation</a>
+            <a href="clio">Clio Integration</a>
+            <a href="docs#counties">County Guides</a>
             <a href="#">Blog</a>
           </div>
         </div>
         <div>
           <h4 class="footer-heading">Company</h4>
           <div class="footer-links">
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <a href="about">About</a>
+            <a href="contact">Contact</a>
+            <a href="privacy">Privacy Policy</a>
+            <a href="terms">Terms of Service</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p class="footer-copyright">&copy; 2026 Docket Radar. All rights reserved.</p>
         <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <a href="privacy">Privacy Policy</a>
+          <a href="terms">Terms of Service</a>
         </div>
       </div>
     </div>
