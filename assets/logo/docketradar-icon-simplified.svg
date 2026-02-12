@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!--
+    DocketRadar Icon — Simplified (16-32px)
+    For Chrome toolbar icons, favicons, and small UI contexts.
+    Document lines removed per brand spec. Arcs + blip only.
+    Stroke weights increased for legibility at small sizes.
+  -->
+
+  <!-- Container -->
+  <rect x="1" y="1" width="30" height="30" rx="7" ry="7" fill="#1e3a5f"/>
+
+  <!-- Inner radar arc (r=9, origin at 5.5, 26.5) -->
+  <path d="M 14.2 24.2 A 9 9 0 0 0 5.5 17.5"
+        fill="none"
+        stroke="rgba(255,255,255,0.45)"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+
+  <!-- Outer radar arc (r=15, origin at 5.5, 26.5) -->
+  <path d="M 20 22.6 A 15 15 0 0 0 5.5 11.5"
+        fill="none"
+        stroke="rgba(255,255,255,0.45)"
+        stroke-width="1.5"
+        stroke-linecap="round"/>
+
+  <!-- Blip (larger relative to icon for visibility) -->
+  <circle cx="13" cy="13.5" r="2.5" fill="#2dd4bf"/>
+</svg>

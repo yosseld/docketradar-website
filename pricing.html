@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — DocketRadar</title>
+  <meta name="description" content="DocketRadar pricing: Free tier for getting started, Pro tier for power users. Monitor Florida court dockets from a single Chrome sidebar.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo/docketradar-icon-simplified.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/layout.css">
+</head>
+<body>
+
+  <!-- ========== Navigation ========== -->
+  <header class="nav" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="DocketRadar home">
+        <img src="assets/logo/docketradar-icon.svg" alt="" width="36" height="36">
+        <span class="nav-logo-text"><span>Docket</span>Radar</span>
+      </a>
+      <div class="nav-links">
+        <a href="features.html" class="nav-link">Features</a>
+        <a href="pricing.html" class="nav-link active">Pricing</a>
+        <a href="#" class="btn btn-primary btn-sm nav-cta" aria-label="Add DocketRadar to Chrome">Add to Chrome</a>
+      </div>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+    <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+      <a href="features.html" class="nav-link">Features</a>
+      <a href="pricing.html" class="nav-link active">Pricing</a>
+      <a href="#" class="btn btn-primary">Add to Chrome</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== Pricing Hero ========== -->
+    <section class="hero" style="padding-bottom: var(--space-12);" aria-labelledby="pricing-hero-heading">
+      <div class="container" style="text-align: center;">
+        <p class="text-overline" style="color: var(--color-teal-light); margin-bottom: var(--space-3);">Pricing</p>
+        <h1 id="pricing-hero-heading" class="display" style="color: #ffffff; max-width: 560px; margin: 0 auto var(--space-4);">Simple, transparent pricing</h1>
+        <p class="hero-subtitle" style="max-width: 480px; margin: 0 auto;">Start free. Upgrade when you're ready. No surprises, no hidden fees, no per-seat enterprise contracts.</p>
+      </div>
+    </section>
+
+    <!-- ========== Pricing Cards ========== -->
+    <section class="section section-white" aria-labelledby="pricing-tiers-heading">
+      <div class="container">
+        <h2 id="pricing-tiers-heading" class="sr-only">Pricing tiers</h2>
+        <div class="pricing-grid">
+
+          <!-- Free Tier -->
+          <div class="pricing-card">
+            <div class="pricing-tier">Free</div>
+            <div class="pricing-desc">Get started with core monitoring</div>
+            <div class="pricing-price">
+              <span class="pricing-amount">$0</span>
+              <span class="pricing-period">/ forever</span>
+            </div>
+            <div class="pricing-features">
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Monitor up to 10 cases</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>2 counties</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Auto-check every 15 minutes</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Chrome notifications</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Sidebar overlay</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Local-only data storage</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="dash"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Clio sync</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="dash"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>CSV / data export</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="dash"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Dark mode</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn-secondary">Get started free</a>
+          </div>
+
+          <!-- Pro Tier -->
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Most popular</div>
+            <div class="pricing-tier">Pro</div>
+            <div class="pricing-desc">For professionals managing active caseloads</div>
+            <div class="pricing-price">
+              <span class="pricing-amount">$19</span>
+              <span class="pricing-period">/ month</span>
+            </div>
+            <div class="pricing-features">
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Unlimited cases</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>All 8 counties</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Auto-check every 15 minutes</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Chrome notifications</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Sidebar overlay</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Local-only data storage</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Clio sync</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>CSV / data export</span>
+              </div>
+              <div class="pricing-feature">
+                <svg viewBox="0 0 24 24" class="check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Dark mode</span>
+              </div>
+            </div>
+            <a href="#" class="btn btn-primary">Start free trial</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Feature Comparison Table ========== -->
+    <section class="section section-cloud" aria-labelledby="comparison-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="comparison-heading">Compare plans</h2>
+          <p>See exactly what's included in each tier.</p>
+        </div>
+        <div class="table-wrapper" style="max-width: 720px; margin: 0 auto;">
+          <table class="comparison-table" aria-label="Feature comparison between Free and Pro plans">
+            <thead>
+              <tr>
+                <th scope="col">Feature</th>
+                <th scope="col">Free</th>
+                <th scope="col">Pro</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monitored cases</td>
+                <td>Up to 10</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>Counties</td>
+                <td>2</td>
+                <td>All 8</td>
+              </tr>
+              <tr>
+                <td>Auto-check interval</td>
+                <td>Every 15 min</td>
+                <td>Every 15 min</td>
+              </tr>
+              <tr>
+                <td>Chrome notifications</td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>Sidebar overlay</td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>Change detection</td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>Local-only data storage</td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>Clio sync</td>
+                <td><span class="dash-icon" aria-label="Not included">&mdash;</span></td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>CSV / data export</td>
+                <td><span class="dash-icon" aria-label="Not included">&mdash;</span></td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>Dark mode</td>
+                <td><span class="dash-icon" aria-label="Not included">&mdash;</span></td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+              </tr>
+              <tr>
+                <td>Priority support</td>
+                <td><span class="dash-icon" aria-label="Not included">&mdash;</span></td>
+                <td><span class="check-icon" aria-label="Included">&#10003;</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section class="section section-white" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="text-overline">FAQ</p>
+          <h2 id="faq-heading">Frequently asked questions</h2>
+        </div>
+        <div class="faq-container">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Do I need to create an account to use DocketRadar?</span>
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. Core functionality works without creating an account. You can install the extension and start monitoring cases immediately. An account is only needed if you want to enable Clio sync on the Pro plan.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Which Florida counties are supported?</span>
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>DocketRadar currently supports Miami-Dade, Broward, Palm Beach, Osceola, St. Lucie, Indian River, Flagler, and St. Johns counties. More counties are on the roadmap — we're adding new ones regularly.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Is my case data stored on your servers?</span>
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. DocketRadar is built with a privacy-first architecture. All case data is stored locally in your browser. We do not collect, store, or transmit your case information to any server. Your data stays on your machine.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Can I cancel my Pro subscription at any time?</span>
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. You can cancel anytime with no penalties or hidden fees. When your billing period ends, your account reverts to the Free tier. Your case data remains on your machine — nothing is deleted.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Does DocketRadar work with practice management tools other than Clio?</span>
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Currently, DocketRadar integrates directly with Clio. Support for additional practice management platforms — including MyCase, PracticePanther, and Smokeball — is on our roadmap. You can always export data via CSV in the meantime.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>Is there a firm or team plan?</span>
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>We're working on firm-level plans with volume discounts and centralized billing. If your firm has 3 or more users, reach out to us — we're happy to discuss pricing that works for your team.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">
+              <span>How often does DocketRadar check for updates?</span>
+              <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>DocketRadar auto-checks your monitored cases every 15 minutes. When a change is detected — a new filing, a hearing update, a docket entry — you receive a Chrome notification immediately.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Bottom CTA ========== -->
+    <section class="section-dark" aria-labelledby="pricing-cta-heading">
+      <div class="container cta-banner">
+        <h2 id="pricing-cta-heading" class="display" style="color: #ffffff;">Never miss a filing again</h2>
+        <p>Start with Free and upgrade when you're ready. No credit card required.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="#" class="btn btn-primary btn-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 12 L11 15 L16 9"></path></svg>
+            Add to Chrome — Free to Start
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== Footer ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="DocketRadar home">
+            <img src="assets/logo/docketradar-icon-mono-light.svg" alt="" width="32" height="32">
+            <span class="footer-logo-text"><span>Docket</span>Radar</span>
+          </a>
+          <p>Automated court monitoring for Florida legal professionals. One Chrome sidebar. Eight counties. Instant notifications. Clio sync.</p>
+          <div class="footer-social" style="margin-top: var(--space-5);">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">
+              <svg viewBox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+            </a>
+            <a href="#" aria-label="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Product</h4>
+          <div class="footer-links">
+            <a href="features.html">Features</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="#">Chrome Web Store</a>
+            <a href="#">Changelog</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Resources</h4>
+          <div class="footer-links">
+            <a href="#">Documentation</a>
+            <a href="#">Clio Integration</a>
+            <a href="#">County Guides</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Docket Radar. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FAQ toggle + mobile nav script -->
+  <script>
+    function toggleFaq(button) {
+      const item = button.closest('.faq-item');
+      const isOpen = item.classList.toggle('open');
+      button.setAttribute('aria-expanded', isOpen);
+    }
+
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      const toggle = document.querySelector('.nav-toggle');
+      const isOpen = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+      toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    }
+  </script>
+
+
+</body>
+</html>

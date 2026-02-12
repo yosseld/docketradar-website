@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <!--
+    DocketRadar Icon — Monochrome Light (White)
+    For use on dark backgrounds, dark-mode headers, image overlays.
+    Transparent background — place on any dark surface.
+  -->
+
+  <!-- Container (outline only, white) -->
+  <rect x="4" y="4" width="120" height="120" rx="26" ry="26"
+        fill="none" stroke="#ffffff" stroke-width="2.5"/>
+
+  <!-- Inner radar arc -->
+  <path d="M 56.8 96.7 A 36 36 0 0 0 22 70"
+        fill="none"
+        stroke="rgba(255,255,255,0.50)"
+        stroke-width="3"
+        stroke-linecap="round"/>
+
+  <!-- Outer radar arc -->
+  <path d="M 80 90.5 A 60 60 0 0 0 22 46"
+        fill="none"
+        stroke="rgba(255,255,255,0.50)"
+        stroke-width="3"
+        stroke-linecap="round"/>
+
+  <!-- Blip -->
+  <circle cx="52" cy="54" r="6" fill="#ffffff"/>
+
+  <!-- Document lines -->
+  <line x1="72" y1="28" x2="106" y2="28"
+        stroke="rgba(255,255,255,0.30)"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+  <line x1="72" y1="40" x2="106" y2="40"
+        stroke="rgba(255,255,255,0.30)"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+  <line x1="72" y1="52" x2="98" y2="52"
+        stroke="rgba(255,255,255,0.30)"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+</svg>
