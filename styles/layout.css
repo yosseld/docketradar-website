@@ -49,7 +49,7 @@ main {
 }
 
 .section-dark {
-  background-color: var(--color-dark-bg, #0c0a09);
+  background-color: var(--color-dark-bg, #0c1f17);
   color: #ffffff;
   position: relative;
   overflow: hidden;
@@ -118,10 +118,10 @@ main {
   padding: 80px 0 var(--space-16);
   background: linear-gradient(
     160deg,
-    #0c0a09 0%,
-    #292524 30%,
-    #44403c 60%,
-    #57534e 100%
+    #0c1f17 0%,
+    #1b3a2b 30%,
+    #2d5a3f 60%,
+    #3d6b50 100%
   );
   color: #ffffff;
   position: relative;
@@ -151,7 +151,7 @@ main {
     ),
     radial-gradient(
       ellipse 800px 400px at 50% 100%,
-      rgba(68, 64, 60, 0.3) 0%,
+      rgba(45, 90, 63, 0.3) 0%,
       transparent 50%
     );
   pointer-events: none;
@@ -423,7 +423,7 @@ main {
       ),
       radial-gradient(
         ellipse 600px 300px at 70% 100%,
-        rgba(68, 64, 60, 0.25) 0%,
+        rgba(45, 90, 63, 0.25) 0%,
         transparent 50%
       );
   }

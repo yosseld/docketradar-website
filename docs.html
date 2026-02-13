@@ -1,368 +1,1134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documentation — DocketRadar</title>
-  <meta name="description" content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, data export, supported counties, and troubleshooting.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation — DocketRadar</title>
+    <meta
+      name="description"
+      content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, data export, supported counties, and troubleshooting."
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Documentation — DocketRadar">
-  <meta property="og:description" content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, data export, supported counties, and troubleshooting.">
-  <meta property="og:image" content="/assets/logo/docketradar-icon.svg">
-  <meta property="og:url" content="https://docketradar-website.vercel.app/docs">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Documentation — DocketRadar">
-  <meta name="twitter:description" content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, data export, supported counties, and troubleshooting.">
-  <link rel="canonical" href="https://docketradar-website.vercel.app/docs">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Documentation — DocketRadar" />
+    <meta
+      property="og:description"
+      content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, data export, supported counties, and troubleshooting."
+    />
+    <meta property="og:image" content="/assets/logo/docketradar-icon.svg" />
+    <meta
+      property="og:url"
+      content="https://docketradar-website.vercel.app/docs"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Documentation — DocketRadar" />
+    <meta
+      name="twitter:description"
+      content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, data export, supported counties, and troubleshooting."
+    />
+    <link rel="canonical" href="https://docketradar-website.vercel.app/docs" />
 
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/logo/docketradar-icon-simplified.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png">
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/logo/docketradar-icon-simplified.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/logo/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/logo/apple-touch-icon.png"
+    />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/variables.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/layout.css">
-</head>
-<body>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+  </head>
+  <body>
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+      <filter id="grain">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.65"
+          numOctaves="3"
+          stitchTiles="stitch"
+        />
+      </filter>
+    </svg>
 
-  <svg style="position:absolute;width:0;height:0;overflow:hidden">
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter>
-  </svg>
-
-  <!-- ========== Navigation ========== -->
-  <header class="nav" role="banner">
-    <nav class="nav-inner" aria-label="Main navigation">
-      <a href="index.html" class="nav-logo" aria-label="DocketRadar home">
-        <img src="assets/logo/docketradar-icon.svg" alt="" width="36" height="36">
-        <span class="nav-logo-text"><span>Docket</span>Radar</span>
-      </a>
-      <div class="nav-links">
+    <!-- ========== Navigation ========== -->
+    <header class="nav" role="banner">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-logo" aria-label="DocketRadar home">
+          <img
+            src="assets/logo/docketradar-icon.svg"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <span class="nav-logo-text"><span>Docket</span>Radar</span>
+        </a>
+        <div class="nav-links">
+          <a href="features.html" class="nav-link">Features</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a
+            href="#"
+            class="btn btn-primary btn-sm nav-cta"
+            aria-label="Add DocketRadar to Chrome"
+            >Add to Chrome</a
+          >
+        </div>
+        <button
+          class="nav-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          onclick="toggleMobileNav()"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+      <div
+        class="nav-mobile"
+        id="mobileNav"
+        role="navigation"
+        aria-label="Mobile navigation"
+      >
         <a href="features.html" class="nav-link">Features</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="#" class="btn btn-primary btn-sm nav-cta" aria-label="Add DocketRadar to Chrome">Add to Chrome</a>
+        <a href="#" class="btn btn-primary">Add to Chrome</a>
       </div>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-    <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="#" class="btn btn-primary">Add to Chrome</a>
-    </div>
-  </header>
+    </header>
 
-  <main>
-
-    <!-- ========== Docs Hero ========== -->
-    <section class="hero" style="padding-bottom: var(--space-12);" aria-labelledby="docs-hero-heading">
-      <div class="container" style="text-align: center; position: relative; z-index: 2;">
-        <p class="text-overline" style="color: var(--color-teal-light); margin-bottom: var(--space-3);">Documentation</p>
-        <h1 id="docs-hero-heading" class="display" style="color: #ffffff; max-width: 640px; margin: 0 auto var(--space-4); font-weight: 800;">Getting started with DocketRadar</h1>
-        <p class="hero-subtitle" style="max-width: 560px; margin: 0 auto;">Everything you need to install, configure, and get the most out of DocketRadar.</p>
-      </div>
-    </section>
-
-    <!-- ========== Table of Contents ========== -->
-    <section class="section section-cloud" aria-labelledby="toc-heading">
-      <div class="container" style="max-width: 768px; margin: 0 auto;">
-        <h2 id="toc-heading" style="color: var(--color-navy); margin-bottom: var(--space-6);">On this page</h2>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
-          <a href="#installation" style="font-weight: 500; font-size: var(--text-body-sm);">Installation</a>
-          <a href="#quick-start" style="font-weight: 500; font-size: var(--text-body-sm);">Quick Start</a>
-          <a href="#adding-cases" style="font-weight: 500; font-size: var(--text-body-sm);">Adding Cases to Monitor</a>
-          <a href="#sidebar" style="font-weight: 500; font-size: var(--text-body-sm);">Navigating the Sidebar</a>
-          <a href="#notifications" style="font-weight: 500; font-size: var(--text-body-sm);">Notifications Setup</a>
-          <a href="#clio-integration" style="font-weight: 500; font-size: var(--text-body-sm);">Clio Integration</a>
-          <a href="#export" style="font-weight: 500; font-size: var(--text-body-sm);">Data Export</a>
-          <a href="#counties" style="font-weight: 500; font-size: var(--text-body-sm);">Supported Counties</a>
-          <a href="#troubleshooting" style="font-weight: 500; font-size: var(--text-body-sm);">Troubleshooting</a>
-          <a href="#faq" style="font-weight: 500; font-size: var(--text-body-sm);">FAQ</a>
+    <main>
+      <!-- ========== Docs Hero ========== -->
+      <section
+        class="hero"
+        style="padding-bottom: var(--space-12)"
+        aria-labelledby="docs-hero-heading"
+      >
+        <div
+          class="container"
+          style="text-align: center; position: relative; z-index: 2"
+        >
+          <p
+            class="text-overline"
+            style="
+              color: var(--color-teal-light);
+              margin-bottom: var(--space-3);
+            "
+          >
+            Documentation
+          </p>
+          <h1
+            id="docs-hero-heading"
+            class="display"
+            style="
+              color: #ffffff;
+              max-width: 640px;
+              margin: 0 auto var(--space-4);
+              font-weight: 800;
+            "
+          >
+            Getting started with DocketRadar
+          </h1>
+          <p class="hero-subtitle" style="max-width: 560px; margin: 0 auto">
+            Everything you need to install, configure, and get the most out of
+            DocketRadar.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========== Documentation Content ========== -->
-    <section class="section section-white">
-      <div class="container" style="max-width: 768px; margin: 0 auto;">
-        <div style="text-align: left; color: var(--color-slate-700); line-height: 1.8;">
-
-          <!-- Installation -->
-          <h2 id="installation" style="color: var(--color-navy); margin-bottom: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6);">Installation</h2>
-          <ol style="list-style: decimal; padding-left: var(--space-6); margin-bottom: var(--space-6);">
-            <li style="margin-bottom: var(--space-3);">Open the Chrome Web Store and search for "DocketRadar," or follow the direct link from this website.</li>
-            <li style="margin-bottom: var(--space-3);">Click <strong>Add to Chrome</strong> and confirm the permissions prompt.</li>
-            <li style="margin-bottom: var(--space-3);">The DocketRadar icon will appear in your Chrome toolbar. You're ready to go.</li>
-          </ol>
-          <p>No account creation is required for core functionality. The extension works immediately after installation.</p>
-
-          <!-- Quick Start -->
-          <h2 id="quick-start" style="color: var(--color-navy); margin-bottom: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6);">Quick Start</h2>
-          <ol style="list-style: decimal; padding-left: var(--space-6); margin-bottom: var(--space-6);">
-            <li style="margin-bottom: var(--space-3);">Navigate to any supported county clerk portal website (see <a href="#counties">Supported Counties</a> below).</li>
-            <li style="margin-bottom: var(--space-3);">The DocketRadar sidebar will appear automatically on the right side of the page.</li>
-            <li style="margin-bottom: var(--space-3);">Search for a case on the court portal as you normally would. DocketRadar reads the case data from the page.</li>
-            <li style="margin-bottom: var(--space-3);">Click the <strong>Monitor</strong> button in the sidebar to add the case to your watch list.</li>
-            <li style="margin-bottom: var(--space-3);">DocketRadar will now check this case every 15 minutes and notify you when something changes.</li>
-          </ol>
-          <p>That's it. No configuration, no setup wizard, no credentials to enter. The sidebar appears where you work and stays out of the way until you need it.</p>
-
-          <!-- Adding Cases -->
-          <h2 id="adding-cases" style="color: var(--color-navy); margin-bottom: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6);">Adding Cases to Monitor</h2>
-          <p>There are two ways to add cases to your DocketRadar watch list:</p>
-          <p><strong>From a case page:</strong> Navigate to any case detail page on a supported county clerk portal. The DocketRadar sidebar will display the case information and show a "Monitor this case" button. Click it, and the case is added to your watch list.</p>
-          <p><strong>From the sidebar:</strong> Open the DocketRadar sidebar and use the search function to find cases by case number, party name, or attorney name. Results appear directly in the sidebar, where you can add them to your watch list with one click.</p>
-          <p>Free tier users can monitor up to 10 cases across 2 counties. Pro subscribers can monitor unlimited cases across all 8 supported counties.</p>
-
-          <!-- Navigating the Sidebar -->
-          <h2 id="sidebar" style="color: var(--color-navy); margin-bottom: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6);">Navigating the Sidebar UI</h2>
-          <p>The DocketRadar sidebar has three main views:</p>
-          <p><strong>Watch List:</strong> Your monitored cases, organized by county. Cases with new activity are flagged with a change indicator. Click any case to expand its details, including recent docket entries, hearing dates, and party information.</p>
-          <p><strong>Activity Feed:</strong> A chronological timeline of all changes detected across your monitored cases. Each entry shows the case number, county, type of change (new filing, hearing update, docket entry), and timestamp. Unread changes are highlighted.</p>
-          <p><strong>Settings:</strong> Configure notification preferences, Clio integration, display options (light/dark mode, compact view), and manage your subscription. This is also where you can export data and disconnect integrations.</p>
-
-          <!-- Notifications -->
-          <h2 id="notifications" style="color: var(--color-navy); margin-bottom: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6);">Notifications Setup</h2>
-          <p>DocketRadar uses Chrome's native notification system. To ensure you receive notifications:</p>
-          <ol style="list-style: decimal; padding-left: var(--space-6); margin-bottom: var(--space-6);">
-            <li style="margin-bottom: var(--space-3);"><strong>Chrome permissions:</strong> When prompted during installation, allow DocketRadar to send notifications.</li>
-            <li style="margin-bottom: var(--space-3);"><strong>Operating system:</strong> Make sure Chrome is allowed to send notifications in your OS settings (System Preferences on macOS, Settings on Windows).</li>
-            <li style="margin-bottom: var(--space-3);"><strong>Chrome must be running:</strong> DocketRadar checks cases as a background process within Chrome. If Chrome is closed, checks pause until Chrome is reopened.</li>
-          </ol>
-          <p>Notifications include the case number, county, and a brief description of the change. Click a notification to open the relevant case in the DocketRadar sidebar.</p>
-
-          <!-- Clio Integration -->
-          <h2 id="clio-integration" style="color: var(--color-navy); margin-bottom: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6);">Clio Integration</h2>
-          <p>DocketRadar syncs case data directly with Clio practice management (Pro tier only). For a comprehensive guide, see our dedicated <a href="clio">Clio Integration page</a>.</p>
-          <p><strong>Quick setup:</strong> Open DocketRadar Settings, click "Connect Clio," authorize in the OAuth window, and you're syncing. Hearings, docket entries, and party information flow into Clio automatically.</p>
-
-          <!-- Data Export -->
-          <h2 id="export" style="color: var(--color-navy); margin-bottom: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6);">Data Export (CSV)</h2>
-          <p>Pro subscribers can export case data in CSV format for use in spreadsheets, reports, or other tools.</p>
-          <ol style="list-style: decimal; padding-left: var(--space-6); margin-bottom: var(--space-6);">
-            <li style="margin-bottom: var(--space-3);">Open the DocketRadar sidebar.</li>
-            <li style="margin-bottom: var(--space-3);">Navigate to your Watch List or Activity Feed.</li>
-            <li style="margin-bottom: var(--space-3);">Click the export icon (download arrow) in the toolbar.</li>
-            <li style="margin-bottom: var(--space-3);">Choose your export scope: current case, all cases in a county, or your entire watch list.</li>
-            <li style="margin-bottom: var(--space-3);">The CSV file downloads to your default downloads folder.</li>
-          </ol>
-          <p>Exported data includes case numbers, party names, hearing dates, docket entries with timestamps, and change history. All data comes directly from your local storage — nothing is fetched from external servers during export.</p>
-
-          <!-- Supported Counties -->
-          <h2 id="counties" style="color: var(--color-navy); margin-bottom: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6);">Supported Counties</h2>
-          <p style="margin-bottom: var(--space-6);">DocketRadar currently monitors cases across 8 Florida county clerk portals. The sidebar automatically appears when you visit any of these websites:</p>
-
-          <div style="display: grid; gap: var(--space-4); margin-bottom: var(--space-6);">
-            <div style="padding: var(--space-4) var(--space-6); background: var(--color-cloud); border-radius: var(--radius-lg); border: 1px solid var(--color-slate-200);">
-              <h4 style="color: var(--color-navy); margin-bottom: var(--space-1);">Palm Beach County</h4>
-              <a href="https://appsgp.mypalmbeachclerk.com" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-sm);">appsgp.mypalmbeachclerk.com</a>
-            </div>
-            <div style="padding: var(--space-4) var(--space-6); background: var(--color-cloud); border-radius: var(--radius-lg); border: 1px solid var(--color-slate-200);">
-              <h4 style="color: var(--color-navy); margin-bottom: var(--space-1);">Miami-Dade County</h4>
-              <a href="https://www2.miamidadeclerk.gov" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-sm);">www2.miamidadeclerk.gov</a>
-            </div>
-            <div style="padding: var(--space-4) var(--space-6); background: var(--color-cloud); border-radius: var(--radius-lg); border: 1px solid var(--color-slate-200);">
-              <h4 style="color: var(--color-navy); margin-bottom: var(--space-1);">Broward County</h4>
-              <a href="https://www.browardclerk.org" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-sm);">www.browardclerk.org</a>
-            </div>
-            <div style="padding: var(--space-4) var(--space-6); background: var(--color-cloud); border-radius: var(--radius-lg); border: 1px solid var(--color-slate-200);">
-              <h4 style="color: var(--color-navy); margin-bottom: var(--space-1);">Osceola County</h4>
-              <a href="https://courts.osceolaclerk.com" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-sm);">courts.osceolaclerk.com</a>
-            </div>
-            <div style="padding: var(--space-4) var(--space-6); background: var(--color-cloud); border-radius: var(--radius-lg); border: 1px solid var(--color-slate-200);">
-              <h4 style="color: var(--color-navy); margin-bottom: var(--space-1);">St. Lucie County</h4>
-              <a href="https://courtcasesearch.stlucieclerk.gov" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-sm);">courtcasesearch.stlucieclerk.gov</a>
-            </div>
-            <div style="padding: var(--space-4) var(--space-6); background: var(--color-cloud); border-radius: var(--radius-lg); border: 1px solid var(--color-slate-200);">
-              <h4 style="color: var(--color-navy); margin-bottom: var(--space-1);">Indian River County</h4>
-              <a href="https://court.indian-river.org" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-sm);">court.indian-river.org</a>
-            </div>
-            <div style="padding: var(--space-4) var(--space-6); background: var(--color-cloud); border-radius: var(--radius-lg); border: 1px solid var(--color-slate-200);">
-              <h4 style="color: var(--color-navy); margin-bottom: var(--space-1);">Flagler County</h4>
-              <a href="https://apps.flaglerclerk.com" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-sm);">apps.flaglerclerk.com</a>
-            </div>
-            <div style="padding: var(--space-4) var(--space-6); background: var(--color-cloud); border-radius: var(--radius-lg); border: 1px solid var(--color-slate-200);">
-              <h4 style="color: var(--color-navy); margin-bottom: var(--space-1);">St. Johns County</h4>
-              <a href="https://apps.stjohnsclerk.com" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-sm);">apps.stjohnsclerk.com</a>
-            </div>
+      <!-- ========== Table of Contents ========== -->
+      <section class="section section-cloud" aria-labelledby="toc-heading">
+        <div class="container" style="max-width: 768px; margin: 0 auto">
+          <h2
+            id="toc-heading"
+            style="color: var(--color-navy); margin-bottom: var(--space-6)"
+          >
+            On this page
+          </h2>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: var(--space-3);
+            "
+          >
+            <a
+              href="#installation"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >Installation</a
+            >
+            <a
+              href="#quick-start"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >Quick Start</a
+            >
+            <a
+              href="#adding-cases"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >Adding Cases to Monitor</a
+            >
+            <a
+              href="#sidebar"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >Navigating the Sidebar</a
+            >
+            <a
+              href="#notifications"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >Notifications Setup</a
+            >
+            <a
+              href="#clio-integration"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >Clio Integration</a
+            >
+            <a
+              href="#export"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >Data Export</a
+            >
+            <a
+              href="#counties"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >Supported Counties</a
+            >
+            <a
+              href="#troubleshooting"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >Troubleshooting</a
+            >
+            <a
+              href="#faq"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >FAQ</a
+            >
           </div>
-
-          <p>Need a county that isn't listed? Email us at <a href="mailto:cleo@docketradar.com">cleo@docketradar.com</a> with the county name and clerk portal URL. We prioritize new counties based on user demand.</p>
-
-          <!-- Troubleshooting -->
-          <h2 id="troubleshooting" style="color: var(--color-navy); margin-bottom: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6);">Troubleshooting</h2>
-
-          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">The sidebar doesn't appear on a supported portal</h4>
-          <ul style="list-style: disc; padding-left: var(--space-6); margin-bottom: var(--space-4);">
-            <li style="margin-bottom: var(--space-2);">Verify the extension is enabled at <code>chrome://extensions</code>.</li>
-            <li style="margin-bottom: var(--space-2);">Hard-refresh the page (<code>Ctrl+Shift+R</code> or <code>Cmd+Shift+R</code>).</li>
-            <li style="margin-bottom: var(--space-2);">Check that you're on the main portal domain, not a sub-page that doesn't match the supported URL patterns.</li>
-            <li style="margin-bottom: var(--space-2);">Temporarily disable other extensions that modify page content (ad blockers, script blockers) to rule out conflicts.</li>
-          </ul>
-
-          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">Notifications are not arriving</h4>
-          <ul style="list-style: disc; padding-left: var(--space-6); margin-bottom: var(--space-4);">
-            <li style="margin-bottom: var(--space-2);">Confirm Chrome has notification permissions in your operating system settings.</li>
-            <li style="margin-bottom: var(--space-2);">Check that DocketRadar's notification setting is enabled in the sidebar's Settings panel.</li>
-            <li style="margin-bottom: var(--space-2);">Ensure Chrome is running. DocketRadar's background checks pause when Chrome is fully closed.</li>
-            <li style="margin-bottom: var(--space-2);">On macOS, check System Preferences &gt; Notifications &gt; Google Chrome.</li>
-          </ul>
-
-          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">Case data seems stale or outdated</h4>
-          <ul style="list-style: disc; padding-left: var(--space-6); margin-bottom: var(--space-4);">
-            <li style="margin-bottom: var(--space-2);">DocketRadar checks cases every 15 minutes. If a very recent change isn't showing, wait for the next check cycle.</li>
-            <li style="margin-bottom: var(--space-2);">You can manually trigger a refresh by clicking the refresh button in the sidebar toolbar.</li>
-            <li style="margin-bottom: var(--space-2);">If a county clerk portal is experiencing downtime, DocketRadar cannot retrieve updates until the portal is back online.</li>
-          </ul>
-
-          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">Clio sync isn't working</h4>
-          <ul style="list-style: disc; padding-left: var(--space-6); margin-bottom: var(--space-4);">
-            <li style="margin-bottom: var(--space-2);">Verify your Clio connection is active in Settings. If the token has expired, click "Reconnect Clio" to re-authorize.</li>
-            <li style="margin-bottom: var(--space-2);">Check that your Clio account has the required permissions (read/write access to matters).</li>
-            <li style="margin-bottom: var(--space-2);">See the <a href="clio">Clio Integration guide</a> for detailed troubleshooting steps.</li>
-          </ul>
-
-          <!-- FAQ -->
-          <h2 id="faq" style="color: var(--color-navy); margin-bottom: var(--space-4); margin-top: var(--space-10); padding-top: var(--space-6);">FAQ</h2>
-
-          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">Does DocketRadar work on Firefox, Safari, or Edge?</h4>
-          <p>DocketRadar is currently available for Google Chrome only. Chromium-based browsers (like Brave and Microsoft Edge) may work with the Chrome extension, but are not officially supported. Firefox and Safari support is not currently planned.</p>
-
-          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">Does DocketRadar work on mobile?</h4>
-          <p>No. Chrome extensions are not supported on mobile browsers. DocketRadar is a desktop Chrome extension designed for the workflows of legal professionals working at their computers.</p>
-
-          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">How much storage does DocketRadar use?</h4>
-          <p>DocketRadar uses Chrome's local extension storage, which is limited to 10 MB per extension. For most users monitoring even dozens of cases, storage usage stays well under 1 MB. Case data is stored as structured text, not images or documents.</p>
-
-          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">Can I use DocketRadar on multiple computers?</h4>
-          <p>Yes. Install DocketRadar on each computer separately. Since all data is stored locally, your case lists and change history will be independent on each machine. There is no cloud sync between devices — this is a deliberate privacy design choice.</p>
-
-          <h4 style="color: var(--color-navy); margin-bottom: var(--space-2); margin-top: var(--space-6);">What happens if I uninstall the extension?</h4>
-          <p>When you uninstall DocketRadar, Chrome removes the extension's local storage data. Your monitored case list and change history will be deleted. If you need to preserve your data, export it as CSV before uninstalling.</p>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========== Bottom CTA ========== -->
-    <section class="section-dark" aria-labelledby="docs-cta-heading">
-      <div class="container cta-banner">
-        <h2 id="docs-cta-heading" class="display" style="color: #ffffff; font-weight: 800;">Ready to get started?</h2>
-        <p>Install DocketRadar and start monitoring your cases in under a minute.</p>
-        <div class="hero-actions" style="justify-content: center;">
-          <a href="#" class="btn btn-primary btn-lg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 12 L11 15 L16 9"></path></svg>
-            Add to Chrome — Free to Start
-          </a>
+      <!-- ========== Documentation Content ========== -->
+      <section class="section section-white">
+        <div class="container" style="max-width: 768px; margin: 0 auto">
+          <div
+            style="
+              text-align: left;
+              color: var(--color-slate-700);
+              line-height: 1.8;
+            "
+          >
+            <!-- Installation -->
+            <h2
+              id="installation"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              Installation
+            </h2>
+            <ol
+              style="
+                list-style: decimal;
+                padding-left: var(--space-6);
+                margin-bottom: var(--space-6);
+              "
+            >
+              <li style="margin-bottom: var(--space-3)">
+                Open the Chrome Web Store and search for "DocketRadar," or
+                follow the direct link from this website.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Click <strong>Add to Chrome</strong> and confirm the permissions
+                prompt.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                The DocketRadar icon will appear in your Chrome toolbar. You're
+                ready to go.
+              </li>
+            </ol>
+            <p>
+              No account creation is required for core functionality. The
+              extension works immediately after installation.
+            </p>
+
+            <!-- Quick Start -->
+            <h2
+              id="quick-start"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              Quick Start
+            </h2>
+            <ol
+              style="
+                list-style: decimal;
+                padding-left: var(--space-6);
+                margin-bottom: var(--space-6);
+              "
+            >
+              <li style="margin-bottom: var(--space-3)">
+                Navigate to any supported county clerk portal website (see
+                <a href="#counties">Supported Counties</a> below).
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                The DocketRadar sidebar will appear automatically on the right
+                side of the page.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Search for a case on the court portal as you normally would.
+                DocketRadar reads the case data from the page.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Click the <strong>Monitor</strong> button in the sidebar to add
+                the case to your watch list.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                DocketRadar will now check this case every 15 minutes and notify
+                you when something changes.
+              </li>
+            </ol>
+            <p>
+              That's it. No configuration, no setup wizard, no credentials to
+              enter. The sidebar appears where you work and stays out of the way
+              until you need it.
+            </p>
+
+            <!-- Adding Cases -->
+            <h2
+              id="adding-cases"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              Adding Cases to Monitor
+            </h2>
+            <p>
+              There are two ways to add cases to your DocketRadar watch list:
+            </p>
+            <p>
+              <strong>From a case page:</strong> Navigate to any case detail
+              page on a supported county clerk portal. The DocketRadar sidebar
+              will display the case information and show a "Monitor this case"
+              button. Click it, and the case is added to your watch list.
+            </p>
+            <p>
+              <strong>From the sidebar:</strong> Open the DocketRadar sidebar
+              and use the search function to find cases by case number, party
+              name, or attorney name. Results appear directly in the sidebar,
+              where you can add them to your watch list with one click.
+            </p>
+            <p>
+              Free tier users can monitor up to 10 cases across 2 counties. Pro
+              subscribers can monitor unlimited cases across all 8 supported
+              counties.
+            </p>
+
+            <!-- Navigating the Sidebar -->
+            <h2
+              id="sidebar"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              Navigating the Sidebar UI
+            </h2>
+            <p>The DocketRadar sidebar has three main views:</p>
+            <p>
+              <strong>Watch List:</strong> Your monitored cases, organized by
+              county. Cases with new activity are flagged with a change
+              indicator. Click any case to expand its details, including recent
+              docket entries, hearing dates, and party information.
+            </p>
+            <p>
+              <strong>Activity Feed:</strong> A chronological timeline of all
+              changes detected across your monitored cases. Each entry shows the
+              case number, county, type of change (new filing, hearing update,
+              docket entry), and timestamp. Unread changes are highlighted.
+            </p>
+            <p>
+              <strong>Settings:</strong> Configure notification preferences,
+              Clio integration, display options (light/dark mode, compact view),
+              and manage your subscription. This is also where you can export
+              data and disconnect integrations.
+            </p>
+
+            <!-- Notifications -->
+            <h2
+              id="notifications"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              Notifications Setup
+            </h2>
+            <p>
+              DocketRadar uses Chrome's native notification system. To ensure
+              you receive notifications:
+            </p>
+            <ol
+              style="
+                list-style: decimal;
+                padding-left: var(--space-6);
+                margin-bottom: var(--space-6);
+              "
+            >
+              <li style="margin-bottom: var(--space-3)">
+                <strong>Chrome permissions:</strong> When prompted during
+                installation, allow DocketRadar to send notifications.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                <strong>Operating system:</strong> Make sure Chrome is allowed
+                to send notifications in your OS settings (System Preferences on
+                macOS, Settings on Windows).
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                <strong>Chrome must be running:</strong> DocketRadar checks
+                cases as a background process within Chrome. If Chrome is
+                closed, checks pause until Chrome is reopened.
+              </li>
+            </ol>
+            <p>
+              Notifications include the case number, county, and a brief
+              description of the change. Click a notification to open the
+              relevant case in the DocketRadar sidebar.
+            </p>
+
+            <!-- Clio Integration -->
+            <h2
+              id="clio-integration"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              Clio Integration
+            </h2>
+            <p>
+              DocketRadar syncs case data directly with Clio practice management
+              (Pro tier only). For a comprehensive guide, see our dedicated
+              <a href="clio">Clio Integration page</a>.
+            </p>
+            <p>
+              <strong>Quick setup:</strong> Open DocketRadar Settings, click
+              "Connect Clio," authorize in the OAuth window, and you're syncing.
+              Hearings, docket entries, and party information flow into Clio
+              automatically.
+            </p>
+
+            <!-- Data Export -->
+            <h2
+              id="export"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              Data Export (CSV)
+            </h2>
+            <p>
+              Pro subscribers can export case data in CSV format for use in
+              spreadsheets, reports, or other tools.
+            </p>
+            <ol
+              style="
+                list-style: decimal;
+                padding-left: var(--space-6);
+                margin-bottom: var(--space-6);
+              "
+            >
+              <li style="margin-bottom: var(--space-3)">
+                Open the DocketRadar sidebar.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Navigate to your Watch List or Activity Feed.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Click the export icon (download arrow) in the toolbar.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Choose your export scope: current case, all cases in a county,
+                or your entire watch list.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                The CSV file downloads to your default downloads folder.
+              </li>
+            </ol>
+            <p>
+              Exported data includes case numbers, party names, hearing dates,
+              docket entries with timestamps, and change history. All data comes
+              directly from your local storage — nothing is fetched from
+              external servers during export.
+            </p>
+
+            <!-- Supported Counties -->
+            <h2
+              id="counties"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              Supported Counties
+            </h2>
+            <p style="margin-bottom: var(--space-6)">
+              DocketRadar currently monitors cases across 8 Florida county clerk
+              portals. The sidebar automatically appears when you visit any of
+              these websites:
+            </p>
+
+            <div
+              style="
+                display: grid;
+                gap: var(--space-4);
+                margin-bottom: var(--space-6);
+              "
+            >
+              <div
+                style="
+                  padding: var(--space-4) var(--space-6);
+                  background: var(--color-cloud);
+                  border-radius: var(--radius-lg);
+                  border: 1px solid var(--color-slate-200);
+                "
+              >
+                <h4
+                  style="
+                    color: var(--color-navy);
+                    margin-bottom: var(--space-1);
+                  "
+                >
+                  Palm Beach County
+                </h4>
+                <a
+                  href="https://appsgp.mypalmbeachclerk.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-size: var(--text-body-sm)"
+                  >appsgp.mypalmbeachclerk.com</a
+                >
+              </div>
+              <div
+                style="
+                  padding: var(--space-4) var(--space-6);
+                  background: var(--color-cloud);
+                  border-radius: var(--radius-lg);
+                  border: 1px solid var(--color-slate-200);
+                "
+              >
+                <h4
+                  style="
+                    color: var(--color-navy);
+                    margin-bottom: var(--space-1);
+                  "
+                >
+                  Miami-Dade County
+                </h4>
+                <a
+                  href="https://www2.miamidadeclerk.gov"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-size: var(--text-body-sm)"
+                  >www2.miamidadeclerk.gov</a
+                >
+              </div>
+              <div
+                style="
+                  padding: var(--space-4) var(--space-6);
+                  background: var(--color-cloud);
+                  border-radius: var(--radius-lg);
+                  border: 1px solid var(--color-slate-200);
+                "
+              >
+                <h4
+                  style="
+                    color: var(--color-navy);
+                    margin-bottom: var(--space-1);
+                  "
+                >
+                  Broward County
+                </h4>
+                <a
+                  href="https://www.browardclerk.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-size: var(--text-body-sm)"
+                  >www.browardclerk.org</a
+                >
+              </div>
+              <div
+                style="
+                  padding: var(--space-4) var(--space-6);
+                  background: var(--color-cloud);
+                  border-radius: var(--radius-lg);
+                  border: 1px solid var(--color-slate-200);
+                "
+              >
+                <h4
+                  style="
+                    color: var(--color-navy);
+                    margin-bottom: var(--space-1);
+                  "
+                >
+                  Osceola County
+                </h4>
+                <a
+                  href="https://courts.osceolaclerk.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-size: var(--text-body-sm)"
+                  >courts.osceolaclerk.com</a
+                >
+              </div>
+              <div
+                style="
+                  padding: var(--space-4) var(--space-6);
+                  background: var(--color-cloud);
+                  border-radius: var(--radius-lg);
+                  border: 1px solid var(--color-slate-200);
+                "
+              >
+                <h4
+                  style="
+                    color: var(--color-navy);
+                    margin-bottom: var(--space-1);
+                  "
+                >
+                  St. Lucie County
+                </h4>
+                <a
+                  href="https://courtcasesearch.stlucieclerk.gov"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-size: var(--text-body-sm)"
+                  >courtcasesearch.stlucieclerk.gov</a
+                >
+              </div>
+              <div
+                style="
+                  padding: var(--space-4) var(--space-6);
+                  background: var(--color-cloud);
+                  border-radius: var(--radius-lg);
+                  border: 1px solid var(--color-slate-200);
+                "
+              >
+                <h4
+                  style="
+                    color: var(--color-navy);
+                    margin-bottom: var(--space-1);
+                  "
+                >
+                  Indian River County
+                </h4>
+                <a
+                  href="https://court.indian-river.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-size: var(--text-body-sm)"
+                  >court.indian-river.org</a
+                >
+              </div>
+              <div
+                style="
+                  padding: var(--space-4) var(--space-6);
+                  background: var(--color-cloud);
+                  border-radius: var(--radius-lg);
+                  border: 1px solid var(--color-slate-200);
+                "
+              >
+                <h4
+                  style="
+                    color: var(--color-navy);
+                    margin-bottom: var(--space-1);
+                  "
+                >
+                  Flagler County
+                </h4>
+                <a
+                  href="https://apps.flaglerclerk.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-size: var(--text-body-sm)"
+                  >apps.flaglerclerk.com</a
+                >
+              </div>
+              <div
+                style="
+                  padding: var(--space-4) var(--space-6);
+                  background: var(--color-cloud);
+                  border-radius: var(--radius-lg);
+                  border: 1px solid var(--color-slate-200);
+                "
+              >
+                <h4
+                  style="
+                    color: var(--color-navy);
+                    margin-bottom: var(--space-1);
+                  "
+                >
+                  St. Johns County
+                </h4>
+                <a
+                  href="https://apps.stjohnsclerk.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="font-size: var(--text-body-sm)"
+                  >apps.stjohnsclerk.com</a
+                >
+              </div>
+            </div>
+
+            <p>
+              Need a county that isn't listed? Email us at
+              <a href="mailto:cleo@docketradar.com">cleo@docketradar.com</a>
+              with the county name and clerk portal URL. We prioritize new
+              counties based on user demand.
+            </p>
+
+            <!-- Troubleshooting -->
+            <h2
+              id="troubleshooting"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              Troubleshooting
+            </h2>
+
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              The sidebar doesn't appear on a supported portal
+            </h4>
+            <ul
+              style="
+                list-style: disc;
+                padding-left: var(--space-6);
+                margin-bottom: var(--space-4);
+              "
+            >
+              <li style="margin-bottom: var(--space-2)">
+                Verify the extension is enabled at
+                <code>chrome://extensions</code>.
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                Hard-refresh the page (<code>Ctrl+Shift+R</code> or
+                <code>Cmd+Shift+R</code>).
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                Check that you're on the main portal domain, not a sub-page that
+                doesn't match the supported URL patterns.
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                Temporarily disable other extensions that modify page content
+                (ad blockers, script blockers) to rule out conflicts.
+              </li>
+            </ul>
+
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              Notifications are not arriving
+            </h4>
+            <ul
+              style="
+                list-style: disc;
+                padding-left: var(--space-6);
+                margin-bottom: var(--space-4);
+              "
+            >
+              <li style="margin-bottom: var(--space-2)">
+                Confirm Chrome has notification permissions in your operating
+                system settings.
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                Check that DocketRadar's notification setting is enabled in the
+                sidebar's Settings panel.
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                Ensure Chrome is running. DocketRadar's background checks pause
+                when Chrome is fully closed.
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                On macOS, check System Preferences &gt; Notifications &gt;
+                Google Chrome.
+              </li>
+            </ul>
+
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              Case data seems stale or outdated
+            </h4>
+            <ul
+              style="
+                list-style: disc;
+                padding-left: var(--space-6);
+                margin-bottom: var(--space-4);
+              "
+            >
+              <li style="margin-bottom: var(--space-2)">
+                DocketRadar checks cases every 15 minutes. If a very recent
+                change isn't showing, wait for the next check cycle.
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                You can manually trigger a refresh by clicking the refresh
+                button in the sidebar toolbar.
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                If a county clerk portal is experiencing downtime, DocketRadar
+                cannot retrieve updates until the portal is back online.
+              </li>
+            </ul>
+
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              Clio sync isn't working
+            </h4>
+            <ul
+              style="
+                list-style: disc;
+                padding-left: var(--space-6);
+                margin-bottom: var(--space-4);
+              "
+            >
+              <li style="margin-bottom: var(--space-2)">
+                Verify your Clio connection is active in Settings. If the token
+                has expired, click "Reconnect Clio" to re-authorize.
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                Check that your Clio account has the required permissions
+                (read/write access to matters).
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                See the <a href="clio">Clio Integration guide</a> for detailed
+                troubleshooting steps.
+              </li>
+            </ul>
+
+            <!-- FAQ -->
+            <h2
+              id="faq"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              FAQ
+            </h2>
+
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              Does DocketRadar work on Firefox, Safari, or Edge?
+            </h4>
+            <p>
+              DocketRadar is currently available for Google Chrome only.
+              Chromium-based browsers (like Brave and Microsoft Edge) may work
+              with the Chrome extension, but are not officially supported.
+              Firefox and Safari support is not currently planned.
+            </p>
+
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              Does DocketRadar work on mobile?
+            </h4>
+            <p>
+              No. Chrome extensions are not supported on mobile browsers.
+              DocketRadar is a desktop Chrome extension designed for the
+              workflows of legal professionals working at their computers.
+            </p>
+
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              How much storage does DocketRadar use?
+            </h4>
+            <p>
+              DocketRadar uses Chrome's local extension storage, which is
+              limited to 10 MB per extension. For most users monitoring even
+              dozens of cases, storage usage stays well under 1 MB. Case data is
+              stored as structured text, not images or documents.
+            </p>
+
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              Can I use DocketRadar on multiple computers?
+            </h4>
+            <p>
+              Yes. Install DocketRadar on each computer separately. Since all
+              data is stored locally, your case lists and change history will be
+              independent on each machine. There is no cloud sync between
+              devices — this is a deliberate privacy design choice.
+            </p>
+
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              What happens if I uninstall the extension?
+            </h4>
+            <p>
+              When you uninstall DocketRadar, Chrome removes the extension's
+              local storage data. Your monitored case list and change history
+              will be deleted. If you need to preserve your data, export it as
+              CSV before uninstalling.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
-
-  <!-- ========== Footer ========== -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="footer-logo" aria-label="DocketRadar home">
-            <img src="assets/logo/docketradar-icon-mono-light.svg" alt="" width="32" height="32">
-            <span class="footer-logo-text"><span>Docket</span>Radar</span>
-          </a>
-          <p>Automated court monitoring for Florida legal professionals. One Chrome sidebar. Eight counties. Instant notifications. Clio sync.</p>
-          <div class="footer-social" style="margin-top: var(--space-5);">
-            <a href="#" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+      <!-- ========== Bottom CTA ========== -->
+      <section class="section-dark" aria-labelledby="docs-cta-heading">
+        <div class="container cta-banner">
+          <h2
+            id="docs-cta-heading"
+            class="display"
+            style="color: #ffffff; font-weight: 800"
+          >
+            Ready to get started?
+          </h2>
+          <p>
+            Install DocketRadar and start monitoring your cases in under a
+            minute.
+          </p>
+          <div class="hero-actions" style="justify-content: center">
+            <a href="#" class="btn btn-primary btn-lg">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 12 L11 15 L16 9"></path>
+              </svg>
+              Add to Chrome — Free to Start
             </a>
-            <a href="#" aria-label="X (Twitter)">
-              <svg viewBox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a
+              href="index.html"
+              class="footer-logo"
+              aria-label="DocketRadar home"
+            >
+              <img
+                src="assets/logo/docketradar-icon-mono-light.svg"
+                alt=""
+                width="32"
+                height="32"
+              />
+              <span class="footer-logo-text"><span>Docket</span>Radar</span>
             </a>
-            <a href="#" aria-label="GitHub">
-              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            </a>
+            <p>
+              Automated court monitoring for Florida legal professionals. One
+              Chrome sidebar. Eight counties. Instant notifications. Clio sync.
+            </p>
+            <div class="footer-social" style="margin-top: var(--space-5)">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="GitHub">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading">Product</h4>
+            <div class="footer-links">
+              <a href="features.html">Features</a>
+              <a href="pricing.html">Pricing</a>
+              <a href="#">Chrome Web Store</a>
+              <a href="changelog">Changelog</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading">Resources</h4>
+            <div class="footer-links">
+              <a href="docs">Documentation</a>
+              <a href="clio">Clio Integration</a>
+              <a href="docs#counties">County Guides</a>
+              <a href="#">Blog</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading">Company</h4>
+            <div class="footer-links">
+              <a href="about">About</a>
+              <a href="contact">Contact</a>
+              <a href="privacy">Privacy Policy</a>
+              <a href="terms">Terms of Service</a>
+            </div>
           </div>
         </div>
-        <div>
-          <h4 class="footer-heading">Product</h4>
-          <div class="footer-links">
-            <a href="features.html">Features</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="#">Chrome Web Store</a>
-            <a href="changelog">Changelog</a>
-          </div>
-        </div>
-        <div>
-          <h4 class="footer-heading">Resources</h4>
-          <div class="footer-links">
-            <a href="docs">Documentation</a>
-            <a href="clio">Clio Integration</a>
-            <a href="docs#counties">County Guides</a>
-            <a href="#">Blog</a>
-          </div>
-        </div>
-        <div>
-          <h4 class="footer-heading">Company</h4>
-          <div class="footer-links">
-            <a href="about">About</a>
-            <a href="contact">Contact</a>
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            &copy; 2026 Docket Radar. All rights reserved.
+          </p>
+          <div class="footer-legal">
             <a href="privacy">Privacy Policy</a>
             <a href="terms">Terms of Service</a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2026 Docket Radar. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="privacy">Privacy Policy</a>
-          <a href="terms">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Mobile nav toggle script -->
-  <script>
-    function toggleMobileNav() {
-      const nav = document.getElementById('mobileNav');
-      const toggle = document.querySelector('.nav-toggle');
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen);
-      toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    }
-  </script>
+    <!-- Mobile nav toggle script -->
+    <script>
+      function toggleMobileNav() {
+        const nav = document.getElementById("mobileNav");
+        const toggle = document.querySelector(".nav-toggle");
+        const isOpen = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", isOpen);
+        toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      }
+    </script>
 
-  <!-- Scroll reveal -->
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
+    <!-- Scroll reveal -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+        );
+        document
+          .querySelectorAll(
+            ".card, .feature-detail, .testimonial-card, .section-divider, .pricing-card, .doc-card, .changelog-entry",
+          )
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = window.matchMedia("(max-width: 768px)").matches
+              ? "translateY(10px)"
+              : "translateY(16px)";
+            el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            observer.observe(el);
+          });
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.card, .feature-detail, .testimonial-card, .section-divider, .pricing-card, .doc-card, .changelog-entry').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-  });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>

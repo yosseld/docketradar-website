@@ -1,283 +1,702 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Changelog — DocketRadar</title>
-  <meta name="description" content="DocketRadar release notes and version history. Track new features, improvements, and updates to the court monitoring Chrome extension.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Changelog — DocketRadar</title>
+    <meta
+      name="description"
+      content="DocketRadar release notes and version history. Track new features, improvements, and updates to the court monitoring Chrome extension."
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Changelog — DocketRadar">
-  <meta property="og:description" content="DocketRadar release notes and version history. Track new features, improvements, and updates to the court monitoring Chrome extension.">
-  <meta property="og:image" content="/assets/logo/docketradar-icon.svg">
-  <meta property="og:url" content="https://docketradar-website.vercel.app/changelog">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Changelog — DocketRadar">
-  <meta name="twitter:description" content="DocketRadar release notes and version history. Track new features, improvements, and updates to the court monitoring Chrome extension.">
-  <link rel="canonical" href="https://docketradar-website.vercel.app/changelog">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Changelog — DocketRadar" />
+    <meta
+      property="og:description"
+      content="DocketRadar release notes and version history. Track new features, improvements, and updates to the court monitoring Chrome extension."
+    />
+    <meta property="og:image" content="/assets/logo/docketradar-icon.svg" />
+    <meta
+      property="og:url"
+      content="https://docketradar-website.vercel.app/changelog"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Changelog — DocketRadar" />
+    <meta
+      name="twitter:description"
+      content="DocketRadar release notes and version history. Track new features, improvements, and updates to the court monitoring Chrome extension."
+    />
+    <link
+      rel="canonical"
+      href="https://docketradar-website.vercel.app/changelog"
+    />
 
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/logo/docketradar-icon-simplified.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png">
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/logo/docketradar-icon-simplified.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/logo/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/logo/apple-touch-icon.png"
+    />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/variables.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/layout.css">
-</head>
-<body>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+  </head>
+  <body>
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+      <filter id="grain">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.65"
+          numOctaves="3"
+          stitchTiles="stitch"
+        />
+      </filter>
+    </svg>
 
-  <svg style="position:absolute;width:0;height:0;overflow:hidden">
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter>
-  </svg>
-
-  <!-- ========== Navigation ========== -->
-  <header class="nav" role="banner">
-    <nav class="nav-inner" aria-label="Main navigation">
-      <a href="index.html" class="nav-logo" aria-label="DocketRadar home">
-        <img src="assets/logo/docketradar-icon.svg" alt="" width="36" height="36">
-        <span class="nav-logo-text"><span>Docket</span>Radar</span>
-      </a>
-      <div class="nav-links">
+    <!-- ========== Navigation ========== -->
+    <header class="nav" role="banner">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-logo" aria-label="DocketRadar home">
+          <img
+            src="assets/logo/docketradar-icon.svg"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <span class="nav-logo-text"><span>Docket</span>Radar</span>
+        </a>
+        <div class="nav-links">
+          <a href="features.html" class="nav-link">Features</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a
+            href="#"
+            class="btn btn-primary btn-sm nav-cta"
+            aria-label="Add DocketRadar to Chrome"
+            >Add to Chrome</a
+          >
+        </div>
+        <button
+          class="nav-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          onclick="toggleMobileNav()"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+      <div
+        class="nav-mobile"
+        id="mobileNav"
+        role="navigation"
+        aria-label="Mobile navigation"
+      >
         <a href="features.html" class="nav-link">Features</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="#" class="btn btn-primary btn-sm nav-cta" aria-label="Add DocketRadar to Chrome">Add to Chrome</a>
+        <a href="#" class="btn btn-primary">Add to Chrome</a>
       </div>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-    <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="#" class="btn btn-primary">Add to Chrome</a>
-    </div>
-  </header>
+    </header>
 
-  <main>
-
-    <!-- ========== Changelog Hero ========== -->
-    <section class="hero" style="padding-bottom: var(--space-12);" aria-labelledby="changelog-hero-heading">
-      <div class="container" style="text-align: center; position: relative; z-index: 2;">
-        <p class="text-overline" style="color: var(--color-teal-light); margin-bottom: var(--space-3);">Changelog</p>
-        <h1 id="changelog-hero-heading" class="display" style="color: #ffffff; max-width: 640px; margin: 0 auto var(--space-4); font-weight: 800;">Release notes</h1>
-        <p class="hero-subtitle" style="max-width: 560px; margin: 0 auto;">Everything new, improved, and fixed in DocketRadar. Current version: v0.2.2.</p>
-      </div>
-    </section>
-
-    <!-- ========== Timeline ========== -->
-    <section class="section section-white" aria-labelledby="releases-heading">
-      <div class="container" style="max-width: 768px; margin: 0 auto;">
-        <h2 id="releases-heading" class="sr-only">Release history</h2>
-
-        <!-- Timeline container -->
-        <div style="position: relative; padding-left: var(--space-10);">
-
-          <!-- Timeline line -->
-          <div style="position: absolute; left: 15px; top: 8px; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--color-teal), var(--color-slate-200));" aria-hidden="true"></div>
-
-          <!-- v0.2.2 -->
-          <article style="position: relative; margin-bottom: var(--space-12);">
-            <div style="position: absolute; left: -33px; top: 4px; width: 12px; height: 12px; border-radius: var(--radius-full); background-color: var(--color-teal); border: 3px solid #ffffff; box-shadow: var(--shadow-sm);" aria-hidden="true"></div>
-            <div style="display: flex; align-items: baseline; gap: var(--space-4); margin-bottom: var(--space-3); flex-wrap: wrap;">
-              <h3 style="color: var(--color-navy);">v0.2.2</h3>
-              <span style="font-size: var(--text-caption); font-weight: 600; color: #ffffff; background-color: var(--color-teal); padding: 2px 10px; border-radius: var(--radius-full); text-transform: uppercase; letter-spacing: 0.04em;">Latest</span>
-              <span style="font-size: var(--text-body-sm); color: var(--color-slate-500);">February 2026</span>
-            </div>
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-3);">DocketRadar Rebrand</h4>
-            <p style="color: var(--color-slate-700); line-height: 1.7; margin-bottom: var(--space-4);">A complete visual refresh bringing DocketRadar a polished, professional identity built for the legal industry.</p>
-            <ul style="list-style: disc; padding-left: var(--space-6); color: var(--color-slate-600); line-height: 1.7;">
-              <li style="margin-bottom: var(--space-2);">Complete visual refresh with new brand identity and logo system</li>
-              <li style="margin-bottom: var(--space-2);">Updated color system: Navy, Teal, and Slate palette replacing previous colors</li>
-              <li style="margin-bottom: var(--space-2);">New typography system using Inter font family</li>
-              <li style="margin-bottom: var(--space-2);">Redesigned sidebar UI with improved visual hierarchy and readability</li>
-              <li style="margin-bottom: var(--space-2);">New marketing website reflecting updated brand identity</li>
-            </ul>
-          </article>
-
-          <!-- v0.2.1 -->
-          <article style="position: relative; margin-bottom: var(--space-12);">
-            <div style="position: absolute; left: -33px; top: 4px; width: 12px; height: 12px; border-radius: var(--radius-full); background-color: var(--color-slate-300); border: 3px solid #ffffff; box-shadow: var(--shadow-sm);" aria-hidden="true"></div>
-            <div style="display: flex; align-items: baseline; gap: var(--space-4); margin-bottom: var(--space-3); flex-wrap: wrap;">
-              <h3 style="color: var(--color-navy);">v0.2.1</h3>
-              <span style="font-size: var(--text-body-sm); color: var(--color-slate-500);">January 2026</span>
-            </div>
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-3);">8-County Support</h4>
-            <p style="color: var(--color-slate-700); line-height: 1.7; margin-bottom: var(--space-4);">Expanding DocketRadar's coverage from 4 counties to 8, reaching more of Florida's legal community.</p>
-            <ul style="list-style: disc; padding-left: var(--space-6); color: var(--color-slate-600); line-height: 1.7;">
-              <li style="margin-bottom: var(--space-2);">Added St. Lucie County support (courtcasesearch.stlucieclerk.gov)</li>
-              <li style="margin-bottom: var(--space-2);">Added Indian River County support (court.indian-river.org)</li>
-              <li style="margin-bottom: var(--space-2);">Added Flagler County support (apps.flaglerclerk.com)</li>
-              <li style="margin-bottom: var(--space-2);">Added St. Johns County support (apps.stjohnsclerk.com)</li>
-              <li style="margin-bottom: var(--space-2);">Improved county detection logic for faster sidebar loading</li>
-              <li style="margin-bottom: var(--space-2);">Updated Free tier to allow selection of any 2 counties (previously limited to specific counties)</li>
-            </ul>
-          </article>
-
-          <!-- v0.2.0 -->
-          <article style="position: relative; margin-bottom: var(--space-12);">
-            <div style="position: absolute; left: -33px; top: 4px; width: 12px; height: 12px; border-radius: var(--radius-full); background-color: var(--color-slate-300); border: 3px solid #ffffff; box-shadow: var(--shadow-sm);" aria-hidden="true"></div>
-            <div style="display: flex; align-items: baseline; gap: var(--space-4); margin-bottom: var(--space-3); flex-wrap: wrap;">
-              <h3 style="color: var(--color-navy);">v0.2.0</h3>
-              <span style="font-size: var(--text-body-sm); color: var(--color-slate-500);">December 2025</span>
-            </div>
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-3);">Clio Integration</h4>
-            <p style="color: var(--color-slate-700); line-height: 1.7; margin-bottom: var(--space-4);">The most-requested feature: direct Clio practice management sync, eliminating double data entry for court updates.</p>
-            <ul style="list-style: disc; padding-left: var(--space-6); color: var(--color-slate-600); line-height: 1.7;">
-              <li style="margin-bottom: var(--space-2);">OAuth 2.0 authorization flow for secure Clio connection</li>
-              <li style="margin-bottom: var(--space-2);">Auto-sync hearings to Clio calendar events</li>
-              <li style="margin-bottom: var(--space-2);">Auto-sync docket entries to Clio activity timeline</li>
-              <li style="margin-bottom: var(--space-2);">Party information sync to Clio matter relationships</li>
-              <li style="margin-bottom: var(--space-2);">Manual sync trigger for immediate data push</li>
-              <li style="margin-bottom: var(--space-2);">One-click disconnect with local token cleanup</li>
-              <li style="margin-bottom: var(--space-2);">All OAuth tokens stored locally — zero server-side credential storage</li>
-            </ul>
-          </article>
-
-          <!-- v0.1.0 -->
-          <article style="position: relative; margin-bottom: var(--space-6);">
-            <div style="position: absolute; left: -33px; top: 4px; width: 12px; height: 12px; border-radius: var(--radius-full); background-color: var(--color-slate-300); border: 3px solid #ffffff; box-shadow: var(--shadow-sm);" aria-hidden="true"></div>
-            <div style="display: flex; align-items: baseline; gap: var(--space-4); margin-bottom: var(--space-3); flex-wrap: wrap;">
-              <h3 style="color: var(--color-navy);">v0.1.0</h3>
-              <span style="font-size: var(--text-body-sm); color: var(--color-slate-500);">October 2025</span>
-            </div>
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-3);">Initial Release</h4>
-            <p style="color: var(--color-slate-700); line-height: 1.7; margin-bottom: var(--space-4);">The first public release of DocketRadar, bringing automated court monitoring to four South Florida counties.</p>
-            <ul style="list-style: disc; padding-left: var(--space-6); color: var(--color-slate-600); line-height: 1.7;">
-              <li style="margin-bottom: var(--space-2);">Palm Beach County support (appsgp.mypalmbeachclerk.com)</li>
-              <li style="margin-bottom: var(--space-2);">Miami-Dade County support (www2.miamidadeclerk.gov)</li>
-              <li style="margin-bottom: var(--space-2);">Broward County support (www.browardclerk.org)</li>
-              <li style="margin-bottom: var(--space-2);">Osceola County support (courts.osceolaclerk.com)</li>
-              <li style="margin-bottom: var(--space-2);">Sidebar overlay on supported court portal pages</li>
-              <li style="margin-bottom: var(--space-2);">Automatic change detection with 15-minute check intervals</li>
-              <li style="margin-bottom: var(--space-2);">Chrome desktop notifications for docket changes</li>
-              <li style="margin-bottom: var(--space-2);">Case watch list with multi-county organization</li>
-              <li style="margin-bottom: var(--space-2);">Local-only data storage — zero data collection</li>
-              <li style="margin-bottom: var(--space-2);">Free and Pro tier structure</li>
-            </ul>
-          </article>
-
+    <main>
+      <!-- ========== Changelog Hero ========== -->
+      <section
+        class="hero"
+        style="padding-bottom: var(--space-12)"
+        aria-labelledby="changelog-hero-heading"
+      >
+        <div
+          class="container"
+          style="text-align: center; position: relative; z-index: 2"
+        >
+          <p
+            class="text-overline"
+            style="
+              color: var(--color-teal-light);
+              margin-bottom: var(--space-3);
+            "
+          >
+            Changelog
+          </p>
+          <h1
+            id="changelog-hero-heading"
+            class="display"
+            style="
+              color: #ffffff;
+              max-width: 640px;
+              margin: 0 auto var(--space-4);
+              font-weight: 800;
+            "
+          >
+            Release notes
+          </h1>
+          <p class="hero-subtitle" style="max-width: 560px; margin: 0 auto">
+            Everything new, improved, and fixed in DocketRadar. Current version:
+            v0.2.2.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========== Bottom CTA ========== -->
-    <section class="section-dark" aria-labelledby="changelog-cta-heading">
-      <div class="container cta-banner">
-        <h2 id="changelog-cta-heading" class="display" style="color: #ffffff; font-weight: 800;">Stay up to date</h2>
-        <p>Install DocketRadar to get the latest features and improvements automatically through Chrome's extension updates.</p>
-        <div class="hero-actions" style="justify-content: center;">
-          <a href="#" class="btn btn-primary btn-lg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 12 L11 15 L16 9"></path></svg>
-            Add to Chrome — Free to Start
-          </a>
+      <!-- ========== Timeline ========== -->
+      <section class="section section-white" aria-labelledby="releases-heading">
+        <div class="container" style="max-width: 768px; margin: 0 auto">
+          <h2 id="releases-heading" class="sr-only">Release history</h2>
+
+          <!-- Timeline container -->
+          <div style="position: relative; padding-left: var(--space-10)">
+            <!-- Timeline line -->
+            <div
+              style="
+                position: absolute;
+                left: 15px;
+                top: 8px;
+                bottom: 0;
+                width: 2px;
+                background: linear-gradient(
+                  to bottom,
+                  var(--color-teal),
+                  var(--color-slate-200)
+                );
+              "
+              aria-hidden="true"
+            ></div>
+
+            <!-- v0.2.2 -->
+            <article style="position: relative; margin-bottom: var(--space-12)">
+              <div
+                style="
+                  position: absolute;
+                  left: -33px;
+                  top: 4px;
+                  width: 12px;
+                  height: 12px;
+                  border-radius: var(--radius-full);
+                  background-color: var(--color-teal);
+                  border: 3px solid #ffffff;
+                  box-shadow: var(--shadow-sm);
+                "
+                aria-hidden="true"
+              ></div>
+              <div
+                style="
+                  display: flex;
+                  align-items: baseline;
+                  gap: var(--space-4);
+                  margin-bottom: var(--space-3);
+                  flex-wrap: wrap;
+                "
+              >
+                <h3 style="color: var(--color-navy)">v0.2.2</h3>
+                <span
+                  style="
+                    font-size: var(--text-caption);
+                    font-weight: 600;
+                    color: #ffffff;
+                    background-color: var(--color-teal);
+                    padding: 2px 10px;
+                    border-radius: var(--radius-full);
+                    text-transform: uppercase;
+                    letter-spacing: 0.04em;
+                  "
+                  >Latest</span
+                >
+                <span
+                  style="
+                    font-size: var(--text-body-sm);
+                    color: var(--color-slate-500);
+                  "
+                  >February 2026</span
+                >
+              </div>
+              <h4
+                style="color: var(--color-navy); margin-bottom: var(--space-3)"
+              >
+                DocketRadar Rebrand
+              </h4>
+              <p
+                style="
+                  color: var(--color-slate-700);
+                  line-height: 1.7;
+                  margin-bottom: var(--space-4);
+                "
+              >
+                A complete visual refresh bringing DocketRadar a polished,
+                professional identity built for the legal industry.
+              </p>
+              <ul
+                style="
+                  list-style: disc;
+                  padding-left: var(--space-6);
+                  color: var(--color-slate-600);
+                  line-height: 1.7;
+                "
+              >
+                <li style="margin-bottom: var(--space-2)">
+                  Complete visual refresh with new brand identity and logo
+                  system
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Updated color system: Navy, Teal, and Slate palette replacing
+                  previous colors
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  New typography system using Inter font family
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Redesigned sidebar UI with improved visual hierarchy and
+                  readability
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  New marketing website reflecting updated brand identity
+                </li>
+              </ul>
+            </article>
+
+            <!-- v0.2.1 -->
+            <article style="position: relative; margin-bottom: var(--space-12)">
+              <div
+                style="
+                  position: absolute;
+                  left: -33px;
+                  top: 4px;
+                  width: 12px;
+                  height: 12px;
+                  border-radius: var(--radius-full);
+                  background-color: var(--color-slate-300);
+                  border: 3px solid #ffffff;
+                  box-shadow: var(--shadow-sm);
+                "
+                aria-hidden="true"
+              ></div>
+              <div
+                style="
+                  display: flex;
+                  align-items: baseline;
+                  gap: var(--space-4);
+                  margin-bottom: var(--space-3);
+                  flex-wrap: wrap;
+                "
+              >
+                <h3 style="color: var(--color-navy)">v0.2.1</h3>
+                <span
+                  style="
+                    font-size: var(--text-body-sm);
+                    color: var(--color-slate-500);
+                  "
+                  >January 2026</span
+                >
+              </div>
+              <h4
+                style="color: var(--color-navy); margin-bottom: var(--space-3)"
+              >
+                8-County Support
+              </h4>
+              <p
+                style="
+                  color: var(--color-slate-700);
+                  line-height: 1.7;
+                  margin-bottom: var(--space-4);
+                "
+              >
+                Expanding DocketRadar's coverage from 4 counties to 8, reaching
+                more of Florida's legal community.
+              </p>
+              <ul
+                style="
+                  list-style: disc;
+                  padding-left: var(--space-6);
+                  color: var(--color-slate-600);
+                  line-height: 1.7;
+                "
+              >
+                <li style="margin-bottom: var(--space-2)">
+                  Added St. Lucie County support
+                  (courtcasesearch.stlucieclerk.gov)
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Added Indian River County support (court.indian-river.org)
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Added Flagler County support (apps.flaglerclerk.com)
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Added St. Johns County support (apps.stjohnsclerk.com)
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Improved county detection logic for faster sidebar loading
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Updated Free tier to allow selection of any 2 counties
+                  (previously limited to specific counties)
+                </li>
+              </ul>
+            </article>
+
+            <!-- v0.2.0 -->
+            <article style="position: relative; margin-bottom: var(--space-12)">
+              <div
+                style="
+                  position: absolute;
+                  left: -33px;
+                  top: 4px;
+                  width: 12px;
+                  height: 12px;
+                  border-radius: var(--radius-full);
+                  background-color: var(--color-slate-300);
+                  border: 3px solid #ffffff;
+                  box-shadow: var(--shadow-sm);
+                "
+                aria-hidden="true"
+              ></div>
+              <div
+                style="
+                  display: flex;
+                  align-items: baseline;
+                  gap: var(--space-4);
+                  margin-bottom: var(--space-3);
+                  flex-wrap: wrap;
+                "
+              >
+                <h3 style="color: var(--color-navy)">v0.2.0</h3>
+                <span
+                  style="
+                    font-size: var(--text-body-sm);
+                    color: var(--color-slate-500);
+                  "
+                  >December 2025</span
+                >
+              </div>
+              <h4
+                style="color: var(--color-navy); margin-bottom: var(--space-3)"
+              >
+                Clio Integration
+              </h4>
+              <p
+                style="
+                  color: var(--color-slate-700);
+                  line-height: 1.7;
+                  margin-bottom: var(--space-4);
+                "
+              >
+                The most-requested feature: direct Clio practice management
+                sync, eliminating double data entry for court updates.
+              </p>
+              <ul
+                style="
+                  list-style: disc;
+                  padding-left: var(--space-6);
+                  color: var(--color-slate-600);
+                  line-height: 1.7;
+                "
+              >
+                <li style="margin-bottom: var(--space-2)">
+                  OAuth 2.0 authorization flow for secure Clio connection
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Auto-sync hearings to Clio calendar events
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Auto-sync docket entries to Clio activity timeline
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Party information sync to Clio matter relationships
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Manual sync trigger for immediate data push
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  One-click disconnect with local token cleanup
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  All OAuth tokens stored locally — zero server-side credential
+                  storage
+                </li>
+              </ul>
+            </article>
+
+            <!-- v0.1.0 -->
+            <article style="position: relative; margin-bottom: var(--space-6)">
+              <div
+                style="
+                  position: absolute;
+                  left: -33px;
+                  top: 4px;
+                  width: 12px;
+                  height: 12px;
+                  border-radius: var(--radius-full);
+                  background-color: var(--color-slate-300);
+                  border: 3px solid #ffffff;
+                  box-shadow: var(--shadow-sm);
+                "
+                aria-hidden="true"
+              ></div>
+              <div
+                style="
+                  display: flex;
+                  align-items: baseline;
+                  gap: var(--space-4);
+                  margin-bottom: var(--space-3);
+                  flex-wrap: wrap;
+                "
+              >
+                <h3 style="color: var(--color-navy)">v0.1.0</h3>
+                <span
+                  style="
+                    font-size: var(--text-body-sm);
+                    color: var(--color-slate-500);
+                  "
+                  >October 2025</span
+                >
+              </div>
+              <h4
+                style="color: var(--color-navy); margin-bottom: var(--space-3)"
+              >
+                Initial Release
+              </h4>
+              <p
+                style="
+                  color: var(--color-slate-700);
+                  line-height: 1.7;
+                  margin-bottom: var(--space-4);
+                "
+              >
+                The first public release of DocketRadar, bringing automated
+                court monitoring to four South Florida counties.
+              </p>
+              <ul
+                style="
+                  list-style: disc;
+                  padding-left: var(--space-6);
+                  color: var(--color-slate-600);
+                  line-height: 1.7;
+                "
+              >
+                <li style="margin-bottom: var(--space-2)">
+                  Palm Beach County support (appsgp.mypalmbeachclerk.com)
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Miami-Dade County support (www2.miamidadeclerk.gov)
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Broward County support (www.browardclerk.org)
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Osceola County support (courts.osceolaclerk.com)
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Sidebar overlay on supported court portal pages
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Automatic change detection with 15-minute check intervals
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Chrome desktop notifications for docket changes
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Case watch list with multi-county organization
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Local-only data storage — zero data collection
+                </li>
+                <li style="margin-bottom: var(--space-2)">
+                  Free and Pro tier structure
+                </li>
+              </ul>
+            </article>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-  </main>
-
-  <!-- ========== Footer ========== -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="footer-logo" aria-label="DocketRadar home">
-            <img src="assets/logo/docketradar-icon-mono-light.svg" alt="" width="32" height="32">
-            <span class="footer-logo-text"><span>Docket</span>Radar</span>
-          </a>
-          <p>Automated court monitoring for Florida legal professionals. One Chrome sidebar. Eight counties. Instant notifications. Clio sync.</p>
-          <div class="footer-social" style="margin-top: var(--space-5);">
-            <a href="#" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            </a>
-            <a href="#" aria-label="X (Twitter)">
-              <svg viewBox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
-            </a>
-            <a href="#" aria-label="GitHub">
-              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+      <!-- ========== Bottom CTA ========== -->
+      <section class="section-dark" aria-labelledby="changelog-cta-heading">
+        <div class="container cta-banner">
+          <h2
+            id="changelog-cta-heading"
+            class="display"
+            style="color: #ffffff; font-weight: 800"
+          >
+            Stay up to date
+          </h2>
+          <p>
+            Install DocketRadar to get the latest features and improvements
+            automatically through Chrome's extension updates.
+          </p>
+          <div class="hero-actions" style="justify-content: center">
+            <a href="#" class="btn btn-primary btn-lg">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 12 L11 15 L16 9"></path>
+              </svg>
+              Add to Chrome — Free to Start
             </a>
           </div>
         </div>
-        <div>
-          <h4 class="footer-heading">Product</h4>
-          <div class="footer-links">
-            <a href="features.html">Features</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="#">Chrome Web Store</a>
-            <a href="changelog">Changelog</a>
+      </section>
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a
+              href="index.html"
+              class="footer-logo"
+              aria-label="DocketRadar home"
+            >
+              <img
+                src="assets/logo/docketradar-icon-mono-light.svg"
+                alt=""
+                width="32"
+                height="32"
+              />
+              <span class="footer-logo-text"><span>Docket</span>Radar</span>
+            </a>
+            <p>
+              Automated court monitoring for Florida legal professionals. One
+              Chrome sidebar. Eight counties. Instant notifications. Clio sync.
+            </p>
+            <div class="footer-social" style="margin-top: var(--space-5)">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="GitHub">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading">Product</h4>
+            <div class="footer-links">
+              <a href="features.html">Features</a>
+              <a href="pricing.html">Pricing</a>
+              <a href="#">Chrome Web Store</a>
+              <a href="changelog">Changelog</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading">Resources</h4>
+            <div class="footer-links">
+              <a href="docs">Documentation</a>
+              <a href="clio">Clio Integration</a>
+              <a href="docs#counties">County Guides</a>
+              <a href="#">Blog</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading">Company</h4>
+            <div class="footer-links">
+              <a href="about">About</a>
+              <a href="contact">Contact</a>
+              <a href="privacy">Privacy Policy</a>
+              <a href="terms">Terms of Service</a>
+            </div>
           </div>
         </div>
-        <div>
-          <h4 class="footer-heading">Resources</h4>
-          <div class="footer-links">
-            <a href="docs">Documentation</a>
-            <a href="clio">Clio Integration</a>
-            <a href="docs#counties">County Guides</a>
-            <a href="#">Blog</a>
-          </div>
-        </div>
-        <div>
-          <h4 class="footer-heading">Company</h4>
-          <div class="footer-links">
-            <a href="about">About</a>
-            <a href="contact">Contact</a>
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            &copy; 2026 Docket Radar. All rights reserved.
+          </p>
+          <div class="footer-legal">
             <a href="privacy">Privacy Policy</a>
             <a href="terms">Terms of Service</a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2026 Docket Radar. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="privacy">Privacy Policy</a>
-          <a href="terms">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Mobile nav toggle script -->
-  <script>
-    function toggleMobileNav() {
-      const nav = document.getElementById('mobileNav');
-      const toggle = document.querySelector('.nav-toggle');
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen);
-      toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    }
-  </script>
+    <!-- Mobile nav toggle script -->
+    <script>
+      function toggleMobileNav() {
+        const nav = document.getElementById("mobileNav");
+        const toggle = document.querySelector(".nav-toggle");
+        const isOpen = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", isOpen);
+        toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      }
+    </script>
 
-  <!-- Scroll reveal -->
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
+    <!-- Scroll reveal -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+        );
+        document
+          .querySelectorAll(
+            ".card, .feature-detail, .testimonial-card, .section-divider, .pricing-card, .doc-card, .changelog-entry",
+          )
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = window.matchMedia("(max-width: 768px)").matches
+              ? "translateY(10px)"
+              : "translateY(16px)";
+            el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            observer.observe(el);
+          });
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.card, .feature-detail, .testimonial-card, .section-divider, .pricing-card, .doc-card, .changelog-entry').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-  });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>

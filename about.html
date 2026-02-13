@@ -1,304 +1,589 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — DocketRadar</title>
-  <meta name="description" content="DocketRadar is built for Florida legal professionals frustrated with manually checking county clerk portals. Our mission: eliminate busywork so lawyers focus on practicing law.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — DocketRadar</title>
+    <meta
+      name="description"
+      content="DocketRadar is built for Florida legal professionals frustrated with manually checking county clerk portals. Our mission: eliminate busywork so lawyers focus on practicing law."
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="About — DocketRadar">
-  <meta property="og:description" content="DocketRadar is built for Florida legal professionals frustrated with manually checking county clerk portals. Our mission: eliminate busywork so lawyers focus on practicing law.">
-  <meta property="og:image" content="/assets/logo/docketradar-icon.svg">
-  <meta property="og:url" content="https://docketradar-website.vercel.app/about">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="About — DocketRadar">
-  <meta name="twitter:description" content="DocketRadar is built for Florida legal professionals frustrated with manually checking county clerk portals. Our mission: eliminate busywork so lawyers focus on practicing law.">
-  <link rel="canonical" href="https://docketradar-website.vercel.app/about">
+    <!-- Open Graph -->
+    <meta property="og:title" content="About — DocketRadar" />
+    <meta
+      property="og:description"
+      content="DocketRadar is built for Florida legal professionals frustrated with manually checking county clerk portals. Our mission: eliminate busywork so lawyers focus on practicing law."
+    />
+    <meta property="og:image" content="/assets/logo/docketradar-icon.svg" />
+    <meta
+      property="og:url"
+      content="https://docketradar-website.vercel.app/about"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="About — DocketRadar" />
+    <meta
+      name="twitter:description"
+      content="DocketRadar is built for Florida legal professionals frustrated with manually checking county clerk portals. Our mission: eliminate busywork so lawyers focus on practicing law."
+    />
+    <link rel="canonical" href="https://docketradar-website.vercel.app/about" />
 
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/logo/docketradar-icon-simplified.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/logo/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/logo/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/logo/apple-touch-icon.png">
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/logo/docketradar-icon-simplified.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/logo/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/logo/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/logo/apple-touch-icon.png"
+    />
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="styles/variables.css">
-  <link rel="stylesheet" href="styles/base.css">
-  <link rel="stylesheet" href="styles/components.css">
-  <link rel="stylesheet" href="styles/layout.css">
-</head>
-<body>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/variables.css" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+  </head>
+  <body>
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+      <filter id="grain">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.65"
+          numOctaves="3"
+          stitchTiles="stitch"
+        />
+      </filter>
+    </svg>
 
-  <svg style="position:absolute;width:0;height:0;overflow:hidden">
-    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter>
-  </svg>
-
-  <!-- ========== Navigation ========== -->
-  <header class="nav" role="banner">
-    <nav class="nav-inner" aria-label="Main navigation">
-      <a href="index.html" class="nav-logo" aria-label="DocketRadar home">
-        <img src="assets/logo/docketradar-icon.svg" alt="" width="36" height="36">
-        <span class="nav-logo-text"><span>Docket</span>Radar</span>
-      </a>
-      <div class="nav-links">
+    <!-- ========== Navigation ========== -->
+    <header class="nav" role="banner">
+      <nav class="nav-inner" aria-label="Main navigation">
+        <a href="index.html" class="nav-logo" aria-label="DocketRadar home">
+          <img
+            src="assets/logo/docketradar-icon.svg"
+            alt=""
+            width="36"
+            height="36"
+          />
+          <span class="nav-logo-text"><span>Docket</span>Radar</span>
+        </a>
+        <div class="nav-links">
+          <a href="features.html" class="nav-link">Features</a>
+          <a href="pricing.html" class="nav-link">Pricing</a>
+          <a
+            href="#"
+            class="btn btn-primary btn-sm nav-cta"
+            aria-label="Add DocketRadar to Chrome"
+            >Add to Chrome</a
+          >
+        </div>
+        <button
+          class="nav-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          onclick="toggleMobileNav()"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+      <div
+        class="nav-mobile"
+        id="mobileNav"
+        role="navigation"
+        aria-label="Mobile navigation"
+      >
         <a href="features.html" class="nav-link">Features</a>
         <a href="pricing.html" class="nav-link">Pricing</a>
-        <a href="#" class="btn btn-primary btn-sm nav-cta" aria-label="Add DocketRadar to Chrome">Add to Chrome</a>
+        <a href="#" class="btn btn-primary">Add to Chrome</a>
       </div>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="toggleMobileNav()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </nav>
-    <div class="nav-mobile" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-      <a href="features.html" class="nav-link">Features</a>
-      <a href="pricing.html" class="nav-link">Pricing</a>
-      <a href="#" class="btn btn-primary">Add to Chrome</a>
-    </div>
-  </header>
+    </header>
 
-  <main>
-
-    <!-- ========== About Hero ========== -->
-    <section class="hero" style="padding-bottom: var(--space-12);" aria-labelledby="about-hero-heading">
-      <div class="container" style="text-align: center; position: relative; z-index: 2;">
-        <p class="text-overline" style="color: var(--color-teal-light); margin-bottom: var(--space-3);">About</p>
-        <h1 id="about-hero-heading" class="display" style="color: #ffffff; max-width: 640px; margin: 0 auto var(--space-4); font-weight: 800;">Built for the daily reality of Florida court practice</h1>
-        <p class="hero-subtitle" style="max-width: 560px; margin: 0 auto;">DocketRadar exists because legal professionals deserve better than manually refreshing eight different county clerk websites every morning.</p>
-      </div>
-    </section>
-
-    <!-- ========== Our Story ========== -->
-    <section class="section section-white" aria-labelledby="story-heading">
-      <div class="container" style="max-width: 768px; margin: 0 auto;">
-        <div class="section-header" style="text-align: left; max-width: 100%;">
-          <p class="text-overline" style="margin-bottom: var(--space-3);">Our Story</p>
-          <h2 id="story-heading" style="margin-bottom: var(--space-6);">From frustration to a better workflow</h2>
+    <main>
+      <!-- ========== About Hero ========== -->
+      <section
+        class="hero"
+        style="padding-bottom: var(--space-12)"
+        aria-labelledby="about-hero-heading"
+      >
+        <div
+          class="container"
+          style="text-align: center; position: relative; z-index: 2"
+        >
+          <p
+            class="text-overline"
+            style="
+              color: var(--color-teal-light);
+              margin-bottom: var(--space-3);
+            "
+          >
+            About
+          </p>
+          <h1
+            id="about-hero-heading"
+            class="display"
+            style="
+              color: #ffffff;
+              max-width: 640px;
+              margin: 0 auto var(--space-4);
+              font-weight: 800;
+            "
+          >
+            Built for the daily reality of Florida court practice
+          </h1>
+          <p class="hero-subtitle" style="max-width: 560px; margin: 0 auto">
+            DocketRadar exists because legal professionals deserve better than
+            manually refreshing eight different county clerk websites every
+            morning.
+          </p>
         </div>
-        <div style="color: var(--color-slate-700); line-height: 1.8;">
-          <p>Every morning, paralegals and attorneys across Florida sit down, open their browsers, and begin the same ritual: check Palm Beach. Check Miami-Dade. Check Broward. Tab by tab, case by case, portal by portal. Each county has a different layout, a different search interface, and a different way of surfacing updates. By the time you finish checking 50 cases across three counties, an hour has passed and the actual work of practicing law hasn't started yet.</p>
-          <p>DocketRadar was built to end that routine. We watched legal professionals spend their most productive morning hours on repetitive manual checking and asked a simple question: why isn't the browser doing this for you?</p>
-          <p>The answer is DocketRadar. A Chrome sidebar that appears on the court portal pages you already visit, monitors your cases every 15 minutes, and notifies you the moment something changes. No new tabs to manage. No new app to learn. No case data leaving your machine.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========== Mission ========== -->
-    <section class="section section-cloud" aria-labelledby="mission-heading">
-      <div class="container">
-        <div class="section-header">
-          <p class="text-overline">Mission</p>
-          <h2 id="mission-heading">Eliminate busywork so lawyers can focus on practicing law</h2>
-          <p>DocketRadar exists to eliminate the fragmented, error-prone process of manually monitoring Florida court dockets — giving legal professionals a single, reliable command center so they never miss a filing, hearing, or deadline again.</p>
+      <!-- ========== Our Story ========== -->
+      <section class="section section-white" aria-labelledby="story-heading">
+        <div class="container" style="max-width: 768px; margin: 0 auto">
+          <div class="section-header" style="text-align: left; max-width: 100%">
+            <p class="text-overline" style="margin-bottom: var(--space-3)">
+              Our Story
+            </p>
+            <h2 id="story-heading" style="margin-bottom: var(--space-6)">
+              From frustration to a better workflow
+            </h2>
+          </div>
+          <div style="color: var(--color-slate-700); line-height: 1.8">
+            <p>
+              Every morning, paralegals and attorneys across Florida sit down,
+              open their browsers, and begin the same ritual: check Palm Beach.
+              Check Miami-Dade. Check Broward. Tab by tab, case by case, portal
+              by portal. Each county has a different layout, a different search
+              interface, and a different way of surfacing updates. By the time
+              you finish checking 50 cases across three counties, an hour has
+              passed and the actual work of practicing law hasn't started yet.
+            </p>
+            <p>
+              DocketRadar was built to end that routine. We watched legal
+              professionals spend their most productive morning hours on
+              repetitive manual checking and asked a simple question: why isn't
+              the browser doing this for you?
+            </p>
+            <p>
+              The answer is DocketRadar. A Chrome sidebar that appears on the
+              court portal pages you already visit, monitors your cases every 15
+              minutes, and notifies you the moment something changes. No new
+              tabs to manage. No new app to learn. No case data leaving your
+              machine.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========== Brand Values ========== -->
-    <section class="section section-white" aria-labelledby="values-heading">
-      <div class="container">
-        <div class="section-divider">
-          <span class="section-divider-label">What We Stand For</span>
-          <h2 class="section-divider-title" id="values-heading">Our values</h2>
+      <!-- ========== Mission ========== -->
+      <section class="section section-cloud" aria-labelledby="mission-heading">
+        <div class="container">
+          <div class="section-header">
+            <p class="text-overline">Mission</p>
+            <h2 id="mission-heading">
+              Eliminate busywork so lawyers can focus on practicing law
+            </h2>
+            <p>
+              DocketRadar exists to eliminate the fragmented, error-prone
+              process of manually monitoring Florida court dockets — giving
+              legal professionals a single, reliable command center so they
+              never miss a filing, hearing, or deadline again.
+            </p>
+          </div>
         </div>
-        <div class="grid-3">
+      </section>
 
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M12 12 L12 2"></path><path d="M12 12 L18.9 18.9"></path><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+      <!-- ========== Brand Values ========== -->
+      <section class="section section-white" aria-labelledby="values-heading">
+        <div class="container">
+          <div class="section-divider">
+            <span class="section-divider-label">What We Stand For</span>
+            <h2 class="section-divider-title" id="values-heading">
+              Our values
+            </h2>
+          </div>
+          <div class="grid-3">
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M12 12 L12 2"></path>
+                  <path d="M12 12 L18.9 18.9"></path>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+              </div>
+              <h3>Precision</h3>
+              <p>
+                Court dockets don't wait, and neither does DocketRadar. We check
+                every 15 minutes, surface changes immediately, and present case
+                data with absolute clarity. When you're tracking a case with
+                DocketRadar, nothing slips past undetected.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <h3>Transparency</h3>
+              <p>
+                We collect zero user data. No analytics, no tracking, no
+                server-side storage. Our privacy-first architecture isn't a
+                marketing angle — it's a foundational design decision. We tell
+                you exactly what the extension does and, just as importantly,
+                what it doesn't do.
+              </p>
+            </article>
+
+            <article class="card">
+              <div class="card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <h3>Respect for practitioners' time</h3>
+              <p>
+                Every design decision starts with one question: does this save a
+                practitioner time right now? We don't add features to check
+                boxes on a comparison chart. If it doesn't make your daily
+                workflow faster, it doesn't ship.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== Our Approach — The Sentinel ========== -->
+      <section class="section section-cloud" aria-labelledby="approach-heading">
+        <div class="container">
+          <div class="section-header">
+            <div class="privacy-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
             </div>
-            <h3>Precision</h3>
-            <p>Court dockets don't wait, and neither does DocketRadar. We check every 15 minutes, surface changes immediately, and present case data with absolute clarity. When you're tracking a case with DocketRadar, nothing slips past undetected.</p>
-          </article>
+            <p class="text-overline">Our Approach</p>
+            <h2 id="approach-heading">
+              The Sentinel — always watching so you don't have to
+            </h2>
+            <p>
+              DocketRadar embodies the Sentinel archetype: the trusted,
+              ever-watchful guardian that protects legal professionals from the
+              chaos of fragmented docket monitoring. We don't seek the
+              spotlight. We earn trust through consistent, reliable performance
+              — the colleague who's always three steps ahead, who never forgets
+              to check, who quietly ensures nothing falls through the cracks.
+            </p>
+          </div>
+          <div style="max-width: 640px; margin: 0 auto; text-align: center">
+            <p
+              style="
+                color: var(--color-slate-600);
+                font-size: 1.0625rem;
+                line-height: 1.7;
+              "
+            >
+              Underneath the Sentinel's watchfulness is the Craftsman's
+              dedication to getting the details right. DocketRadar is a
+              precision tool — built with care, designed for the specific
+              realities of Florida court portals, and refined through intimate
+              knowledge of how legal professionals actually work. We'd rather do
+              one thing perfectly than ten things adequately.
+            </p>
+          </div>
+        </div>
+      </section>
 
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      <!-- ========== By the Numbers ========== -->
+      <section class="section section-white" aria-labelledby="numbers-heading">
+        <div class="container">
+          <div class="section-divider">
+            <span class="section-divider-label">By the Numbers</span>
+            <h2 class="section-divider-title" id="numbers-heading">
+              DocketRadar at a glance
+            </h2>
+          </div>
+          <div class="grid-4">
+            <div class="text-center">
+              <div
+                style="
+                  font-size: var(--text-display);
+                  font-weight: 700;
+                  color: var(--color-teal);
+                  margin-bottom: var(--space-2);
+                "
+              >
+                8
+              </div>
+              <h4
+                style="color: var(--color-navy); margin-bottom: var(--space-2)"
+              >
+                Counties
+              </h4>
+              <p class="text-sm text-slate">
+                Florida county clerk portals monitored from a single sidebar
+              </p>
             </div>
-            <h3>Transparency</h3>
-            <p>We collect zero user data. No analytics, no tracking, no server-side storage. Our privacy-first architecture isn't a marketing angle — it's a foundational design decision. We tell you exactly what the extension does and, just as importantly, what it doesn't do.</p>
-          </article>
 
-          <article class="card">
-            <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <div class="text-center">
+              <div
+                style="
+                  font-size: var(--text-display);
+                  font-weight: 700;
+                  color: var(--color-teal);
+                  margin-bottom: var(--space-2);
+                "
+              >
+                15
+              </div>
+              <h4
+                style="color: var(--color-navy); margin-bottom: var(--space-2)"
+              >
+                Minute Intervals
+              </h4>
+              <p class="text-sm text-slate">
+                Automatic check cycles keep your case data current around the
+                clock
+              </p>
             </div>
-            <h3>Respect for practitioners' time</h3>
-            <p>Every design decision starts with one question: does this save a practitioner time right now? We don't add features to check boxes on a comparison chart. If it doesn't make your daily workflow faster, it doesn't ship.</p>
-          </article>
 
-        </div>
-      </div>
-    </section>
+            <div class="text-center">
+              <div
+                style="
+                  font-size: var(--text-display);
+                  font-weight: 700;
+                  color: var(--color-teal);
+                  margin-bottom: var(--space-2);
+                "
+              >
+                0
+              </div>
+              <h4
+                style="color: var(--color-navy); margin-bottom: var(--space-2)"
+              >
+                Data Collected
+              </h4>
+              <p class="text-sm text-slate">
+                Zero analytics, zero tracking, zero server-side storage of your
+                information
+              </p>
+            </div>
 
-    <!-- ========== Our Approach — The Sentinel ========== -->
-    <section class="section section-cloud" aria-labelledby="approach-heading">
-      <div class="container">
-        <div class="section-header">
-          <div class="privacy-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+            <div class="text-center">
+              <div
+                style="
+                  font-size: var(--text-display);
+                  font-weight: 700;
+                  color: var(--color-teal);
+                  margin-bottom: var(--space-2);
+                "
+              >
+                1
+              </div>
+              <h4
+                style="color: var(--color-navy); margin-bottom: var(--space-2)"
+              >
+                Sidebar
+              </h4>
+              <p class="text-sm text-slate">
+                One unified interface for everything — cases, changes,
+                notifications, and sync
+              </p>
+            </div>
           </div>
-          <p class="text-overline">Our Approach</p>
-          <h2 id="approach-heading">The Sentinel — always watching so you don't have to</h2>
-          <p>DocketRadar embodies the Sentinel archetype: the trusted, ever-watchful guardian that protects legal professionals from the chaos of fragmented docket monitoring. We don't seek the spotlight. We earn trust through consistent, reliable performance — the colleague who's always three steps ahead, who never forgets to check, who quietly ensures nothing falls through the cracks.</p>
         </div>
-        <div style="max-width: 640px; margin: 0 auto; text-align: center;">
-          <p style="color: var(--color-slate-600); font-size: 1.0625rem; line-height: 1.7;">Underneath the Sentinel's watchfulness is the Craftsman's dedication to getting the details right. DocketRadar is a precision tool — built with care, designed for the specific realities of Florida court portals, and refined through intimate knowledge of how legal professionals actually work. We'd rather do one thing perfectly than ten things adequately.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ========== By the Numbers ========== -->
-    <section class="section section-white" aria-labelledby="numbers-heading">
-      <div class="container">
-        <div class="section-divider">
-          <span class="section-divider-label">By the Numbers</span>
-          <h2 class="section-divider-title" id="numbers-heading">DocketRadar at a glance</h2>
-        </div>
-        <div class="grid-4">
-
-          <div class="text-center">
-            <div style="font-size: var(--text-display); font-weight: 700; color: var(--color-teal); margin-bottom: var(--space-2);">8</div>
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-2);">Counties</h4>
-            <p class="text-sm text-slate">Florida county clerk portals monitored from a single sidebar</p>
-          </div>
-
-          <div class="text-center">
-            <div style="font-size: var(--text-display); font-weight: 700; color: var(--color-teal); margin-bottom: var(--space-2);">15</div>
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-2);">Minute Intervals</h4>
-            <p class="text-sm text-slate">Automatic check cycles keep your case data current around the clock</p>
-          </div>
-
-          <div class="text-center">
-            <div style="font-size: var(--text-display); font-weight: 700; color: var(--color-teal); margin-bottom: var(--space-2);">0</div>
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-2);">Data Collected</h4>
-            <p class="text-sm text-slate">Zero analytics, zero tracking, zero server-side storage of your information</p>
-          </div>
-
-          <div class="text-center">
-            <div style="font-size: var(--text-display); font-weight: 700; color: var(--color-teal); margin-bottom: var(--space-2);">1</div>
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-2);">Sidebar</h4>
-            <p class="text-sm text-slate">One unified interface for everything — cases, changes, notifications, and sync</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== Bottom CTA ========== -->
-    <section class="section-dark" aria-labelledby="about-cta-heading">
-      <div class="container cta-banner">
-        <h2 id="about-cta-heading" class="display" style="color: #ffffff; font-weight: 800;">Ready to stop refreshing?</h2>
-        <p>Install DocketRadar and get your mornings back.</p>
-        <div class="hero-actions" style="justify-content: center;">
-          <a href="#" class="btn btn-primary btn-lg">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 12 L11 15 L16 9"></path></svg>
-            Add to Chrome — Free to Start
-          </a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ========== Footer ========== -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="footer-logo" aria-label="DocketRadar home">
-            <img src="assets/logo/docketradar-icon-mono-light.svg" alt="" width="32" height="32">
-            <span class="footer-logo-text"><span>Docket</span>Radar</span>
-          </a>
-          <p>Automated court monitoring for Florida legal professionals. One Chrome sidebar. Eight counties. Instant notifications. Clio sync.</p>
-          <div class="footer-social" style="margin-top: var(--space-5);">
-            <a href="#" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-            </a>
-            <a href="#" aria-label="X (Twitter)">
-              <svg viewBox="0 0 24 24"><path d="M4 4l11.733 16h4.267l-11.733 -16z"></path><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path></svg>
-            </a>
-            <a href="#" aria-label="GitHub">
-              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+      <!-- ========== Bottom CTA ========== -->
+      <section class="section-dark" aria-labelledby="about-cta-heading">
+        <div class="container cta-banner">
+          <h2
+            id="about-cta-heading"
+            class="display"
+            style="color: #ffffff; font-weight: 800"
+          >
+            Ready to stop refreshing?
+          </h2>
+          <p>Install DocketRadar and get your mornings back.</p>
+          <div class="hero-actions" style="justify-content: center">
+            <a href="#" class="btn btn-primary btn-lg">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M8 12 L11 15 L16 9"></path>
+              </svg>
+              Add to Chrome — Free to Start
             </a>
           </div>
         </div>
-        <div>
-          <h4 class="footer-heading">Product</h4>
-          <div class="footer-links">
-            <a href="features.html">Features</a>
-            <a href="pricing.html">Pricing</a>
-            <a href="#">Chrome Web Store</a>
-            <a href="changelog">Changelog</a>
+      </section>
+    </main>
+
+    <!-- ========== Footer ========== -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a
+              href="index.html"
+              class="footer-logo"
+              aria-label="DocketRadar home"
+            >
+              <img
+                src="assets/logo/docketradar-icon-mono-light.svg"
+                alt=""
+                width="32"
+                height="32"
+              />
+              <span class="footer-logo-text"><span>Docket</span>Radar</span>
+            </a>
+            <p>
+              Automated court monitoring for Florida legal professionals. One
+              Chrome sidebar. Eight counties. Instant notifications. Clio sync.
+            </p>
+            <div class="footer-social" style="margin-top: var(--space-5)">
+              <a href="#" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" aria-label="X (Twitter)">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4l11.733 16h4.267l-11.733 -16z"></path>
+                  <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"></path>
+                </svg>
+              </a>
+              <a href="#" aria-label="GitHub">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading">Product</h4>
+            <div class="footer-links">
+              <a href="features.html">Features</a>
+              <a href="pricing.html">Pricing</a>
+              <a href="#">Chrome Web Store</a>
+              <a href="changelog">Changelog</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading">Resources</h4>
+            <div class="footer-links">
+              <a href="docs">Documentation</a>
+              <a href="clio">Clio Integration</a>
+              <a href="docs#counties">County Guides</a>
+              <a href="#">Blog</a>
+            </div>
+          </div>
+          <div>
+            <h4 class="footer-heading">Company</h4>
+            <div class="footer-links">
+              <a href="about">About</a>
+              <a href="contact">Contact</a>
+              <a href="privacy">Privacy Policy</a>
+              <a href="terms">Terms of Service</a>
+            </div>
           </div>
         </div>
-        <div>
-          <h4 class="footer-heading">Resources</h4>
-          <div class="footer-links">
-            <a href="docs">Documentation</a>
-            <a href="clio">Clio Integration</a>
-            <a href="docs#counties">County Guides</a>
-            <a href="#">Blog</a>
-          </div>
-        </div>
-        <div>
-          <h4 class="footer-heading">Company</h4>
-          <div class="footer-links">
-            <a href="about">About</a>
-            <a href="contact">Contact</a>
+        <div class="footer-bottom">
+          <p class="footer-copyright">
+            &copy; 2026 Docket Radar. All rights reserved.
+          </p>
+          <div class="footer-legal">
             <a href="privacy">Privacy Policy</a>
             <a href="terms">Terms of Service</a>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p class="footer-copyright">&copy; 2026 Docket Radar. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="privacy">Privacy Policy</a>
-          <a href="terms">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Mobile nav toggle script -->
-  <script>
-    function toggleMobileNav() {
-      const nav = document.getElementById('mobileNav');
-      const toggle = document.querySelector('.nav-toggle');
-      const isOpen = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', isOpen);
-      toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-    }
-  </script>
+    <!-- Mobile nav toggle script -->
+    <script>
+      function toggleMobileNav() {
+        const nav = document.getElementById("mobileNav");
+        const toggle = document.querySelector(".nav-toggle");
+        const isOpen = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", isOpen);
+        toggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      }
+    </script>
 
-  <!-- Scroll reveal -->
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
+    <!-- Scroll reveal -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = "1";
+                entry.target.style.transform = "translateY(0)";
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+        );
+        document
+          .querySelectorAll(
+            ".card, .feature-detail, .testimonial-card, .section-divider, .pricing-card, .doc-card, .changelog-entry",
+          )
+          .forEach((el) => {
+            el.style.opacity = "0";
+            el.style.transform = window.matchMedia("(max-width: 768px)").matches
+              ? "translateY(10px)"
+              : "translateY(16px)";
+            el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+            observer.observe(el);
+          });
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.card, .feature-detail, .testimonial-card, .section-divider, .pricing-card, .doc-card, .changelog-entry').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(16px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
-  });
-  </script>
-
-</body>
+    </script>
+  </body>
 </html>
