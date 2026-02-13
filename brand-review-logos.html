@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DocketRadar Logo Review</title>
+  <title>DocketRadar — The Mark</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
       --navy: #1e3a5f;
+      --navy-deep: #0f2440;
       --teal: #0d9488;
       --teal-light: #2dd4bf;
+      --amber: #d97706;
       --slate-50: #f8fafc;
       --slate-100: #f1f5f9;
       --slate-200: #e2e8f0;
@@ -24,139 +26,311 @@
       --slate-700: #334155;
       --slate-800: #1e293b;
       --slate-900: #0f172a;
-      --radius: 12px;
-      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
-      --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
-      --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.1);
+      --slate-950: #020617;
     }
+
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--slate-50);
-      color: var(--slate-800);
+      background: var(--slate-950);
+      color: rgba(255,255,255,0.85);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
-    /* Top bar */
+    /* Noise texture overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 10000;
+      opacity: 0.4;
+    }
+
+    /* Sticky nav */
     .topbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(248, 250, 252, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--slate-200);
-      padding: 14px 32px;
+      z-index: 1000;
+      background: rgba(2, 6, 23, 0.8);
+      backdrop-filter: blur(20px) saturate(1.2);
+      -webkit-backdrop-filter: blur(20px) saturate(1.2);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
+      padding: 0 40px;
+      height: 56px;
     }
-    .topbar-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--teal);
+    .topbar-logo {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
     }
-    .topbar-title {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--slate-600);
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
+    .topbar-brand {
+      font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.9);
+      letter-spacing: -0.01em;
     }
-    .topbar-badge {
+    .topbar-brand span:first-child { font-weight: 400; opacity: 0.7; }
+    .topbar-sep {
+      width: 1px; height: 20px; background: rgba(255,255,255,0.1);
+    }
+    .topbar-page {
+      font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.35);
+    }
+    .topbar-nav {
       margin-left: auto;
-      font-size: 11px;
-      font-weight: 500;
-      color: var(--slate-400);
-      background: var(--slate-100);
-      border: 1px solid var(--slate-200);
-      padding: 3px 10px;
+      display: flex; gap: 4px;
+    }
+    .topbar-nav a {
+      font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      padding: 6px 14px;
       border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .topbar-nav a:hover {
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.06);
     }
 
-    /* Page layout */
-    .page {
-      max-width: 1080px;
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px;
+      overflow: hidden;
+    }
+
+    /* Animated radar rings in hero background */
+    .hero-radar {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px; height: 800px;
+      pointer-events: none;
+    }
+    .hero-radar-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      border-radius: 50%;
+      border: 1px solid rgba(45, 212, 191, 0.06);
+      transform: translate(-50%, -50%);
+    }
+    .hero-radar-ring:nth-child(1) { width: 200px; height: 200px; animation: radar-pulse 4s ease-out infinite; }
+    .hero-radar-ring:nth-child(2) { width: 350px; height: 350px; animation: radar-pulse 4s ease-out 0.8s infinite; }
+    .hero-radar-ring:nth-child(3) { width: 500px; height: 500px; animation: radar-pulse 4s ease-out 1.6s infinite; }
+    .hero-radar-ring:nth-child(4) { width: 650px; height: 650px; animation: radar-pulse 4s ease-out 2.4s infinite; }
+    .hero-radar-ring:nth-child(5) { width: 800px; height: 800px; animation: radar-pulse 4s ease-out 3.2s infinite; }
+
+    @keyframes radar-pulse {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+      20% { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(1.1); }
+    }
+
+    /* Gradient mesh background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -20%; left: -20%;
+      width: 140%; height: 140%;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(30, 58, 95, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(13, 148, 136, 0.08) 0%, transparent 40%),
+        radial-gradient(ellipse at 60% 80%, rgba(30, 58, 95, 0.2) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-icon {
+      width: 120px; height: 120px;
+      margin: 0 auto 48px;
+      position: relative;
+    }
+    .hero-icon img {
+      width: 100%; height: 100%;
+      border-radius: 28px;
+      box-shadow:
+        0 0 0 1px rgba(45, 212, 191, 0.1),
+        0 8px 40px rgba(0, 0, 0, 0.4),
+        0 0 80px rgba(45, 212, 191, 0.08);
+    }
+    /* Breathing glow behind logo */
+    .hero-icon::before {
+      content: '';
+      position: absolute;
+      top: -20px; left: -20px; right: -20px; bottom: -20px;
+      border-radius: 40px;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%);
+      animation: breathe 3s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .hero-overline {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--teal-light);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fade-up 0.8s ease-out 0.3s forwards;
+    }
+
+    .hero h1 {
+      font-size: 72px;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: fade-up 0.8s ease-out 0.5s forwards;
+    }
+
+    .hero-sub {
+      font-size: 20px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+      max-width: 500px;
       margin: 0 auto;
-      padding: 48px 32px 80px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fade-up 0.8s ease-out 0.7s forwards;
     }
 
-    .page-header {
-      margin-bottom: 48px;
-    }
-    .page-header h1 {
-      font-size: 32px;
-      font-weight: 700;
-      color: var(--slate-900);
-      letter-spacing: -0.025em;
-      margin-bottom: 8px;
-    }
-    .page-header p {
-      font-size: 16px;
-      color: var(--slate-500);
-      max-width: 600px;
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Section */
-    .section {
-      margin-bottom: 56px;
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.2);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: fade-up 0.8s ease-out 1.2s forwards;
+      opacity: 0;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.2), transparent);
+      animation: scroll-pulse 2s ease-in-out infinite;
+    }
+    @keyframes scroll-pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Content container */
+    .content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* Section dividers */
+    .section-divider {
+      padding: 120px 0 60px;
+      position: relative;
+    }
+    .section-number {
+      font-size: 120px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.03);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: -20px;
     }
     .section-label {
       font-size: 11px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.2em;
       color: var(--teal);
       margin-bottom: 12px;
     }
     .section-title {
-      font-size: 20px;
-      font-weight: 600;
-      color: var(--slate-800);
-      letter-spacing: -0.01em;
-      margin-bottom: 24px;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      font-size: 17px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+      max-width: 560px;
+      line-height: 1.7;
     }
 
-    /* Logo grid */
-    .logo-grid {
+    /* Logo showcase cards */
+    .showcase-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .logo-card {
-      background: #ffffff;
-      border: 1px solid var(--slate-200);
-      border-radius: var(--radius);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      border-radius: 20px;
       overflow: hidden;
-      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+      margin-bottom: 48px;
     }
-    .logo-card:hover {
-      box-shadow: var(--shadow-md);
-      border-color: var(--slate-300);
+    .showcase-grid.two-col {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .showcase-grid.single {
+      grid-template-columns: 1fr;
     }
 
-    .logo-preview {
+    .showcase-card {
+      position: relative;
+      background: rgba(255,255,255,0.03);
+      overflow: hidden;
+      transition: background 0.3s ease;
+    }
+    .showcase-card:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    .showcase-preview {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 48px 32px;
-      min-height: 200px;
+      padding: 60px 40px;
+      min-height: 240px;
+      position: relative;
     }
-    .logo-preview.bg-white {
-      background: #ffffff;
-    }
-    .logo-preview.bg-navy {
-      background: var(--navy);
-    }
-    .logo-preview.bg-slate {
-      background: var(--slate-900);
-    }
-    .logo-preview.bg-cloud {
-      background: var(--slate-100);
-    }
-    .logo-preview.bg-checker {
-      background-color: #ffffff;
+
+    .showcase-preview.bg-dark { background: var(--slate-950); }
+    .showcase-preview.bg-navy { background: var(--navy); }
+    .showcase-preview.bg-white { background: #ffffff; }
+    .showcase-preview.bg-cloud { background: var(--slate-100); }
+    .showcase-preview.bg-checker {
+      background-color: #fff;
       background-image:
         linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
         linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
@@ -165,403 +339,1204 @@
       background-size: 16px 16px;
       background-position: 0 0, 0 8px, 8px -8px, -8px 0;
     }
-
-    .logo-preview img, .logo-preview svg {
-      max-width: 100%;
-      height: auto;
+    .showcase-preview.bg-gradient {
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, #2a5080 100%);
     }
 
-    .logo-meta {
-      padding: 16px 20px;
-      border-top: 1px solid var(--slate-100);
+    .showcase-preview img {
+      transition: transform 0.4s ease;
+      position: relative;
+      z-index: 1;
     }
-    .logo-name {
+    .showcase-card:hover .showcase-preview img {
+      transform: scale(1.04);
+    }
+
+    /* Hover glow effect */
+    .showcase-card:hover .logo-glow {
+      opacity: 1;
+    }
+    .logo-glow {
+      position: absolute;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.12) 0%, transparent 70%);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .showcase-meta {
+      padding: 20px 24px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .showcase-card .showcase-preview.bg-white + .showcase-meta,
+    .showcase-card .showcase-preview.bg-cloud + .showcase-meta,
+    .showcase-card .showcase-preview.bg-checker + .showcase-meta {
+      border-top: 1px solid var(--slate-200);
+      background: #fff;
+    }
+    .showcase-card .showcase-preview.bg-white + .showcase-meta .showcase-name,
+    .showcase-card .showcase-preview.bg-cloud + .showcase-meta .showcase-name,
+    .showcase-card .showcase-preview.bg-checker + .showcase-meta .showcase-name {
+      color: var(--slate-800);
+    }
+    .showcase-card .showcase-preview.bg-white + .showcase-meta .showcase-desc,
+    .showcase-card .showcase-preview.bg-cloud + .showcase-meta .showcase-desc,
+    .showcase-card .showcase-preview.bg-checker + .showcase-meta .showcase-desc {
+      color: var(--slate-500);
+    }
+    .showcase-card .showcase-preview.bg-white + .showcase-meta .showcase-file,
+    .showcase-card .showcase-preview.bg-cloud + .showcase-meta .showcase-file,
+    .showcase-card .showcase-preview.bg-checker + .showcase-meta .showcase-file {
+      background: var(--slate-50);
+      border-color: var(--slate-200);
+      color: var(--slate-400);
+    }
+
+    .showcase-name {
       font-size: 14px;
       font-weight: 600;
-      color: var(--slate-800);
-      margin-bottom: 2px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 4px;
     }
-    .logo-desc {
+    .showcase-desc {
       font-size: 12px;
-      color: var(--slate-400);
-      line-height: 1.4;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.5;
     }
-    .logo-file {
+    .showcase-file {
       display: inline-block;
-      margin-top: 6px;
+      margin-top: 8px;
       font-size: 11px;
       font-weight: 500;
-      color: var(--slate-400);
-      background: var(--slate-50);
-      border: 1px solid var(--slate-200);
-      padding: 2px 8px;
+      color: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 2px 10px;
       border-radius: 4px;
       font-family: 'JetBrains Mono', monospace;
     }
 
-    /* Full-width lockup */
-    .logo-card-wide {
+    /* Full-width lockup cards */
+    .showcase-grid .wide {
       grid-column: 1 / -1;
     }
-    .logo-card-wide .logo-preview {
-      padding: 40px 64px;
+    .wide .showcase-preview {
+      padding: 48px 80px;
     }
 
-    /* Size comparison strip */
-    .size-strip {
+    /* Anatomy section */
+    .anatomy-container {
       display: flex;
       align-items: center;
-      gap: 32px;
-      flex-wrap: wrap;
       justify-content: center;
+      padding: 80px 40px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 20px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
     }
-    .size-item {
+    .anatomy-container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    .anatomy-logo {
+      position: relative;
+      width: 256px;
+      height: 256px;
+    }
+    .anatomy-logo img {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 2;
+      border-radius: 52px;
+    }
+
+    /* Construction guides overlaid on logo */
+    .anatomy-guides {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+    .guide-circle {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px dashed rgba(45, 212, 191, 0.3);
+    }
+    .guide-line {
+      position: absolute;
+      background: rgba(45, 212, 191, 0.15);
+    }
+    .guide-point {
+      position: absolute;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--teal-light);
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 12px rgba(45, 212, 191, 0.4);
+    }
+
+    .anatomy-labels {
+      margin-left: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .anatomy-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .anatomy-label-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .anatomy-label-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.5;
+    }
+    .anatomy-label-text strong {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    /* Size ladder */
+    .size-ladder {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 48px;
+      padding: 80px 40px;
+      background: rgba(255,255,255,0.02);
+      border-radius: 20px;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .size-ladder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 20px;
+      pointer-events: none;
+    }
+
+    .size-step {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
+      gap: 16px;
     }
-    .size-label {
+    .size-step img {
+      transition: transform 0.3s ease;
+    }
+    .size-step:hover img {
+      transform: scale(1.1);
+    }
+    .size-context {
+      text-align: center;
+    }
+    .size-px {
+      font-size: 24px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.8);
+      letter-spacing: -0.02em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .size-use {
       font-size: 11px;
-      color: var(--slate-400);
       font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.25);
+      margin-top: 4px;
+    }
+    .size-divider {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.08), transparent);
+      align-self: center;
     }
 
-    /* Divider */
-    .divider {
-      height: 1px;
-      background: var(--slate-200);
-      margin: 48px 0;
+    /* Contextual mockups */
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .mockup-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .mockup-card:hover {
+      border-color: rgba(255,255,255,0.1);
+      transform: translateY(-2px);
+    }
+
+    .mockup-body {
+      padding: 32px;
+    }
+    .mockup-title {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+
+    /* Chrome browser mockup */
+    .chrome-frame {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .chrome-titlebar {
+      display: flex;
+      align-items: center;
+      padding: 10px 14px;
+      background: #f0f0f0;
+      gap: 8px;
+    }
+    .chrome-dots {
+      display: flex; gap: 6px;
+    }
+    .chrome-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+    }
+    .chrome-dot.r { background: #ff5f57; }
+    .chrome-dot.y { background: #ffbd2e; }
+    .chrome-dot.g { background: #28c840; }
+    .chrome-tabs {
+      display: flex;
+      align-items: center;
+      margin-left: 8px;
+    }
+    .chrome-tab {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      padding: 6px 14px;
+      border-radius: 8px 8px 0 0;
+      font-size: 12px;
+      color: #333;
+    }
+    .chrome-tab img { border-radius: 2px; }
+    .chrome-tab-close {
+      font-size: 10px;
+      color: #999;
+      margin-left: 6px;
+    }
+    .chrome-addressbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 12px 10px;
+      background: #f5f5f5;
+      border-radius: 20px;
+      padding: 7px 14px;
+    }
+    .chrome-lock { font-size: 11px; color: #5f6368; }
+    .chrome-url { font-size: 13px; color: #5f6368; }
+    .chrome-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 12px 8px;
+      gap: 8px;
+    }
+    .chrome-ext-icon {
+      width: 20px; height: 20px;
+      border-radius: 3px;
+    }
+    .chrome-page {
+      height: 100px;
+      background: linear-gradient(to bottom, #fafafa, #f0f0f0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #ccc;
+    }
+
+    /* Chrome Web Store mockup */
+    .cws-card {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      display: flex;
+      gap: 20px;
+      padding: 24px;
+      align-items: center;
+    }
+    .cws-icon {
+      width: 96px; height: 96px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .cws-info { flex: 1; }
+    .cws-name {
+      font-size: 18px; font-weight: 600; color: #202124;
+      margin-bottom: 4px;
+    }
+    .cws-category {
+      font-size: 12px; color: #5f6368;
+      margin-bottom: 8px;
+    }
+    .cws-stars {
+      display: flex; align-items: center; gap: 4px;
+      font-size: 12px; color: #fbbc04;
+      margin-bottom: 12px;
+    }
+    .cws-stars span { color: #5f6368; font-size: 11px; }
+    .cws-btn {
+      display: inline-block;
+      padding: 8px 24px;
+      background: #1a73e8;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      border-radius: 4px;
+      border: none;
+    }
+
+    /* Social profile mockup */
+    .social-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .social-cover {
+      height: 80px;
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy), #2a5080);
+    }
+    .social-avatar-wrap {
+      display: flex;
+      align-items: flex-end;
+      padding: 0 24px;
+      margin-top: -32px;
+    }
+    .social-avatar {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      object-fit: cover;
+      background: #fff;
+      padding: 2px;
+    }
+    .social-handle {
+      margin-left: 14px;
+      margin-bottom: 6px;
+    }
+    .social-name-text { font-size: 16px; font-weight: 600; color: #202124; }
+    .social-at { font-size: 13px; color: #5f6368; }
+    .social-bio {
+      padding: 14px 24px 20px;
+      font-size: 13px;
+      color: #5f6368;
+      line-height: 1.5;
+    }
+
+    /* Business card mockup */
+    .biz-card {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      padding: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      aspect-ratio: 3.5 / 2;
+    }
+    .biz-left { display: flex; flex-direction: column; justify-content: space-between; height: 100%; }
+    .biz-name {
+      font-size: 16px; font-weight: 600; color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .biz-title-text { font-size: 11px; color: var(--slate-500); margin-top: 2px; }
+    .biz-contact {
+      font-size: 10px; color: var(--slate-400); line-height: 1.7;
+    }
+    .biz-right {
+      display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; height: 100%;
+    }
+    .biz-logo-mark { border-radius: 8px; }
+    .biz-wordmark {
+      font-size: 13px; color: var(--navy); letter-spacing: -0.02em;
+    }
+    .biz-wordmark span:first-child { font-weight: 500; }
+    .biz-wordmark span:last-child { font-weight: 600; }
+
+    /* Email signature mockup */
+    .email-sig {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      padding: 24px;
+    }
+    .email-sig-divider {
+      border-top: 2px solid var(--teal);
+      width: 40px;
+      margin-bottom: 14px;
+    }
+    .email-sig-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .email-sig-icon { border-radius: 6px; flex-shrink: 0; }
+    .email-sig-name { font-size: 14px; font-weight: 600; color: var(--navy); }
+    .email-sig-title-text { font-size: 12px; color: var(--slate-500); }
+    .email-sig-brand {
+      font-size: 12px; color: var(--teal); margin-top: 4px;
+      letter-spacing: -0.01em;
+    }
+    .email-sig-links {
+      font-size: 11px; color: var(--slate-400); margin-top: 6px; line-height: 1.6;
+    }
+
+    /* Background toggle */
+    .bg-toggle {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 4px;
+      margin-bottom: 24px;
+      width: fit-content;
+    }
+    .bg-toggle-btn {
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      background: transparent;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .bg-toggle-btn.active {
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.9);
+    }
+    .bg-toggle-btn:hover:not(.active) {
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Interactive preview area */
+    .interactive-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 40px;
+      border-radius: 20px;
+      margin-bottom: 48px;
+      transition: background 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+    }
+    .interactive-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 20px;
+      pointer-events: none;
+      transition: border-color 0.4s;
+    }
+    .interactive-preview.bg-dark {
+      background: var(--slate-950);
+    }
+    .interactive-preview.bg-dark::before {
+      border-color: rgba(255,255,255,0.06);
+    }
+    .interactive-preview.bg-navy {
+      background: var(--navy);
+    }
+    .interactive-preview.bg-white {
+      background: #ffffff;
+    }
+    .interactive-preview.bg-white::before {
+      border-color: var(--slate-200);
+    }
+    .interactive-preview.bg-checker {
+      background-color: #fff;
+      background-image:
+        linear-gradient(45deg, #e8e8e8 25%, transparent 25%),
+        linear-gradient(-45deg, #e8e8e8 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #e8e8e8 75%),
+        linear-gradient(-45deg, transparent 75%, #e8e8e8 75%);
+      background-size: 20px 20px;
+      background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+    }
+    .interactive-preview.bg-checker::before {
+      border-color: var(--slate-300);
     }
 
     /* Color reference strip */
     .color-strip {
       display: flex;
       gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 16px;
+      margin-bottom: 80px;
     }
     .color-chip {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border: 1px solid var(--slate-200);
-      border-radius: 8px;
-      padding: 8px 14px;
+      flex: 1;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .color-chip:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,0.12);
     }
     .color-swatch {
-      width: 24px;
-      height: 24px;
-      border-radius: 6px;
-      border: 1px solid rgba(0,0,0,0.06);
+      height: 64px;
     }
-    .color-label {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--slate-700);
+    .color-info {
+      padding: 12px 14px;
+    }
+    .color-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.8);
     }
     .color-hex {
       font-size: 11px;
-      color: var(--slate-400);
-      font-family: monospace;
+      font-family: 'JetBrains Mono', monospace;
+      color: rgba(255,255,255,0.3);
+      margin-top: 2px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 80px 40px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.2);
+    }
+    .footer-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.08);
+      margin: 0 auto 16px;
+    }
+
+    /* Blip animation on showcase cards */
+    @keyframes blip-ping {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(2.5); opacity: 0; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top bar -->
   <div class="topbar">
-    <div class="topbar-dot"></div>
-    <span class="topbar-title">DocketRadar / Brand Review</span>
-    <span class="topbar-badge">Logo System</span>
+    <a href="#" class="topbar-logo">
+      <img src="assets/logo/docketradar-icon.svg" width="28" height="28" alt="" style="border-radius: 6px;">
+      <span class="topbar-brand"><span>Docket</span>Radar</span>
+    </a>
+    <div class="topbar-sep"></div>
+    <span class="topbar-page">Logo System</span>
+    <nav class="topbar-nav">
+      <a href="#primary">The Mark</a>
+      <a href="#variants">Variants</a>
+      <a href="#anatomy">Anatomy</a>
+      <a href="#scale">Scale</a>
+      <a href="#context">In Context</a>
+    </nav>
   </div>
 
-  <div class="page">
-
-    <div class="page-header">
-      <h1>Logo System Review</h1>
-      <p>All logo variants for DocketRadar. Review each mark across backgrounds and sizes to confirm the system is complete and cohesive.</p>
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-radar">
+      <div class="hero-radar-ring"></div>
+      <div class="hero-radar-ring"></div>
+      <div class="hero-radar-ring"></div>
+      <div class="hero-radar-ring"></div>
+      <div class="hero-radar-ring"></div>
     </div>
+    <div class="hero-content">
+      <div class="hero-icon">
+        <img src="assets/logo/docketradar-icon.svg" alt="DocketRadar">
+      </div>
+      <div class="hero-overline">Brand Identity</div>
+      <h1>The Mark.</h1>
+      <p class="hero-sub">A radar sweep meets a legal document. One symbol that says: we're watching every docket, every county, every time.</p>
+    </div>
+    <div class="hero-scroll">
+      Scroll
+      <div class="hero-scroll-line"></div>
+    </div>
+  </div>
 
-    <!-- Colors used -->
-    <div class="section">
-      <div class="section-label">Reference</div>
-      <div class="section-title">Brand Colors</div>
+  <div class="content">
+
+    <!-- Color reference -->
+    <div style="padding-top: 80px;">
+      <div class="section-label">Palette</div>
+      <div style="font-size: 20px; font-weight: 600; color: #fff; letter-spacing: -0.02em; margin-bottom: 24px;">Brand Colors</div>
       <div class="color-strip">
         <div class="color-chip">
           <div class="color-swatch" style="background: #1e3a5f;"></div>
-          <div><div class="color-label">Navy</div><div class="color-hex">#1e3a5f</div></div>
+          <div class="color-info"><div class="color-name">Navy</div><div class="color-hex">#1e3a5f</div></div>
         </div>
         <div class="color-chip">
           <div class="color-swatch" style="background: #0d9488;"></div>
-          <div><div class="color-label">Teal</div><div class="color-hex">#0d9488</div></div>
+          <div class="color-info"><div class="color-name">Teal</div><div class="color-hex">#0d9488</div></div>
         </div>
         <div class="color-chip">
           <div class="color-swatch" style="background: #2dd4bf;"></div>
-          <div><div class="color-label">Teal Light</div><div class="color-hex">#2dd4bf</div></div>
+          <div class="color-info"><div class="color-name">Teal Light</div><div class="color-hex">#2dd4bf</div></div>
         </div>
         <div class="color-chip">
           <div class="color-swatch" style="background: #0f172a;"></div>
-          <div><div class="color-label">Slate 900</div><div class="color-hex">#0f172a</div></div>
+          <div class="color-info"><div class="color-name">Slate 900</div><div class="color-hex">#0f172a</div></div>
         </div>
         <div class="color-chip">
           <div class="color-swatch" style="background: #d97706;"></div>
-          <div><div class="color-label">Amber</div><div class="color-hex">#d97706</div></div>
+          <div class="color-info"><div class="color-name">Amber</div><div class="color-hex">#d97706</div></div>
         </div>
       </div>
     </div>
 
-    <div class="divider"></div>
+    <!-- 01: Primary Icon -->
+    <div class="section-divider" id="primary">
+      <div class="section-number">01</div>
+      <div class="section-label">Primary Mark</div>
+      <div class="section-title">The Icon.</div>
+      <div class="section-desc">Navy container, white arcs, teal blip, document lines. The full symbol at every scale where detail is legible.</div>
+    </div>
 
-    <!-- 1. Primary Icon -->
-    <div class="section">
-      <div class="section-label">01</div>
-      <div class="section-title">Primary Icon</div>
-      <div class="logo-grid">
-        <div class="logo-card">
-          <div class="logo-preview bg-white">
-            <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary icon on white">
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Primary Icon on White</div>
-            <div class="logo-desc">Navy container, white arcs, teal blip, document lines. Primary usage context.</div>
-            <div class="logo-file">docketradar-icon.svg</div>
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <div class="showcase-preview bg-white">
+          <div class="logo-glow"></div>
+          <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary icon on white">
+        </div>
+        <div class="showcase-meta">
+          <div class="showcase-name">On White</div>
+          <div class="showcase-desc">Primary usage. Marketing, web, print.</div>
+          <div class="showcase-file">docketradar-icon.svg</div>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-preview bg-cloud">
+          <div class="logo-glow"></div>
+          <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary icon on cloud">
+        </div>
+        <div class="showcase-meta">
+          <div class="showcase-name">On Cloud</div>
+          <div class="showcase-desc">Cards, sidebars, UI backgrounds.</div>
+          <div class="showcase-file">docketradar-icon.svg</div>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-preview bg-navy">
+          <div class="logo-glow"></div>
+          <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary icon on navy">
+        </div>
+        <div class="showcase-meta">
+          <div class="showcase-name">On Navy</div>
+          <div class="showcase-desc">Container blends. Use mono-light instead.</div>
+          <div class="showcase-file">docketradar-icon.svg</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02: Full Lockup -->
+    <div class="section-divider">
+      <div class="section-number">02</div>
+      <div class="section-label">Lockup</div>
+      <div class="section-title">The Wordmark.</div>
+      <div class="section-desc">"Docket" at weight 500, "Radar" at weight 600. Inter, letter-spacing -0.02em. Symbol + wordmark, always horizontal.</div>
+    </div>
+
+    <div class="showcase-grid single">
+      <div class="showcase-card">
+        <div class="showcase-preview bg-white" style="padding: 48px 80px;">
+          <img src="assets/logo/docketradar-logo.svg" alt="Full horizontal lockup" style="max-height: 80px; width: auto;">
+        </div>
+        <div class="showcase-meta">
+          <div class="showcase-name">Full Horizontal Lockup</div>
+          <div class="showcase-desc">Website header, Chrome Web Store listing, marketing materials. Navy on white.</div>
+          <div class="showcase-file">docketradar-logo.svg</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="showcase-grid single" style="margin-top: 2px;">
+      <div class="showcase-card">
+        <div class="showcase-preview bg-gradient" style="padding: 48px 80px;">
+          <img src="assets/logo/docketradar-logo.svg" alt="Full horizontal lockup inverted" style="max-height: 80px; width: auto; filter: brightness(0) invert(1);">
+        </div>
+        <div class="showcase-meta">
+          <div class="showcase-name">Inverted for Dark Surfaces</div>
+          <div class="showcase-desc">CSS-inverted preview. A dedicated white-on-transparent SVG is recommended for production.</div>
+          <div class="showcase-file">docketradar-logo.svg (inverted)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03: Monochrome Variants -->
+    <div class="section-divider" id="variants">
+      <div class="section-number">03</div>
+      <div class="section-label">Variants</div>
+      <div class="section-title">Mono & Flat.</div>
+      <div class="section-desc">Single-color versions for constrained contexts. Print, dark mode, watermarks, single-color reproduction.</div>
+    </div>
+
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <div class="showcase-preview bg-white">
+          <div class="logo-glow"></div>
+          <img src="assets/logo/docketradar-icon-mono-dark.svg" width="128" height="128" alt="Mono dark">
+        </div>
+        <div class="showcase-meta">
+          <div class="showcase-name">Monochrome Dark</div>
+          <div class="showcase-desc">Slate 900. Print, single-color, light surfaces.</div>
+          <div class="showcase-file">docketradar-icon-mono-dark.svg</div>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-preview bg-dark">
+          <div class="logo-glow"></div>
+          <img src="assets/logo/docketradar-icon-mono-light.svg" width="128" height="128" alt="Mono light">
+        </div>
+        <div class="showcase-meta">
+          <div class="showcase-name">Monochrome Light</div>
+          <div class="showcase-desc">White. Dark-mode headers, image overlays.</div>
+          <div class="showcase-file">docketradar-icon-mono-light.svg</div>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-preview bg-checker">
+          <div class="logo-glow"></div>
+          <img src="assets/logo/docketradar-icon-flat.svg" width="128" height="128" alt="Flat outline">
+        </div>
+        <div class="showcase-meta">
+          <div class="showcase-name">Flat / Outline</div>
+          <div class="showcase-desc">Navy on transparent. Letterheads, watermarks.</div>
+          <div class="showcase-file">docketradar-icon-flat.svg</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04: Simplified -->
+    <div class="section-divider">
+      <div class="section-number">04</div>
+      <div class="section-label">Small Sizes</div>
+      <div class="section-title">Simplified.</div>
+      <div class="section-desc">Arcs + blip only. No document lines. Heavier strokes for legibility at 32px and below.</div>
+    </div>
+
+    <div class="showcase-grid two-col">
+      <div class="showcase-card">
+        <div class="showcase-preview bg-white" style="padding: 48px;">
+          <div style="display: flex; align-items: center; gap: 32px;">
+            <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg" width="64" height="64" alt="64px"><div style="font-size: 11px; color: var(--slate-400); margin-top: 8px;">64px</div></div>
+            <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg" width="48" height="48" alt="48px"><div style="font-size: 11px; color: var(--slate-400); margin-top: 8px;">48px</div></div>
+            <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg" width="32" height="32" alt="32px"><div style="font-size: 11px; color: var(--slate-400); margin-top: 8px;">32px</div></div>
+            <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg" width="24" height="24" alt="24px"><div style="font-size: 11px; color: var(--slate-400); margin-top: 8px;">24px</div></div>
+            <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="16px"><div style="font-size: 11px; color: var(--slate-400); margin-top: 8px;">16px</div></div>
           </div>
         </div>
-        <div class="logo-card">
-          <div class="logo-preview bg-cloud">
-            <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary icon on cloud">
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Primary Icon on Cloud</div>
-            <div class="logo-desc">On light gray surfaces (cards, sidebars, UI backgrounds).</div>
-            <div class="logo-file">docketradar-icon.svg</div>
+        <div class="showcase-meta">
+          <div class="showcase-name">Simplified on White</div>
+          <div class="showcase-desc">Chrome toolbar, favicon, tab bar, small UI elements.</div>
+          <div class="showcase-file">docketradar-icon-simplified.svg</div>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <div class="showcase-preview bg-navy" style="padding: 48px;">
+          <div style="display: flex; align-items: center; gap: 32px;">
+            <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg" width="64" height="64" alt="64px"><div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 8px;">64px</div></div>
+            <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg" width="48" height="48" alt="48px"><div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 8px;">48px</div></div>
+            <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg" width="32" height="32" alt="32px"><div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 8px;">32px</div></div>
+            <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg" width="24" height="24" alt="24px"><div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 8px;">24px</div></div>
+            <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="16px"><div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 8px;">16px</div></div>
           </div>
         </div>
-        <div class="logo-card">
-          <div class="logo-preview bg-navy">
-            <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary icon on navy">
+        <div class="showcase-meta">
+          <div class="showcase-name">Simplified on Navy</div>
+          <div class="showcase-desc">Navy container is less visible on navy bg. Acceptable for toolbar icons.</div>
+          <div class="showcase-file">docketradar-icon-simplified.svg</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 05: Anatomy -->
+    <div class="section-divider" id="anatomy">
+      <div class="section-number">05</div>
+      <div class="section-label">Construction</div>
+      <div class="section-title">Anatomy.</div>
+      <div class="section-desc">Geometric precision. Every element placed with intent on a 128-unit grid.</div>
+    </div>
+
+    <div class="anatomy-container">
+      <div class="anatomy-logo">
+        <img src="assets/logo/docketradar-icon.svg" alt="DocketRadar anatomy">
+        <div class="anatomy-guides">
+          <!-- Radar origin marker -->
+          <div class="guide-point" style="left: 17.2%; top: 82.8%;"></div>
+          <!-- Inner arc radius guide -->
+          <div class="guide-circle" style="left: calc(17.2% - 56px); top: calc(82.8% - 56px); width: 112px; height: 112px;"></div>
+          <!-- Outer arc radius guide -->
+          <div class="guide-circle" style="left: calc(17.2% - 94px); top: calc(82.8% - 94px); width: 188px; height: 188px;"></div>
+          <!-- Blip marker -->
+          <div class="guide-point" style="left: 40.6%; top: 42.2%; background: var(--teal-light);"></div>
+          <!-- Container corners -->
+          <div class="guide-line" style="top: 3.1%; left: 3.1%; width: 20px; height: 1px;"></div>
+          <div class="guide-line" style="top: 3.1%; left: 3.1%; width: 1px; height: 20px;"></div>
+          <div class="guide-line" style="top: 3.1%; right: 3.1%; width: 20px; height: 1px;"></div>
+          <div class="guide-line" style="top: 3.1%; right: 3.1%; width: 1px; height: 20px;"></div>
+          <div class="guide-line" style="bottom: 3.1%; left: 3.1%; width: 20px; height: 1px;"></div>
+          <div class="guide-line" style="bottom: 3.1%; left: 3.1%; width: 1px; height: 20px;"></div>
+          <div class="guide-line" style="bottom: 3.1%; right: 3.1%; width: 20px; height: 1px;"></div>
+          <div class="guide-line" style="bottom: 3.1%; right: 3.1%; width: 1px; height: 20px;"></div>
+          <!-- Document lines region -->
+          <div class="guide-line" style="top: 20.3%; left: 56.3%; width: 28%; height: 1px;"></div>
+        </div>
+      </div>
+      <div class="anatomy-labels">
+        <div class="anatomy-label">
+          <div class="anatomy-label-dot" style="background: var(--teal-light);"></div>
+          <div class="anatomy-label-text">
+            <strong>Blip</strong>
+            The detected change. Teal (#2dd4bf) at (52, 54). r=6 with r=11 glow halo.
           </div>
-          <div class="logo-meta">
-            <div class="logo-name">Primary Icon on Navy</div>
-            <div class="logo-desc">Container blends with background. Consider using mono-light variant instead.</div>
-            <div class="logo-file">docketradar-icon.svg</div>
+        </div>
+        <div class="anatomy-label">
+          <div class="anatomy-label-dot" style="background: rgba(255,255,255,0.4);"></div>
+          <div class="anatomy-label-text">
+            <strong>Radar Arcs</strong>
+            Inner r=36, outer r=60. Origin at (22, 106). 15-degree to 90-degree sweep. 3px stroke, white at 40%.
+          </div>
+        </div>
+        <div class="anatomy-label">
+          <div class="anatomy-label-dot" style="background: var(--navy);"></div>
+          <div class="anatomy-label-text">
+            <strong>Container</strong>
+            Superellipse, rx=26. Navy #1e3a5f. 120x120 on 128 canvas. 4px padding.
+          </div>
+        </div>
+        <div class="anatomy-label">
+          <div class="anatomy-label-dot" style="background: rgba(255,255,255,0.22);"></div>
+          <div class="anatomy-label-text">
+            <strong>Document Lines</strong>
+            Three horizontal lines in upper-right quadrant. Evoke docket text. White at 22%.
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 2. Full Horizontal Lockup -->
-    <div class="section">
-      <div class="section-label">02</div>
-      <div class="section-title">Full Horizontal Lockup</div>
-      <div class="logo-grid">
-        <div class="logo-card logo-card-wide">
-          <div class="logo-preview bg-white">
-            <img src="assets/logo/docketradar-logo.svg" alt="Full horizontal lockup" style="max-height: 80px;">
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Symbol + Wordmark (Navy on White)</div>
-            <div class="logo-desc">Primary lockup. "Docket" at weight 500, "Radar" at weight 600. Inter, letter-spacing -0.02em. For website header, marketing materials, Chrome Web Store.</div>
-            <div class="logo-file">docketradar-logo.svg</div>
+    <!-- 06: Size Ladder -->
+    <div class="section-divider" id="scale">
+      <div class="section-number">06</div>
+      <div class="section-label">Scale</div>
+      <div class="section-title">Every Size.</div>
+      <div class="section-desc">From marketing hero to favicon. Switch from primary to simplified at 32px and below.</div>
+    </div>
+
+    <div class="size-ladder">
+      <div class="size-step">
+        <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="128px" style="border-radius: 28px;">
+        <div class="size-context">
+          <div class="size-px">128</div>
+          <div class="size-use">Marketing</div>
+        </div>
+      </div>
+      <div class="size-divider"></div>
+      <div class="size-step">
+        <img src="assets/logo/docketradar-icon.svg" width="96" height="96" alt="96px" style="border-radius: 22px;">
+        <div class="size-context">
+          <div class="size-px">96</div>
+          <div class="size-use">Chrome Web Store</div>
+        </div>
+      </div>
+      <div class="size-divider"></div>
+      <div class="size-step">
+        <img src="assets/logo/docketradar-icon.svg" width="64" height="64" alt="64px" style="border-radius: 14px;">
+        <div class="size-context">
+          <div class="size-px">64</div>
+          <div class="size-use">App Icon</div>
+        </div>
+      </div>
+      <div class="size-divider"></div>
+      <div class="size-step">
+        <img src="assets/logo/docketradar-icon-simplified.svg" width="32" height="32" alt="32px" style="border-radius: 7px;">
+        <div class="size-context">
+          <div class="size-px">32</div>
+          <div class="size-use">Navigation</div>
+        </div>
+      </div>
+      <div class="size-divider"></div>
+      <div class="size-step">
+        <img src="assets/logo/docketradar-icon-simplified.svg" width="24" height="24" alt="24px" style="border-radius: 5px;">
+        <div class="size-context">
+          <div class="size-px">24</div>
+          <div class="size-use">Toolbar</div>
+        </div>
+      </div>
+      <div class="size-divider"></div>
+      <div class="size-step">
+        <img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="16px" style="border-radius: 3px;">
+        <div class="size-context">
+          <div class="size-px">16</div>
+          <div class="size-use">Favicon</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Breakpoint callout -->
+    <div style="text-align: center; padding: 32px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; margin-bottom: 48px;">
+      <div style="display: inline-flex; align-items: center; gap: 24px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <img src="assets/logo/docketradar-icon.svg" width="32" height="32" alt="" style="border-radius: 7px;">
+          <span style="font-size: 13px; color: rgba(255,255,255,0.5);">Primary 32px</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <div style="width: 32px; height: 1px; background: rgba(255,255,255,0.15);"></div>
+          <span style="font-size: 11px; font-weight: 600; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; white-space: nowrap;">Switch at 32px</span>
+          <div style="width: 32px; height: 1px; background: rgba(255,255,255,0.15);"></div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <img src="assets/logo/docketradar-icon-simplified.svg" width="32" height="32" alt="" style="border-radius: 7px;">
+          <span style="font-size: 13px; color: rgba(255,255,255,0.5);">Simplified 32px</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 07: Interactive Background Toggle -->
+    <div class="section-divider">
+      <div class="section-number">07</div>
+      <div class="section-label">Flexibility</div>
+      <div class="section-title">Any Surface.</div>
+      <div class="section-desc">Toggle between backgrounds to see how the mark adapts. Click to compare.</div>
+    </div>
+
+    <div class="bg-toggle" id="bgToggle">
+      <button class="bg-toggle-btn active" data-bg="bg-dark">Dark</button>
+      <button class="bg-toggle-btn" data-bg="bg-navy">Navy</button>
+      <button class="bg-toggle-btn" data-bg="bg-white">White</button>
+      <button class="bg-toggle-btn" data-bg="bg-checker">Checker</button>
+    </div>
+
+    <div class="interactive-preview bg-dark" id="interactivePreview">
+      <div style="display: flex; align-items: center; gap: 48px;">
+        <img src="assets/logo/docketradar-icon.svg" width="96" height="96" alt="" style="border-radius: 22px; transition: transform 0.3s;" id="previewIcon">
+        <img src="assets/logo/docketradar-icon-mono-light.svg" width="96" height="96" alt="" style="border-radius: 22px; transition: transform 0.3s;" id="previewMono">
+        <img src="assets/logo/docketradar-icon-flat.svg" width="96" height="96" alt="" style="border-radius: 22px; transition: transform 0.3s;" id="previewFlat">
+        <img src="assets/logo/docketradar-icon-simplified.svg" width="96" height="96" alt="" style="border-radius: 22px; transition: transform 0.3s;">
+      </div>
+    </div>
+
+    <!-- 08: Contextual Mockups -->
+    <div class="section-divider" id="context">
+      <div class="section-number">08</div>
+      <div class="section-label">In the Wild</div>
+      <div class="section-title">Context.</div>
+      <div class="section-desc">The mark in realistic usage contexts. Browser chrome, store listings, social profiles, business collateral.</div>
+    </div>
+
+    <div class="mockup-grid">
+      <!-- Chrome Browser -->
+      <div class="mockup-card">
+        <div class="mockup-body">
+          <div class="mockup-title">Browser Tab + Toolbar</div>
+          <div class="chrome-frame">
+            <div class="chrome-titlebar">
+              <div class="chrome-dots">
+                <div class="chrome-dot r"></div>
+                <div class="chrome-dot y"></div>
+                <div class="chrome-dot g"></div>
+              </div>
+              <div class="chrome-tabs">
+                <div class="chrome-tab">
+                  <img src="assets/logo/docketradar-icon-simplified.svg" width="14" height="14" alt="">
+                  <span>DocketRadar</span>
+                  <span class="chrome-tab-close">x</span>
+                </div>
+              </div>
+            </div>
+            <div class="chrome-addressbar">
+              <span class="chrome-lock">&#128274;</span>
+              <span class="chrome-url">docketradar.com</span>
+            </div>
+            <div class="chrome-toolbar">
+              <img src="assets/logo/docketradar-icon-simplified.svg" width="20" height="20" alt="" class="chrome-ext-icon" title="DocketRadar Extension">
+            </div>
+            <div class="chrome-page">Court portal content</div>
           </div>
         </div>
-        <div class="logo-card logo-card-wide">
-          <div class="logo-preview bg-navy">
-            <img src="assets/logo/docketradar-logo.svg" alt="Full horizontal lockup on navy" style="max-height: 80px; filter: brightness(0) invert(1);">
+      </div>
+
+      <!-- Chrome Web Store -->
+      <div class="mockup-card">
+        <div class="mockup-body">
+          <div class="mockup-title">Chrome Web Store</div>
+          <div class="cws-card">
+            <img src="assets/logo/docketradar-icon.svg" class="cws-icon" alt="">
+            <div class="cws-info">
+              <div class="cws-name">DocketRadar</div>
+              <div class="cws-category">Productivity</div>
+              <div class="cws-stars">
+                &#9733;&#9733;&#9733;&#9733;&#9733; <span>4.9 (127)</span>
+              </div>
+              <div class="cws-btn">Add to Chrome</div>
+            </div>
           </div>
-          <div class="logo-meta">
-            <div class="logo-name">Symbol + Wordmark (Inverted for Dark)</div>
-            <div class="logo-desc">CSS-inverted preview. A dedicated white-on-transparent SVG variant would be ideal for dark backgrounds.</div>
-            <div class="logo-file">docketradar-logo.svg (inverted)</div>
+        </div>
+      </div>
+
+      <!-- Social Profile -->
+      <div class="mockup-card">
+        <div class="mockup-body">
+          <div class="mockup-title">Social Profile</div>
+          <div class="social-card">
+            <div class="social-cover"></div>
+            <div class="social-avatar-wrap">
+              <img src="assets/logo/docketradar-icon.svg" class="social-avatar" alt="">
+              <div class="social-handle">
+                <div class="social-name-text">DocketRadar</div>
+                <div class="social-at">@docketradar</div>
+              </div>
+            </div>
+            <div class="social-bio">Court docket monitoring for Florida legal professionals. Every docket. Every county. Every time.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Card -->
+      <div class="mockup-card">
+        <div class="mockup-body">
+          <div class="mockup-title">Business Card</div>
+          <div class="biz-card">
+            <div class="biz-left">
+              <div>
+                <div class="biz-name">Alex Morgan</div>
+                <div class="biz-title-text">Founder & CEO</div>
+              </div>
+              <div class="biz-contact">
+                alex@docketradar.com<br>
+                docketradar.com
+              </div>
+            </div>
+            <div class="biz-right">
+              <img src="assets/logo/docketradar-icon.svg" width="40" height="40" class="biz-logo-mark" alt="">
+              <div class="biz-wordmark"><span>Docket</span><span>Radar</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Website Navigation -->
+      <div class="mockup-card" style="grid-column: 1 / -1;">
+        <div class="mockup-body">
+          <div class="mockup-title">Website Navigation</div>
+          <div style="background: #fff; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); overflow: hidden;">
+            <div style="display: flex; align-items: center; gap: 10px; padding: 18px 28px; border-bottom: 1px solid #eee;">
+              <img src="assets/logo/docketradar-icon.svg" width="32" height="32" alt="" style="border-radius: 8px;">
+              <span style="font-size: 18px; color: #1e3a5f; letter-spacing: -0.02em;"><span style="font-weight: 500;">Docket</span><span style="font-weight: 600;">Radar</span></span>
+              <div style="margin-left: auto; display: flex; align-items: center; gap: 24px;">
+                <span style="font-size: 14px; color: #64748b; font-weight: 500;">Features</span>
+                <span style="font-size: 14px; color: #64748b; font-weight: 500;">Pricing</span>
+                <span style="font-size: 14px; color: #64748b; font-weight: 500;">Docs</span>
+                <span style="font-size: 13px; background: #0d9488; color: white; padding: 8px 20px; border-radius: 8px; font-weight: 500;">Add to Chrome</span>
+              </div>
+            </div>
+            <div style="height: 80px; background: linear-gradient(to bottom, #fafafa, #f5f5f5); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #ccc;">Page content</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email Signature -->
+      <div class="mockup-card" style="grid-column: 1 / -1;">
+        <div class="mockup-body">
+          <div class="mockup-title">Email Signature</div>
+          <div class="email-sig">
+            <div style="font-size: 14px; color: #334155; margin-bottom: 16px; line-height: 1.6;">
+              Thanks,<br>Alex
+            </div>
+            <div class="email-sig-divider"></div>
+            <div class="email-sig-row">
+              <img src="assets/logo/docketradar-icon.svg" width="40" height="40" class="email-sig-icon" alt="">
+              <div>
+                <div class="email-sig-name">Alex Morgan</div>
+                <div class="email-sig-title-text">Founder & CEO</div>
+                <div class="email-sig-brand"><span style="font-weight: 500;">Docket</span><span style="font-weight: 600;">Radar</span> | Court docket monitoring for Florida legal professionals</div>
+                <div class="email-sig-links">docketradar.com | alex@docketradar.com</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- 3. Monochrome Variants -->
-    <div class="section">
-      <div class="section-label">03</div>
-      <div class="section-title">Monochrome Variants</div>
-      <div class="logo-grid">
-        <div class="logo-card">
-          <div class="logo-preview bg-white">
-            <img src="assets/logo/docketradar-icon-mono-dark.svg" width="128" height="128" alt="Mono dark">
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Monochrome Dark (Slate 900)</div>
-            <div class="logo-desc">For print, single-color contexts, light backgrounds. Filled container.</div>
-            <div class="logo-file">docketradar-icon-mono-dark.svg</div>
-          </div>
-        </div>
-        <div class="logo-card">
-          <div class="logo-preview bg-slate">
-            <img src="assets/logo/docketradar-icon-mono-light.svg" width="128" height="128" alt="Mono light">
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Monochrome Light (White)</div>
-            <div class="logo-desc">For dark backgrounds, dark-mode headers, image overlays. Outline container.</div>
-            <div class="logo-file">docketradar-icon-mono-light.svg</div>
-          </div>
-        </div>
-        <div class="logo-card">
-          <div class="logo-preview bg-checker">
-            <img src="assets/logo/docketradar-icon-flat.svg" width="128" height="128" alt="Flat outline">
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Flat / Outline (Navy on Transparent)</div>
-            <div class="logo-desc">For letterheads, light UI contexts, watermarks. Outline container, no fill.</div>
-            <div class="logo-file">docketradar-icon-flat.svg</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4. Simplified (Small Sizes) -->
-    <div class="section">
-      <div class="section-label">04</div>
-      <div class="section-title">Simplified (Small Sizes)</div>
-      <div class="logo-grid">
-        <div class="logo-card">
-          <div class="logo-preview bg-white">
-            <div class="size-strip">
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="16px">
-                <span class="size-label">16px</span>
-              </div>
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="24" height="24" alt="24px">
-                <span class="size-label">24px</span>
-              </div>
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="32" height="32" alt="32px">
-                <span class="size-label">32px</span>
-              </div>
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="48" height="48" alt="48px">
-                <span class="size-label">48px</span>
-              </div>
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="64" height="64" alt="64px">
-                <span class="size-label">64px</span>
-              </div>
-            </div>
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Simplified Icon — Size Comparison</div>
-            <div class="logo-desc">Arcs + blip only, no document lines. Heavier strokes for legibility. For Chrome toolbar, favicon, small UI.</div>
-            <div class="logo-file">docketradar-icon-simplified.svg</div>
-          </div>
-        </div>
-        <div class="logo-card">
-          <div class="logo-preview bg-navy">
-            <div class="size-strip">
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="16px on navy">
-                <span class="size-label" style="color: var(--slate-300);">16px</span>
-              </div>
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="32" height="32" alt="32px on navy">
-                <span class="size-label" style="color: var(--slate-300);">32px</span>
-              </div>
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="64" height="64" alt="64px on navy">
-                <span class="size-label" style="color: var(--slate-300);">64px</span>
-              </div>
-            </div>
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Simplified — Dark Background</div>
-            <div class="logo-desc">Navy container is less visible on navy bg at small sizes. Acceptable for toolbar icons.</div>
-            <div class="logo-file">docketradar-icon-simplified.svg</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5. Size Comparison: Primary vs Simplified -->
-    <div class="section">
-      <div class="section-label">05</div>
-      <div class="section-title">Primary vs Simplified Comparison</div>
-      <div class="logo-grid">
-        <div class="logo-card logo-card-wide">
-          <div class="logo-preview bg-white">
-            <div class="size-strip">
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary 128">
-                <span class="size-label">Primary 128px</span>
-              </div>
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon.svg" width="64" height="64" alt="Primary 64">
-                <span class="size-label">Primary 64px</span>
-              </div>
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon.svg" width="32" height="32" alt="Primary 32">
-                <span class="size-label">Primary 32px</span>
-              </div>
-              <div class="size-item" style="border-left: 2px solid var(--slate-200); padding-left: 32px;">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="32" height="32" alt="Simplified 32">
-                <span class="size-label">Simplified 32px</span>
-              </div>
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="24" height="24" alt="Simplified 24">
-                <span class="size-label">Simplified 24px</span>
-              </div>
-              <div class="size-item">
-                <img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="Simplified 16">
-                <span class="size-label">Simplified 16px</span>
-              </div>
-            </div>
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Size Breakpoint</div>
-            <div class="logo-desc">Switch from primary to simplified at 32px and below. Document lines become illegible at small sizes.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6. Usage Context Mockups -->
-    <div class="section">
-      <div class="section-label">06</div>
-      <div class="section-title">Usage Context Previews</div>
-      <div class="logo-grid">
-        <!-- Browser tab -->
-        <div class="logo-card">
-          <div class="logo-preview bg-white" style="flex-direction: column; gap: 16px; padding: 32px;">
-            <div style="display: flex; align-items: center; gap: 8px; background: var(--slate-100); border-radius: 8px 8px 0 0; padding: 10px 14px; width: 100%; max-width: 360px;">
-              <img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="favicon">
-              <span style="font-size: 13px; color: var(--slate-600);">DocketRadar</span>
-              <span style="margin-left: auto; font-size: 11px; color: var(--slate-300);">x</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 8px; background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 6px; padding: 8px 12px; width: 100%; max-width: 360px;">
-              <span style="font-size: 12px; color: var(--slate-400);">docketradar.com</span>
-            </div>
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Browser Tab + Address Bar</div>
-            <div class="logo-desc">Favicon at 16px using the simplified variant.</div>
-          </div>
-        </div>
-        <!-- Nav bar -->
-        <div class="logo-card">
-          <div class="logo-preview bg-white" style="justify-content: flex-start; padding: 0;">
-            <div style="display: flex; align-items: center; gap: 10px; padding: 16px 24px; border-bottom: 1px solid var(--slate-200); width: 100%;">
-              <img src="assets/logo/docketradar-icon.svg" width="32" height="32" alt="nav icon">
-              <span style="font-size: 18px; color: var(--navy); letter-spacing: -0.02em;"><span style="font-weight: 500;">Docket</span><span style="font-weight: 600;">Radar</span></span>
-              <span style="margin-left: auto; font-size: 13px; color: var(--slate-500);">Features</span>
-              <span style="font-size: 13px; color: var(--slate-500);">Pricing</span>
-              <span style="font-size: 12px; background: var(--teal); color: white; padding: 6px 14px; border-radius: 6px; font-weight: 500;">Add to Chrome</span>
-            </div>
-          </div>
-          <div class="logo-meta">
-            <div class="logo-name">Website Navigation</div>
-            <div class="logo-desc">Icon at 32px with wordmark. As seen on the live site.</div>
-          </div>
-        </div>
-      </div>
+    <!-- Footer -->
+    <div class="footer">
+      <div class="footer-line"></div>
+      DocketRadar Logo System &middot; v1.0 &middot; February 2026 &middot; Confidential
     </div>
 
   </div>
+
+  <script>
+    // Background toggle
+    const toggle = document.getElementById('bgToggle');
+    const preview = document.getElementById('interactivePreview');
+    const buttons = toggle.querySelectorAll('.bg-toggle-btn');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        preview.className = 'interactive-preview ' + btn.dataset.bg;
+      });
+    });
+
+    // Subtle hover scale on interactive preview logos
+    preview.querySelectorAll('img').forEach(img => {
+      img.addEventListener('mouseenter', () => { img.style.transform = 'scale(1.08)'; });
+      img.addEventListener('mouseleave', () => { img.style.transform = 'scale(1)'; });
+    });
+  </script>
+
 </body>
 </html>

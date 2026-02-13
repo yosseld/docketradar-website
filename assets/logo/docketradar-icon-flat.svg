@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
   <!--
-    DocketRadar Icon — Flat / Outline (Navy on transparent)
+    DocketRadar Icon — Flat / Outline (Navy on transparent) — Redesigned
     For use on white/light backgrounds where a filled background isn't desired.
     Good for: letterheads, light UI contexts, watermarks.
   -->
@@ -9,42 +9,55 @@
   <rect x="4" y="4" width="120" height="120" rx="26" ry="26"
         fill="none" stroke="#1e3a5f" stroke-width="2.5"/>
 
-  <!-- Inner radar arc -->
-  <path d="M 56.8 96.7 A 36 36 0 0 0 22 70"
+  <!-- Arc 1 (inner, r=34) -->
+  <path d="M 52.8 99.2 A 34 34 0 0 0 25.9 74.5"
         fill="none"
         stroke="#1e3a5f"
-        stroke-opacity="0.35"
-        stroke-width="3"
+        stroke-opacity="0.32"
+        stroke-width="2.5"
         stroke-linecap="round"/>
 
-  <!-- Outer radar arc -->
-  <path d="M 80 90.5 A 60 60 0 0 0 22 46"
+  <!-- Arc 2 (middle, r=56) -->
+  <path d="M 74.8 96.4 A 56 56 0 0 0 29.7 52.9"
         fill="none"
         stroke="#1e3a5f"
-        stroke-opacity="0.35"
-        stroke-width="3"
+        stroke-opacity="0.25"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+
+  <!-- Arc 3 (outer, r=78) -->
+  <path d="M 96.8 94.5 A 78 78 0 0 0 33.5 31.2"
+        fill="none"
+        stroke="#1e3a5f"
+        stroke-opacity="0.18"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+
+  <!-- Document lines -->
+  <line x1="42" y1="38" x2="102" y2="38"
+        stroke="#1e3a5f"
+        stroke-opacity="0.15"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+  <line x1="40" y1="50" x2="98" y2="50"
+        stroke="#1e3a5f"
+        stroke-opacity="0.15"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+  <line x1="38" y1="62" x2="90" y2="62"
+        stroke="#1e3a5f"
+        stroke-opacity="0.15"
+        stroke-width="2.5"
+        stroke-linecap="round"/>
+  <line x1="36" y1="74" x2="76" y2="74"
+        stroke="#1e3a5f"
+        stroke-opacity="0.15"
+        stroke-width="2.5"
         stroke-linecap="round"/>
 
   <!-- Blip glow -->
-  <circle cx="52" cy="54" r="11" fill="rgba(13,148,136,0.12)"/>
+  <circle cx="62" cy="62" r="11" fill="rgba(13,148,136,0.10)"/>
 
-  <!-- Blip (using standard teal on light background) -->
-  <circle cx="52" cy="54" r="6" fill="#0d9488"/>
-
-  <!-- Document lines -->
-  <line x1="72" y1="28" x2="106" y2="28"
-        stroke="#1e3a5f"
-        stroke-opacity="0.18"
-        stroke-width="2.5"
-        stroke-linecap="round"/>
-  <line x1="72" y1="40" x2="106" y2="40"
-        stroke="#1e3a5f"
-        stroke-opacity="0.18"
-        stroke-width="2.5"
-        stroke-linecap="round"/>
-  <line x1="72" y1="52" x2="98" y2="52"
-        stroke="#1e3a5f"
-        stroke-opacity="0.18"
-        stroke-width="2.5"
-        stroke-linecap="round"/>
+  <!-- Blip (using standard teal #0d9488 on light background) -->
+  <circle cx="62" cy="62" r="6" fill="#0d9488"/>
 </svg>
