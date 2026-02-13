@@ -16,7 +16,9 @@
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  transition: all var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    all var(--transition-base),
+    box-shadow var(--transition-base);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -152,7 +154,7 @@
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -241,13 +243,17 @@
 }
 
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(to bottom, var(--color-accent-light), var(--color-accent));
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent-light),
+    var(--color-accent)
+  );
   opacity: 0;
   transition: opacity var(--transition-slow);
 }
@@ -310,7 +316,7 @@
 }
 
 .testimonial-card::before {
-  content: '\201C';
+  content: "\201C";
   position: absolute;
   top: var(--space-4);
   left: var(--space-6);
@@ -755,7 +761,9 @@
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-slow), padding var(--transition-slow);
+  transition:
+    max-height var(--transition-slow),
+    padding var(--transition-slow);
 }
 
 .faq-item.open .faq-answer {
@@ -876,4 +884,24 @@
 
 .section-dark .section-divider-desc {
   color: rgba(255, 255, 255, 0.4);
+}
+
+/* ========== Touch Feedback ========== */
+@media (hover: none) and (pointer: coarse) {
+  .card::before {
+    opacity: 0.5;
+  }
+  .card:active {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn:active {
+    transform: scale(0.97);
+  }
+  .testimonial-card:active {
+    transform: translateY(-1px);
+  }
+  .county-badge:active {
+    border-color: var(--color-teal);
+  }
 }
