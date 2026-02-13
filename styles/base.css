@@ -27,7 +27,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--color-slate-700);
-  background-color: #ffffff;
+  background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -166,7 +166,7 @@ p:last-child {
 
 /* ========== Selection ========== */
 ::selection {
-  background: rgba(13, 148, 136, 0.15);
+  background: rgba(184, 134, 11, 0.15);
   color: var(--color-slate-900);
 }
 

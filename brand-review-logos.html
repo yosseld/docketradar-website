@@ -11,29 +11,29 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --navy: #1e3a5f;
-      --navy-deep: #0f2440;
-      --teal: #0d9488;
-      --teal-light: #2dd4bf;
-      --amber: #d97706;
-      --slate-50: #f8fafc;
-      --slate-100: #f1f5f9;
-      --slate-200: #e2e8f0;
-      --slate-300: #cbd5e1;
-      --slate-400: #94a3b8;
-      --slate-500: #64748b;
-      --slate-600: #475569;
-      --slate-700: #334155;
-      --slate-800: #1e293b;
-      --slate-900: #0f172a;
-      --slate-950: #020617;
+      --navy: #44403C;
+      --navy-deep: #292524;
+      --teal: #B8860B;
+      --teal-light: #D4A533;
+      --amber: #B8860B;
+      --slate-50: #FAFAF8;
+      --slate-100: #F5F3EF;
+      --slate-200: #e7e5e0;
+      --slate-300: #d6d3cd;
+      --slate-400: #a8a29e;
+      --slate-500: #78716c;
+      --slate-600: #57534E;
+      --slate-700: #44403C;
+      --slate-800: #292524;
+      --slate-900: #1c1917;
+      --slate-950: #0c0a09;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--slate-950);
+      background: var(--slate-900);
       color: rgba(255,255,255,0.85);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
@@ -58,7 +58,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(2, 6, 23, 0.8);
+      background: rgba(12, 10, 9, 0.8);
       backdrop-filter: blur(20px) saturate(1.2);
       -webkit-backdrop-filter: blur(20px) saturate(1.2);
       border-bottom: 1px solid rgba(255,255,255,0.06);
@@ -124,7 +124,7 @@
       position: absolute;
       top: 50%; left: 50%;
       border-radius: 50%;
-      border: 1px solid rgba(45, 212, 191, 0.06);
+      border: 1px solid rgba(212, 165, 51, 0.06);
       transform: translate(-50%, -50%);
     }
     .hero-radar-ring:nth-child(1) { width: 200px; height: 200px; animation: radar-pulse 4s ease-out infinite; }
@@ -146,9 +146,9 @@
       top: -20%; left: -20%;
       width: 140%; height: 140%;
       background:
-        radial-gradient(ellipse at 20% 50%, rgba(30, 58, 95, 0.4) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 20%, rgba(13, 148, 136, 0.08) 0%, transparent 40%),
-        radial-gradient(ellipse at 60% 80%, rgba(30, 58, 95, 0.2) 0%, transparent 40%);
+        radial-gradient(ellipse at 20% 50%, rgba(41, 37, 36, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(184, 134, 11, 0.08) 0%, transparent 40%),
+        radial-gradient(ellipse at 60% 80%, rgba(41, 37, 36, 0.2) 0%, transparent 40%);
       pointer-events: none;
     }
 
@@ -167,9 +167,9 @@
       width: 100%; height: 100%;
       border-radius: 28px;
       box-shadow:
-        0 0 0 1px rgba(45, 212, 191, 0.1),
+        0 0 0 1px rgba(212, 165, 51, 0.1),
         0 8px 40px rgba(0, 0, 0, 0.4),
-        0 0 80px rgba(45, 212, 191, 0.08);
+        0 0 80px rgba(212, 165, 51, 0.08);
     }
     /* Breathing glow behind logo */
     .hero-icon::before {
@@ -177,7 +177,7 @@
       position: absolute;
       top: -20px; left: -20px; right: -20px; bottom: -20px;
       border-radius: 40px;
-      background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(212, 165, 51, 0.15) 0%, transparent 70%);
       animation: breathe 3s ease-in-out infinite;
     }
 
@@ -343,7 +343,7 @@
       background-position: 0 0, 0 8px, 8px -8px, -8px 0;
     }
     .showcase-preview.bg-gradient {
-      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, #2a5080 100%);
+      background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, #57534E 100%);
     }
 
     .showcase-preview img {
@@ -363,7 +363,7 @@
       position: absolute;
       width: 160px; height: 160px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(45, 212, 191, 0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(212, 165, 51, 0.12) 0%, transparent 70%);
       top: 50%; left: 50%;
       transform: translate(-50%, -50%);
       opacity: 0;
@@ -475,11 +475,11 @@
     .guide-circle {
       position: absolute;
       border-radius: 50%;
-      border: 1px dashed rgba(45, 212, 191, 0.3);
+      border: 1px dashed rgba(212, 165, 51, 0.3);
     }
     .guide-line {
       position: absolute;
-      background: rgba(45, 212, 191, 0.15);
+      background: rgba(212, 165, 51, 0.15);
     }
     .guide-point {
       position: absolute;
@@ -487,7 +487,7 @@
       border-radius: 50%;
       background: var(--teal-light);
       transform: translate(-50%, -50%);
-      box-shadow: 0 0 12px rgba(45, 212, 191, 0.4);
+      box-shadow: 0 0 12px rgba(212, 165, 51, 0.4);
     }
 
     .anatomy-labels {
@@ -739,7 +739,7 @@
     }
     .social-cover {
       height: 80px;
-      background: linear-gradient(135deg, var(--navy-deep), var(--navy), #2a5080);
+      background: linear-gradient(135deg, var(--navy-deep), var(--navy), #57534E);
     }
     .social-avatar-wrap {
       display: flex;
@@ -1020,7 +1020,7 @@
       </div>
       <div class="hero-overline">Brand Identity</div>
       <h1>The Mark.</h1>
-      <p class="hero-sub">A radar sweep meets a legal document. One symbol that says: we're watching every docket, every county, every time.</p>
+      <p class="hero-sub">Two offset squares in slate and amber. One symbol that says: we're watching every docket, every county, every time.</p>
     </div>
     <div class="hero-scroll">
       Scroll
@@ -1036,24 +1036,24 @@
       <div style="font-size: 20px; font-weight: 600; color: #fff; letter-spacing: -0.02em; margin-bottom: 24px;">Brand Colors</div>
       <div class="color-strip">
         <div class="color-chip">
-          <div class="color-swatch" style="background: #1e3a5f;"></div>
-          <div class="color-info"><div class="color-name">Navy</div><div class="color-hex">#1e3a5f</div></div>
+          <div class="color-swatch" style="background: #44403C;"></div>
+          <div class="color-info"><div class="color-name">Warm Charcoal</div><div class="color-hex">#44403C</div></div>
         </div>
         <div class="color-chip">
-          <div class="color-swatch" style="background: #0d9488;"></div>
-          <div class="color-info"><div class="color-name">Teal</div><div class="color-hex">#0d9488</div></div>
+          <div class="color-swatch" style="background: #B8860B;"></div>
+          <div class="color-info"><div class="color-name">Amber</div><div class="color-hex">#B8860B</div></div>
         </div>
         <div class="color-chip">
-          <div class="color-swatch" style="background: #2dd4bf;"></div>
-          <div class="color-info"><div class="color-name">Teal Light</div><div class="color-hex">#2dd4bf</div></div>
+          <div class="color-swatch" style="background: #D4A533;"></div>
+          <div class="color-info"><div class="color-name">Amber Light</div><div class="color-hex">#D4A533</div></div>
         </div>
         <div class="color-chip">
-          <div class="color-swatch" style="background: #0f172a;"></div>
-          <div class="color-info"><div class="color-name">Slate 900</div><div class="color-hex">#0f172a</div></div>
+          <div class="color-swatch" style="background: #292524;"></div>
+          <div class="color-info"><div class="color-name">Dark Charcoal</div><div class="color-hex">#292524</div></div>
         </div>
         <div class="color-chip">
-          <div class="color-swatch" style="background: #d97706;"></div>
-          <div class="color-info"><div class="color-name">Amber</div><div class="color-hex">#d97706</div></div>
+          <div class="color-swatch" style="background: #FAFAF8;"></div>
+          <div class="color-info"><div class="color-name">Warm Paper</div><div class="color-hex">#FAFAF8</div></div>
         </div>
       </div>
     </div>
@@ -1063,7 +1063,7 @@
       <div class="section-number">01</div>
       <div class="section-label">Primary Mark</div>
       <div class="section-title">The Icon.</div>
-      <div class="section-desc">Navy container, white arcs, teal blip, document lines. The full symbol at every scale where detail is legible.</div>
+      <div class="section-desc">Two offset rounded squares in warm charcoal and amber -- the M6 mark. Clean, geometric, and legible at every scale.</div>
     </div>
 
     <div class="showcase-grid">
@@ -1092,11 +1092,11 @@
       <div class="showcase-card">
         <div class="showcase-preview bg-navy">
           <div class="logo-glow"></div>
-          <img src="assets/logo/docketradar-icon.svg?v=5" loading="eager" width="128" height="128" alt="Primary icon on navy">
+          <img src="assets/logo/docketradar-icon.svg?v=5" loading="eager" width="128" height="128" alt="Primary icon on charcoal">
         </div>
         <div class="showcase-meta">
-          <div class="showcase-name">On Navy</div>
-          <div class="showcase-desc">Container blends. Use mono-light instead.</div>
+          <div class="showcase-name">On Charcoal</div>
+          <div class="showcase-desc">Mark adapts well on warm charcoal surfaces.</div>
           <div class="showcase-file">docketradar-icon.svg</div>
         </div>
       </div>
@@ -1117,7 +1117,7 @@
         </div>
         <div class="showcase-meta">
           <div class="showcase-name">Full Horizontal Lockup</div>
-          <div class="showcase-desc">Website header, Chrome Web Store listing, marketing materials. Navy on white.</div>
+          <div class="showcase-desc">Website header, Chrome Web Store listing, marketing materials. Charcoal and amber on white.</div>
           <div class="showcase-file">docketradar-logo.svg</div>
         </div>
       </div>
@@ -1174,7 +1174,7 @@
         </div>
         <div class="showcase-meta">
           <div class="showcase-name">Flat / Outline</div>
-          <div class="showcase-desc">Navy on transparent. Letterheads, watermarks.</div>
+          <div class="showcase-desc">Charcoal on transparent. Letterheads, watermarks.</div>
           <div class="showcase-file">docketradar-icon-flat.svg</div>
         </div>
       </div>
@@ -1185,7 +1185,7 @@
       <div class="section-number">04</div>
       <div class="section-label">Small Sizes</div>
       <div class="section-title">Simplified.</div>
-      <div class="section-desc">Arcs + blip only. No document lines. Heavier strokes for legibility at 32px and below.</div>
+      <div class="section-desc">Simplified offset squares. Reduced detail for legibility at 32px and below.</div>
     </div>
 
     <div class="showcase-grid two-col">
@@ -1206,7 +1206,7 @@
         </div>
       </div>
       <div class="showcase-card">
-        <div class="showcase-preview bg-navy" style="padding: 48px;">
+        <div class="showcase-preview bg-navy" style="padding: 48px;" title="Warm charcoal background">
           <div style="display: flex; align-items: center; gap: 32px;">
             <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg?v=16" loading="eager" width="64" height="64" alt="64px"><div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 8px;">64px</div></div>
             <div style="text-align: center;"><img src="assets/logo/docketradar-icon-simplified.svg?v=17" loading="eager" width="48" height="48" alt="48px"><div style="font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 8px;">48px</div></div>
@@ -1216,8 +1216,8 @@
           </div>
         </div>
         <div class="showcase-meta">
-          <div class="showcase-name">Simplified on Navy</div>
-          <div class="showcase-desc">Navy container is less visible on navy bg. Acceptable for toolbar icons.</div>
+          <div class="showcase-name">Simplified on Charcoal</div>
+          <div class="showcase-desc">Charcoal surface. Amber accent remains visible. Acceptable for toolbar icons.</div>
           <div class="showcase-file">docketradar-icon-simplified.svg</div>
         </div>
       </div>
@@ -1241,8 +1241,8 @@
           <div class="guide-circle" style="left: calc(17.2% - 56px); top: calc(82.8% - 56px); width: 112px; height: 112px;"></div>
           <!-- Outer arc radius guide -->
           <div class="guide-circle" style="left: calc(17.2% - 94px); top: calc(82.8% - 94px); width: 188px; height: 188px;"></div>
-          <!-- Blip marker -->
-          <div class="guide-point" style="left: 40.6%; top: 42.2%; background: var(--teal-light);"></div>
+          <!-- Front square marker -->
+          <div class="guide-point" style="left: 40.6%; top: 42.2%; background: var(--teal);"></div>
           <!-- Container corners -->
           <div class="guide-line" style="top: 3.1%; left: 3.1%; width: 20px; height: 1px;"></div>
           <div class="guide-line" style="top: 3.1%; left: 3.1%; width: 1px; height: 20px;"></div>
@@ -1258,31 +1258,31 @@
       </div>
       <div class="anatomy-labels">
         <div class="anatomy-label">
-          <div class="anatomy-label-dot" style="background: var(--teal-light);"></div>
-          <div class="anatomy-label-text">
-            <strong>Blip</strong>
-            The detected change. Teal (#2dd4bf) at (52, 54). r=6 with r=11 glow halo.
-          </div>
-        </div>
-        <div class="anatomy-label">
-          <div class="anatomy-label-dot" style="background: rgba(255,255,255,0.4);"></div>
-          <div class="anatomy-label-text">
-            <strong>Radar Arcs</strong>
-            Inner r=36, outer r=60. Origin at (22, 106). 15-degree to 90-degree sweep. 3px stroke, white at 40%.
-          </div>
-        </div>
-        <div class="anatomy-label">
           <div class="anatomy-label-dot" style="background: var(--navy);"></div>
           <div class="anatomy-label-text">
-            <strong>Container</strong>
-            Superellipse, rx=26. Navy #1e3a5f. 120x120 on 128 canvas. 4px padding.
+            <strong>Back Square</strong>
+            Warm charcoal (#44403C). Rounded rectangle, larger, positioned behind. Evokes a legal document.
+          </div>
+        </div>
+        <div class="anatomy-label">
+          <div class="anatomy-label-dot" style="background: var(--teal);"></div>
+          <div class="anatomy-label-text">
+            <strong>Front Square</strong>
+            Amber (#B8860B). Rounded rectangle, offset to the lower-right. The active, watched document.
+          </div>
+        </div>
+        <div class="anatomy-label">
+          <div class="anatomy-label-dot" style="background: var(--teal-light);"></div>
+          <div class="anatomy-label-text">
+            <strong>Offset</strong>
+            The two squares overlap with deliberate offset, creating depth and layering. Geometric precision on a 128-unit grid.
           </div>
         </div>
         <div class="anatomy-label">
           <div class="anatomy-label-dot" style="background: rgba(255,255,255,0.22);"></div>
           <div class="anatomy-label-text">
-            <strong>Document Lines</strong>
-            Three horizontal lines in upper-right quadrant. Evoke docket text. White at 22%.
+            <strong>Corner Radius</strong>
+            Consistent rounded corners across both squares. Softens the geometric form while maintaining a professional feel.
           </div>
         </div>
       </div>
@@ -1375,7 +1375,7 @@
 
     <div class="bg-toggle" id="bgToggle">
       <button class="bg-toggle-btn active" data-bg="bg-dark">Dark</button>
-      <button class="bg-toggle-btn" data-bg="bg-navy">Navy</button>
+      <button class="bg-toggle-btn" data-bg="bg-navy">Charcoal</button>
       <button class="bg-toggle-btn" data-bg="bg-white">White</button>
       <button class="bg-toggle-btn" data-bg="bg-checker">Checker</button>
     </div>
@@ -1495,12 +1495,12 @@
           <div style="background: #fff; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); overflow: hidden;">
             <div style="display: flex; align-items: center; gap: 10px; padding: 18px 28px; border-bottom: 1px solid #eee;">
               <img src="assets/logo/docketradar-icon.svg?v=39" loading="eager" width="32" height="32" alt="" style="border-radius: 8px;">
-              <span style="font-size: 18px; color: #1e3a5f; letter-spacing: -0.02em;"><span style="font-weight: 500;">Docket</span><span style="font-weight: 600;">Radar</span></span>
+              <span style="font-size: 18px; color: #44403C; letter-spacing: -0.02em;"><span style="font-weight: 500;">Docket</span><span style="font-weight: 600;">Radar</span></span>
               <div style="margin-left: auto; display: flex; align-items: center; gap: 24px;">
                 <span style="font-size: 14px; color: #64748b; font-weight: 500;">Features</span>
                 <span style="font-size: 14px; color: #64748b; font-weight: 500;">Pricing</span>
                 <span style="font-size: 14px; color: #64748b; font-weight: 500;">Docs</span>
-                <span style="font-size: 13px; background: #0d9488; color: white; padding: 8px 20px; border-radius: 8px; font-weight: 500;">Add to Chrome</span>
+                <span style="font-size: 13px; background: #B8860B; color: white; padding: 8px 20px; border-radius: 8px; font-weight: 500;">Add to Chrome</span>
               </div>
             </div>
             <div style="height: 80px; background: linear-gradient(to bottom, #fafafa, #f5f5f5); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #ccc;">Page content</div>

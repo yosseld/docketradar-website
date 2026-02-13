@@ -11,12 +11,12 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --navy: #1e3a5f;
-      --navy-deep: #0f2440;
-      --teal: #0d9488;
-      --teal-light: #2dd4bf;
-      --teal-lightest: #ccfbf1;
-      --amber: #d97706;
+      --navy: #44403C;
+      --navy-deep: #292524;
+      --teal: #B8860B;
+      --teal-light: #D4A533;
+      --teal-lightest: #F5F0E0;
+      --amber: #B8860B;
       --amber-light: #fef3c7;
       --coral: #e11d48;
       --green: #059669;
@@ -25,17 +25,17 @@
       --blue-light: #eff6ff;
       --red: #dc2626;
       --red-light: #fef2f2;
-      --slate-50: #f8fafc;
-      --slate-100: #f1f5f9;
-      --slate-200: #e2e8f0;
-      --slate-300: #cbd5e1;
-      --slate-400: #94a3b8;
-      --slate-500: #64748b;
-      --slate-600: #475569;
-      --slate-700: #334155;
-      --slate-800: #1e293b;
-      --slate-900: #0f172a;
-      --slate-950: #020617;
+      --slate-50: #FAFAF8;
+      --slate-100: #F5F3EF;
+      --slate-200: #e7e5e0;
+      --slate-300: #d6d3cd;
+      --slate-400: #a8a29e;
+      --slate-500: #78716c;
+      --slate-600: #57534E;
+      --slate-700: #44403C;
+      --slate-800: #292524;
+      --slate-900: #1c1917;
+      --slate-950: #0c0a09;
     }
 
     html { scroll-behavior: smooth; }
@@ -43,7 +43,7 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #ffffff;
+      background: #FAFAF8;
       color: var(--slate-700);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
@@ -57,7 +57,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.75);
+      background: rgba(250,250,248,0.75);
       backdrop-filter: blur(20px) saturate(1.2);
       -webkit-backdrop-filter: blur(20px) saturate(1.2);
       border-bottom: 1px solid rgba(0,0,0,0.06);
@@ -108,7 +108,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(160deg, #050d1a 0%, var(--navy-deep) 30%, var(--navy) 60%, #1a4a6e 100%);
+      background: linear-gradient(160deg, #0c0a09 0%, var(--navy-deep) 30%, var(--navy) 60%, #57534E 100%);
       overflow: hidden;
       padding: 80px 40px;
     }
@@ -131,9 +131,9 @@
       top: -30%; left: -20%;
       width: 160%; height: 160%;
       background:
-        radial-gradient(ellipse 600px 600px at 25% 60%, rgba(13, 148, 136, 0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 500px 500px at 75% 30%, rgba(45, 212, 191, 0.06) 0%, transparent 50%),
-        radial-gradient(ellipse 800px 400px at 50% 100%, rgba(30, 58, 95, 0.3) 0%, transparent 50%);
+        radial-gradient(ellipse 600px 600px at 25% 60%, rgba(184, 134, 11, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 500px at 75% 30%, rgba(212, 165, 51, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 800px 400px at 50% 100%, rgba(68, 64, 60, 0.3) 0%, transparent 50%);
       pointer-events: none;
     }
 
@@ -149,7 +149,7 @@
       position: absolute;
       top: 50%; left: 50%;
       border-radius: 50%;
-      border: 1px solid rgba(45, 212, 191, 0.07);
+      border: 1px solid rgba(212, 165, 51, 0.07);
       transform: translate(-50%, -50%);
       animation: radar-expand 5s ease-out infinite;
     }
@@ -180,7 +180,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      background: linear-gradient(to right, rgba(45, 212, 191, 0.2), transparent);
+      background: linear-gradient(to right, rgba(212, 165, 51, 0.2), transparent);
     }
     @keyframes sweep-rotate {
       from { transform: rotate(0deg); }
@@ -202,16 +202,16 @@
       width: 100%; height: 100%;
       border-radius: 22px;
       box-shadow:
-        0 0 0 1px rgba(45, 212, 191, 0.15),
+        0 0 0 1px rgba(212, 165, 51, 0.15),
         0 12px 48px rgba(0, 0, 0, 0.5),
-        0 0 120px rgba(45, 212, 191, 0.1);
+        0 0 120px rgba(212, 165, 51, 0.1);
     }
     .hero-icon::before {
       content: '';
       position: absolute;
       inset: -24px;
       border-radius: 36px;
-      background: radial-gradient(circle, rgba(45, 212, 191, 0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(212, 165, 51, 0.12) 0%, transparent 70%);
       animation: hero-glow 3s ease-in-out infinite;
     }
     @keyframes hero-glow {
@@ -405,8 +405,8 @@
       position: relative;
       margin: 28px 0;
       padding: 28px 32px;
-      background: linear-gradient(135deg, rgba(13, 148, 136, 0.04) 0%, rgba(13, 148, 136, 0.01) 100%);
-      border: 1px solid rgba(13, 148, 136, 0.1);
+      background: linear-gradient(135deg, rgba(184, 134, 11, 0.04) 0%, rgba(184, 134, 11, 0.01) 100%);
+      border: 1px solid rgba(184, 134, 11, 0.1);
       border-radius: 12px;
       font-size: 16px;
       color: var(--slate-700);
@@ -501,12 +501,12 @@
     .persona-avatar {
       width: 56px; height: 56px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--navy), #2a5080);
+      background: linear-gradient(135deg, var(--navy), #57534E);
       color: #fff;
       display: flex; align-items: center; justify-content: center;
       font-size: 16px; font-weight: 700;
       margin-bottom: 16px;
-      box-shadow: 0 4px 12px rgba(30, 58, 95, 0.2);
+      box-shadow: 0 4px 12px rgba(68, 64, 60, 0.2);
     }
     .persona-name { font-size: 16px; font-weight: 700; color: var(--slate-900); }
     .persona-role { font-size: 12px; color: var(--slate-400); margin-top: 2px; }
@@ -585,8 +585,8 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
     }
-    .logo-display.on-white { background: #fff; }
-    .logo-display.on-navy { background: var(--navy); border-color: var(--navy); }
+    .logo-display.on-white { background: #FAFAF8; }
+    .logo-display.on-charcoal { background: var(--navy); border-color: var(--navy); }
     .logo-display.on-dark { background: var(--slate-900); border-color: var(--slate-800); }
     .logo-display.on-checker {
       background-color: #fff;
@@ -943,8 +943,8 @@
       position: relative;
       margin: 28px 0;
       padding: 36px 40px;
-      background: linear-gradient(135deg, rgba(30, 58, 95, 0.03) 0%, rgba(13, 148, 136, 0.03) 100%);
-      border: 1px solid rgba(30, 58, 95, 0.08);
+      background: linear-gradient(135deg, rgba(68, 64, 60, 0.03) 0%, rgba(184, 134, 11, 0.03) 100%);
+      border: 1px solid rgba(68, 64, 60, 0.08);
       border-radius: 20px;
       font-size: 16px;
       color: var(--slate-700);
@@ -1238,13 +1238,13 @@
     <div class="sec" id="logos-section">
       <div class="sec-label">Logo System</div>
       <div class="sec-title">Symbol + Wordmark</div>
-      <p>The DocketRadar symbol merges a radar sweep with a document page into a single mark. Navy container with radar arcs, a teal "blip" for a detected change, and three horizontal document lines.</p>
+      <p>The DocketRadar symbol uses the M6 "Offset Squares" design -- two overlapping rounded squares in warm charcoal and amber, evoking layered legal documents under watchful surveillance. A clean, geometric mark that works at every scale.</p>
 
       <div class="logo-showcase">
         <div class="logo-display on-white">
           <img src="assets/logo/docketradar-icon.svg?v=3" loading="eager" width="80" height="80" alt="Primary">
         </div>
-        <div class="logo-display on-navy">
+        <div class="logo-display on-charcoal">
           <img src="assets/logo/docketradar-icon-mono-light.svg?v=4" loading="eager" width="80" height="80" alt="Mono light">
         </div>
         <div class="logo-display on-dark">
@@ -1269,81 +1269,81 @@
       <div class="gradient-spectrum"></div>
 
       <div class="palette-grid">
-        <div class="swatch" onclick="copyHex('#1e3a5f')">
-          <div class="swatch-color" style="background: #1e3a5f;">
-            <span class="swatch-hex-label">#1e3a5f</span>
+        <div class="swatch" onclick="copyHex('#44403C')">
+          <div class="swatch-color" style="background: #44403C;">
+            <span class="swatch-hex-label">#44403C</span>
             <button class="swatch-copy">Copy</button>
           </div>
           <div class="swatch-info">
-            <div class="swatch-name">Navy</div>
-            <div class="swatch-use">Primary brand. Logo container, headlines, navigation, primary surfaces.</div>
+            <div class="swatch-name">Warm Charcoal</div>
+            <div class="swatch-use">Primary text, headlines, navigation, logo mark.</div>
           </div>
         </div>
-        <div class="swatch" onclick="copyHex('#0d9488')">
-          <div class="swatch-color" style="background: #0d9488;">
-            <span class="swatch-hex-label">#0d9488</span>
-            <button class="swatch-copy">Copy</button>
-          </div>
-          <div class="swatch-info">
-            <div class="swatch-name">Teal</div>
-            <div class="swatch-use">Secondary brand. Active states, links, CTAs, interactive elements.</div>
-          </div>
-        </div>
-        <div class="swatch" onclick="copyHex('#2dd4bf')">
-          <div class="swatch-color" style="background: #2dd4bf;">
-            <span class="swatch-hex-label">#2dd4bf</span>
-            <button class="swatch-copy">Copy</button>
-          </div>
-          <div class="swatch-info">
-            <div class="swatch-name">Teal Light</div>
-            <div class="swatch-use">Accent on dark backgrounds. The blip in the logo mark.</div>
-          </div>
-        </div>
-        <div class="swatch" onclick="copyHex('#d97706')">
-          <div class="swatch-color" style="background: #d97706;">
-            <span class="swatch-hex-label">#d97706</span>
+        <div class="swatch" onclick="copyHex('#B8860B')">
+          <div class="swatch-color" style="background: #B8860B;">
+            <span class="swatch-hex-label">#B8860B</span>
             <button class="swatch-copy">Copy</button>
           </div>
           <div class="swatch-info">
             <div class="swatch-name">Amber</div>
-            <div class="swatch-use">Warnings, change detected indicators, urgent badges.</div>
+            <div class="swatch-use">Primary accent. Active states, links, CTAs, interactive elements.</div>
           </div>
         </div>
-        <div class="swatch" onclick="copyHex('#475569')">
-          <div class="swatch-color" style="background: #475569;">
-            <span class="swatch-hex-label">#475569</span>
+        <div class="swatch" onclick="copyHex('#D4A533')">
+          <div class="swatch-color" style="background: #D4A533;">
+            <span class="swatch-hex-label">#D4A533</span>
             <button class="swatch-copy">Copy</button>
           </div>
           <div class="swatch-info">
-            <div class="swatch-name">Slate Blue</div>
-            <div class="swatch-use">Body text, secondary labels, borders, muted elements.</div>
+            <div class="swatch-name">Amber Light</div>
+            <div class="swatch-use">Accent on dark backgrounds. Highlights, hover states.</div>
           </div>
         </div>
-        <div class="swatch" onclick="copyHex('#f1f5f9')">
-          <div class="swatch-color" style="background: #f1f5f9; border-bottom: 1px solid var(--slate-200);">
-            <span class="swatch-hex-label" style="color: var(--slate-500); background: rgba(0,0,0,0.04);">#f1f5f9</span>
+        <div class="swatch" onclick="copyHex('#8B6914')">
+          <div class="swatch-color" style="background: #8B6914;">
+            <span class="swatch-hex-label">#8B6914</span>
+            <button class="swatch-copy">Copy</button>
+          </div>
+          <div class="swatch-info">
+            <div class="swatch-name">Amber Dark</div>
+            <div class="swatch-use">Deep accent. Pressed states, emphasis, depth.</div>
+          </div>
+        </div>
+        <div class="swatch" onclick="copyHex('#292524')">
+          <div class="swatch-color" style="background: #292524;">
+            <span class="swatch-hex-label">#292524</span>
+            <button class="swatch-copy">Copy</button>
+          </div>
+          <div class="swatch-info">
+            <div class="swatch-name">Dark Charcoal</div>
+            <div class="swatch-use">Dark sections, hero backgrounds, footer surfaces.</div>
+          </div>
+        </div>
+        <div class="swatch" onclick="copyHex('#FAFAF8')">
+          <div class="swatch-color" style="background: #FAFAF8; border-bottom: 1px solid var(--slate-200);">
+            <span class="swatch-hex-label" style="color: var(--slate-500); background: rgba(0,0,0,0.04);">#FAFAF8</span>
             <button class="swatch-copy" style="color: var(--slate-500); background: rgba(0,0,0,0.04);">Copy</button>
           </div>
           <div class="swatch-info">
-            <div class="swatch-name">Cloud</div>
-            <div class="swatch-use">Page backgrounds, card surfaces, subtle dividers.</div>
+            <div class="swatch-name">Warm Paper</div>
+            <div class="swatch-use">Page backgrounds, card surfaces, warm off-white base.</div>
           </div>
         </div>
       </div>
 
-      <div class="sec-label" style="margin-top: 40px;">Neutral Ramp</div>
+      <div class="sec-label" style="margin-top: 40px;">Warm Neutral Ramp</div>
       <div class="ramp-container">
-        <div class="ramp-step" style="background: #f8fafc; color: var(--slate-400);">50</div>
-        <div class="ramp-step" style="background: #f1f5f9; color: var(--slate-400);">100</div>
-        <div class="ramp-step" style="background: #e2e8f0; color: var(--slate-500);">200</div>
-        <div class="ramp-step" style="background: #cbd5e1; color: var(--slate-600);">300</div>
-        <div class="ramp-step" style="background: #94a3b8; color: #fff;">400</div>
-        <div class="ramp-step" style="background: #64748b; color: #fff;">500</div>
-        <div class="ramp-step" style="background: #475569; color: #fff;">600</div>
-        <div class="ramp-step" style="background: #334155; color: #fff;">700</div>
-        <div class="ramp-step" style="background: #1e293b; color: #fff;">800</div>
-        <div class="ramp-step" style="background: #0f172a; color: #fff;">900</div>
-        <div class="ramp-step" style="background: #020617; color: #fff;">950</div>
+        <div class="ramp-step" style="background: #FAFAF8; color: var(--slate-400);">50</div>
+        <div class="ramp-step" style="background: #F5F3EF; color: var(--slate-400);">100</div>
+        <div class="ramp-step" style="background: #e7e5e0; color: var(--slate-500);">200</div>
+        <div class="ramp-step" style="background: #d6d3cd; color: var(--slate-600);">300</div>
+        <div class="ramp-step" style="background: #a8a29e; color: #fff;">400</div>
+        <div class="ramp-step" style="background: #78716c; color: #fff;">500</div>
+        <div class="ramp-step" style="background: #57534E; color: #fff;">600</div>
+        <div class="ramp-step" style="background: #44403C; color: #fff;">700</div>
+        <div class="ramp-step" style="background: #292524; color: #fff;">800</div>
+        <div class="ramp-step" style="background: #1c1917; color: #fff;">900</div>
+        <div class="ramp-step" style="background: #0c0a09; color: #fff;">950</div>
       </div>
 
       <div class="sec-label" style="margin-top: 32px;">Semantic / Functional</div>
