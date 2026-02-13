@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocketRadar Logo Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #1e3a5f;
+      --teal: #0d9488;
+      --teal-light: #2dd4bf;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --radius: 12px;
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.1);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--slate-50);
+      color: var(--slate-800);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top bar */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 250, 252, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--slate-200);
+      padding: 14px 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .topbar-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--teal);
+    }
+    .topbar-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .topbar-badge {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--slate-400);
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+
+    /* Page layout */
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+
+    .page-header {
+      margin-bottom: 48px;
+    }
+    .page-header h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--slate-900);
+      letter-spacing: -0.025em;
+      margin-bottom: 8px;
+    }
+    .page-header p {
+      font-size: 16px;
+      color: var(--slate-500);
+      max-width: 600px;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 56px;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--slate-800);
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+    }
+
+    /* Logo grid */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+    }
+
+    .logo-card {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .logo-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--slate-300);
+    }
+
+    .logo-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 32px;
+      min-height: 200px;
+    }
+    .logo-preview.bg-white {
+      background: #ffffff;
+    }
+    .logo-preview.bg-navy {
+      background: var(--navy);
+    }
+    .logo-preview.bg-slate {
+      background: var(--slate-900);
+    }
+    .logo-preview.bg-cloud {
+      background: var(--slate-100);
+    }
+    .logo-preview.bg-checker {
+      background-color: #ffffff;
+      background-image:
+        linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+        linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+        linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    }
+
+    .logo-preview img, .logo-preview svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .logo-meta {
+      padding: 16px 20px;
+      border-top: 1px solid var(--slate-100);
+    }
+    .logo-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--slate-800);
+      margin-bottom: 2px;
+    }
+    .logo-desc {
+      font-size: 12px;
+      color: var(--slate-400);
+      line-height: 1.4;
+    }
+    .logo-file {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--slate-400);
+      background: var(--slate-50);
+      border: 1px solid var(--slate-200);
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Full-width lockup */
+    .logo-card-wide {
+      grid-column: 1 / -1;
+    }
+    .logo-card-wide .logo-preview {
+      padding: 40px 64px;
+    }
+
+    /* Size comparison strip */
+    .size-strip {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .size-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .size-label {
+      font-size: 11px;
+      color: var(--slate-400);
+      font-weight: 500;
+    }
+
+    /* Divider */
+    .divider {
+      height: 1px;
+      background: var(--slate-200);
+      margin: 48px 0;
+    }
+
+    /* Color reference strip */
+    .color-strip {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .color-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      padding: 8px 14px;
+    }
+    .color-swatch {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .color-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--slate-700);
+    }
+    .color-hex {
+      font-size: 11px;
+      color: var(--slate-400);
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-dot"></div>
+    <span class="topbar-title">DocketRadar / Brand Review</span>
+    <span class="topbar-badge">Logo System</span>
+  </div>
+
+  <div class="page">
+
+    <div class="page-header">
+      <h1>Logo System Review</h1>
+      <p>All logo variants for DocketRadar. Review each mark across backgrounds and sizes to confirm the system is complete and cohesive.</p>
+    </div>
+
+    <!-- Colors used -->
+    <div class="section">
+      <div class="section-label">Reference</div>
+      <div class="section-title">Brand Colors</div>
+      <div class="color-strip">
+        <div class="color-chip">
+          <div class="color-swatch" style="background: #1e3a5f;"></div>
+          <div><div class="color-label">Navy</div><div class="color-hex">#1e3a5f</div></div>
+        </div>
+        <div class="color-chip">
+          <div class="color-swatch" style="background: #0d9488;"></div>
+          <div><div class="color-label">Teal</div><div class="color-hex">#0d9488</div></div>
+        </div>
+        <div class="color-chip">
+          <div class="color-swatch" style="background: #2dd4bf;"></div>
+          <div><div class="color-label">Teal Light</div><div class="color-hex">#2dd4bf</div></div>
+        </div>
+        <div class="color-chip">
+          <div class="color-swatch" style="background: #0f172a;"></div>
+          <div><div class="color-label">Slate 900</div><div class="color-hex">#0f172a</div></div>
+        </div>
+        <div class="color-chip">
+          <div class="color-swatch" style="background: #d97706;"></div>
+          <div><div class="color-label">Amber</div><div class="color-hex">#d97706</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 1. Primary Icon -->
+    <div class="section">
+      <div class="section-label">01</div>
+      <div class="section-title">Primary Icon</div>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="logo-preview bg-white">
+            <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary icon on white">
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Primary Icon on White</div>
+            <div class="logo-desc">Navy container, white arcs, teal blip, document lines. Primary usage context.</div>
+            <div class="logo-file">docketradar-icon.svg</div>
+          </div>
+        </div>
+        <div class="logo-card">
+          <div class="logo-preview bg-cloud">
+            <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary icon on cloud">
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Primary Icon on Cloud</div>
+            <div class="logo-desc">On light gray surfaces (cards, sidebars, UI backgrounds).</div>
+            <div class="logo-file">docketradar-icon.svg</div>
+          </div>
+        </div>
+        <div class="logo-card">
+          <div class="logo-preview bg-navy">
+            <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary icon on navy">
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Primary Icon on Navy</div>
+            <div class="logo-desc">Container blends with background. Consider using mono-light variant instead.</div>
+            <div class="logo-file">docketradar-icon.svg</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Full Horizontal Lockup -->
+    <div class="section">
+      <div class="section-label">02</div>
+      <div class="section-title">Full Horizontal Lockup</div>
+      <div class="logo-grid">
+        <div class="logo-card logo-card-wide">
+          <div class="logo-preview bg-white">
+            <img src="assets/logo/docketradar-logo.svg" alt="Full horizontal lockup" style="max-height: 80px;">
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Symbol + Wordmark (Navy on White)</div>
+            <div class="logo-desc">Primary lockup. "Docket" at weight 500, "Radar" at weight 600. Inter, letter-spacing -0.02em. For website header, marketing materials, Chrome Web Store.</div>
+            <div class="logo-file">docketradar-logo.svg</div>
+          </div>
+        </div>
+        <div class="logo-card logo-card-wide">
+          <div class="logo-preview bg-navy">
+            <img src="assets/logo/docketradar-logo.svg" alt="Full horizontal lockup on navy" style="max-height: 80px; filter: brightness(0) invert(1);">
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Symbol + Wordmark (Inverted for Dark)</div>
+            <div class="logo-desc">CSS-inverted preview. A dedicated white-on-transparent SVG variant would be ideal for dark backgrounds.</div>
+            <div class="logo-file">docketradar-logo.svg (inverted)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Monochrome Variants -->
+    <div class="section">
+      <div class="section-label">03</div>
+      <div class="section-title">Monochrome Variants</div>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="logo-preview bg-white">
+            <img src="assets/logo/docketradar-icon-mono-dark.svg" width="128" height="128" alt="Mono dark">
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Monochrome Dark (Slate 900)</div>
+            <div class="logo-desc">For print, single-color contexts, light backgrounds. Filled container.</div>
+            <div class="logo-file">docketradar-icon-mono-dark.svg</div>
+          </div>
+        </div>
+        <div class="logo-card">
+          <div class="logo-preview bg-slate">
+            <img src="assets/logo/docketradar-icon-mono-light.svg" width="128" height="128" alt="Mono light">
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Monochrome Light (White)</div>
+            <div class="logo-desc">For dark backgrounds, dark-mode headers, image overlays. Outline container.</div>
+            <div class="logo-file">docketradar-icon-mono-light.svg</div>
+          </div>
+        </div>
+        <div class="logo-card">
+          <div class="logo-preview bg-checker">
+            <img src="assets/logo/docketradar-icon-flat.svg" width="128" height="128" alt="Flat outline">
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Flat / Outline (Navy on Transparent)</div>
+            <div class="logo-desc">For letterheads, light UI contexts, watermarks. Outline container, no fill.</div>
+            <div class="logo-file">docketradar-icon-flat.svg</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Simplified (Small Sizes) -->
+    <div class="section">
+      <div class="section-label">04</div>
+      <div class="section-title">Simplified (Small Sizes)</div>
+      <div class="logo-grid">
+        <div class="logo-card">
+          <div class="logo-preview bg-white">
+            <div class="size-strip">
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="16px">
+                <span class="size-label">16px</span>
+              </div>
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="24" height="24" alt="24px">
+                <span class="size-label">24px</span>
+              </div>
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="32" height="32" alt="32px">
+                <span class="size-label">32px</span>
+              </div>
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="48" height="48" alt="48px">
+                <span class="size-label">48px</span>
+              </div>
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="64" height="64" alt="64px">
+                <span class="size-label">64px</span>
+              </div>
+            </div>
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Simplified Icon — Size Comparison</div>
+            <div class="logo-desc">Arcs + blip only, no document lines. Heavier strokes for legibility. For Chrome toolbar, favicon, small UI.</div>
+            <div class="logo-file">docketradar-icon-simplified.svg</div>
+          </div>
+        </div>
+        <div class="logo-card">
+          <div class="logo-preview bg-navy">
+            <div class="size-strip">
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="16px on navy">
+                <span class="size-label" style="color: var(--slate-300);">16px</span>
+              </div>
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="32" height="32" alt="32px on navy">
+                <span class="size-label" style="color: var(--slate-300);">32px</span>
+              </div>
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="64" height="64" alt="64px on navy">
+                <span class="size-label" style="color: var(--slate-300);">64px</span>
+              </div>
+            </div>
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Simplified — Dark Background</div>
+            <div class="logo-desc">Navy container is less visible on navy bg at small sizes. Acceptable for toolbar icons.</div>
+            <div class="logo-file">docketradar-icon-simplified.svg</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Size Comparison: Primary vs Simplified -->
+    <div class="section">
+      <div class="section-label">05</div>
+      <div class="section-title">Primary vs Simplified Comparison</div>
+      <div class="logo-grid">
+        <div class="logo-card logo-card-wide">
+          <div class="logo-preview bg-white">
+            <div class="size-strip">
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon.svg" width="128" height="128" alt="Primary 128">
+                <span class="size-label">Primary 128px</span>
+              </div>
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon.svg" width="64" height="64" alt="Primary 64">
+                <span class="size-label">Primary 64px</span>
+              </div>
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon.svg" width="32" height="32" alt="Primary 32">
+                <span class="size-label">Primary 32px</span>
+              </div>
+              <div class="size-item" style="border-left: 2px solid var(--slate-200); padding-left: 32px;">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="32" height="32" alt="Simplified 32">
+                <span class="size-label">Simplified 32px</span>
+              </div>
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="24" height="24" alt="Simplified 24">
+                <span class="size-label">Simplified 24px</span>
+              </div>
+              <div class="size-item">
+                <img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="Simplified 16">
+                <span class="size-label">Simplified 16px</span>
+              </div>
+            </div>
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Size Breakpoint</div>
+            <div class="logo-desc">Switch from primary to simplified at 32px and below. Document lines become illegible at small sizes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Usage Context Mockups -->
+    <div class="section">
+      <div class="section-label">06</div>
+      <div class="section-title">Usage Context Previews</div>
+      <div class="logo-grid">
+        <!-- Browser tab -->
+        <div class="logo-card">
+          <div class="logo-preview bg-white" style="flex-direction: column; gap: 16px; padding: 32px;">
+            <div style="display: flex; align-items: center; gap: 8px; background: var(--slate-100); border-radius: 8px 8px 0 0; padding: 10px 14px; width: 100%; max-width: 360px;">
+              <img src="assets/logo/docketradar-icon-simplified.svg" width="16" height="16" alt="favicon">
+              <span style="font-size: 13px; color: var(--slate-600);">DocketRadar</span>
+              <span style="margin-left: auto; font-size: 11px; color: var(--slate-300);">x</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 8px; background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 6px; padding: 8px 12px; width: 100%; max-width: 360px;">
+              <span style="font-size: 12px; color: var(--slate-400);">docketradar.com</span>
+            </div>
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Browser Tab + Address Bar</div>
+            <div class="logo-desc">Favicon at 16px using the simplified variant.</div>
+          </div>
+        </div>
+        <!-- Nav bar -->
+        <div class="logo-card">
+          <div class="logo-preview bg-white" style="justify-content: flex-start; padding: 0;">
+            <div style="display: flex; align-items: center; gap: 10px; padding: 16px 24px; border-bottom: 1px solid var(--slate-200); width: 100%;">
+              <img src="assets/logo/docketradar-icon.svg" width="32" height="32" alt="nav icon">
+              <span style="font-size: 18px; color: var(--navy); letter-spacing: -0.02em;"><span style="font-weight: 500;">Docket</span><span style="font-weight: 600;">Radar</span></span>
+              <span style="margin-left: auto; font-size: 13px; color: var(--slate-500);">Features</span>
+              <span style="font-size: 13px; color: var(--slate-500);">Pricing</span>
+              <span style="font-size: 12px; background: var(--teal); color: white; padding: 6px 14px; border-radius: 6px; font-weight: 500;">Add to Chrome</span>
+            </div>
+          </div>
+          <div class="logo-meta">
+            <div class="logo-name">Website Navigation</div>
+            <div class="logo-desc">Icon at 32px with wordmark. As seen on the live site.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
