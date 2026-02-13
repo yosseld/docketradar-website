@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" width="600" height="80">
+  <g transform="translate(4,4) scale(0.5625)">
+    <rect x="4" y="4" width="120" height="120" rx="24" ry="24" fill="#1e3a5f"/>
+    <path d="M89.46 89.46 A36 36 0 1 0 89.46 38.54 L78.14 49.86 A20 20 0 1 1 78.14 78.14 Z" fill="#2dd4bf"/>
+  </g>
+  <text x="92" y="50" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#1e3a5f"><tspan font-weight="400">Docket</tspan><tspan font-weight="700">Radar</tspan></text>
+</svg>

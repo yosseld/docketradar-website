@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect x="4" y="4" width="120" height="120" rx="24" ry="24" fill="#1e3a5f"/>
+  <path fill-rule="evenodd" fill="#2dd4bf" d="
+    M 34 20 L 56 20
+    A 44 44 0 0 1 97.96 50.77
+    L 82 64
+    L 97.96 77.23
+    A 44 44 0 0 1 56 108
+    L 34 108 Z
+    M 50 38 L 56 38
+    A 26 26 0 1 1 56 90
+    L 50 90 Z
+  "/>
+</svg>

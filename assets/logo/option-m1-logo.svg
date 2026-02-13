@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="80" viewBox="0 0 600 80">
+  <rect x="4" y="4" width="72" height="72" rx="14" ry="14" fill="#1e3a5f"/>
+  <path fill-rule="evenodd" fill="#2dd4bf" d="
+    M 20 14 L 37 14
+    A 26 26 0 0 1 61.79 32.18
+    L 53 40
+    L 61.79 47.82
+    A 26 26 0 0 1 37 66
+    L 20 66 Z
+    M 27 24 L 37 24
+    A 16 16 0 1 1 37 56
+    L 27 56 Z
+  "/>
+  <text x="92" y="50" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#1e3a5f"><tspan font-weight="400">Docket</tspan><tspan font-weight="700">Radar</tspan></text>
+</svg>

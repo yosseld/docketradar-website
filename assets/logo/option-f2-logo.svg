@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" width="600" height="80">
+  <g transform="translate(8,4) scale(0.5625)">
+    <rect x="4" y="4" width="120" height="120" rx="24" ry="24" fill="#1e3a5f"/>
+    <path d="M30,56 L30,44 C30,40 33,37 37,37 L50,37 L56,31 L68,31 C71,31 73,33 73,36 L73,37 L93,37 C97,37 100,40 100,44 L100,56" fill="rgba(255,255,255,0.20)" stroke="none"/>
+    <rect x="30" y="54" width="70" height="50" rx="5" ry="5" fill="rgba(255,255,255,0.18)"/>
+    <path d="M26,66 C26,60 30,58 35,58 L93,58 C98,58 102,60 102,66 L98,102 C97,106 94,108 90,108 L36,108 C32,108 29,106 28,102 Z" fill="rgba(255,255,255,0.42)" stroke="none"/>
+    <rect x="42" y="72" width="32" height="4" rx="2" fill="rgba(255,255,255,0.50)"/>
+    <rect x="42" y="81" width="22" height="4" rx="2" fill="rgba(255,255,255,0.35)"/>
+    <path d="M54.1,46.1 A14,14 0 0 1 73.9,46.1" fill="none" stroke="rgba(45,212,191,0.65)" stroke-width="5.5" stroke-linecap="round"/>
+    <path d="M48.4,40.4 A22,22 0 0 1 79.6,40.4" fill="none" stroke="rgba(45,212,191,0.50)" stroke-width="5.5" stroke-linecap="round"/>
+    <path d="M44.2,36.2 A28,28 0 0 1 83.8,36.2" fill="none" stroke="rgba(45,212,191,0.35)" stroke-width="5.5" stroke-linecap="round"/>
+    <circle cx="64" cy="26" r="9" fill="#2dd4bf"/>
+  </g>
+  <text x="92" y="50" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#1e3a5f"><tspan font-weight="400">Docket</tspan><tspan font-weight="700">Radar</tspan></text>
+</svg>

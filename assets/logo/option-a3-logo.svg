@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" width="600" height="80">
+  <rect x="4" y="4" width="72" height="72" rx="16" ry="16" fill="#1e3a5f"/>
+  <path d="M 28.1,35.4 A 14.4,14.4 0 0,1 39.8,47.1" fill="none" stroke="rgba(255,255,255,0.70)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 30.0,24.8 A 25.2,25.2 0 0,1 50.4,45.2" fill="none" stroke="rgba(255,255,255,0.52)" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 31.9,14.1 A 36.0,36.0 0 0,1 61.1,43.3" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="25.6" cy="49.6" r="3.8" fill="rgba(255,255,255,0.85)"/>
+  <circle cx="49.5" cy="21.1" r="6" fill="#2dd4bf"/>
+  <text x="96" y="52" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#1e3a5f">
+    <tspan font-weight="400">Docket</tspan><tspan font-weight="700">Radar</tspan>
+  </text>
+</svg>

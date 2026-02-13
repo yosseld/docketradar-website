@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" width="600" height="80">
+  <g transform="translate(4 4) scale(0.5625)">
+    <rect x="4" y="4" width="120" height="120" rx="24" ry="24" fill="#1e3a5f"/>
+    <g fill="none" stroke="#2dd4bf" stroke-width="13" stroke-linecap="round">
+      <path d="M 70.60 26.58 A 38 38 0 0 1 99.71 77.00"/>
+      <path d="M 93.11 88.43 A 38 38 0 0 1 34.89 88.43"/>
+      <path d="M 28.29 77.00 A 38 38 0 0 1 57.40 26.58"/>
+    </g>
+  </g>
+  <text x="92" y="50" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#1e3a5f"><tspan font-weight="400">Docket</tspan><tspan font-weight="700">Radar</tspan></text>
+</svg>

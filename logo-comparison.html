@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DocketRadar — M6 Color Palettes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0f172a;
+      color: rgba(255,255,255,0.85);
+      padding: 60px 40px;
+    }
+    h1 {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 60px;
+    }
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      max-width: 1200px;
+    }
+    .option {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .option-header {
+      padding: 24px 28px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .option-letter {
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+    .option-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+    }
+    .option-desc {
+      padding: 10px 28px 0;
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.5;
+    }
+    .color-chips {
+      padding: 12px 28px 0;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .chip {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .chip-label {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+    .previews {
+      padding: 28px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .preview-card {
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+      flex: 1;
+    }
+    .preview-card.dark {
+      background: #1e293b;
+    }
+    .preview-card.light {
+      background: #ffffff;
+    }
+    .preview-card.custom {
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .preview-card img {
+      display: block;
+    }
+    .sizes-row {
+      padding: 0 28px 24px;
+      display: flex;
+      align-items: flex-end;
+      gap: 16px;
+    }
+    .size-item {
+      text-align: center;
+    }
+    .size-item img {
+      border-radius: 4px;
+    }
+    .size-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.3);
+      margin-top: 4px;
+    }
+    .trust-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-top: 8px;
+      margin-left: 28px;
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>M6 × Color.</h1>
+  <p class="subtitle">Same shape. Different palettes. Which promotes trust and confidence for legal tech?</p>
+
+  <div class="options">
+
+    <div class="option">
+      <div class="option-header">
+        <span class="option-letter" style="color:#2dd4bf; background:rgba(45,212,191,0.1);">C0</span>
+        <span class="option-name">Navy + Teal (Current)</span>
+      </div>
+      <p class="option-desc">The default. Generic corporate trust palette. Every B2B legal SaaS uses this combination.</p>
+      <div class="color-chips">
+        <div class="chip" style="background:#1e3a5f;"></div>
+        <span class="chip-label">#1e3a5f</span>
+        <div class="chip" style="background:#2dd4bf;"></div>
+        <span class="chip-label">#2dd4bf</span>
+      </div>
+      <span class="trust-tag" style="background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.4);">Baseline</span>
+      <div class="previews">
+        <div class="preview-card dark">
+          <img src="assets/logo/option-c0-icon.svg?v=1" loading="eager" width="96" height="96">
+        </div>
+        <div class="preview-card light">
+          <img src="assets/logo/option-c0-icon.svg?v=2" loading="eager" width="96" height="96">
+        </div>
+      </div>
+      <div class="sizes-row">
+        <div class="size-item"><img src="assets/logo/option-c0-icon.svg?v=3" loading="eager" width="64" height="64"><div class="size-label">64</div></div>
+        <div class="size-item"><img src="assets/logo/option-c0-icon.svg?v=4" loading="eager" width="32" height="32"><div class="size-label">32</div></div>
+        <div class="size-item"><img src="assets/logo/option-c0-icon.svg?v=5" loading="eager" width="16" height="16"><div class="size-label">16</div></div>
+      </div>
+    </div>
+
+    <div class="option">
+      <div class="option-header">
+        <span class="option-letter" style="color:#6366F1; background:rgba(99,102,241,0.1);">C1</span>
+        <span class="option-name">Obsidian + Indigo</span>
+      </div>
+      <p class="option-desc">Calm authority, precision engineering. Linear-like. Focused and confident without shouting.</p>
+      <div class="color-chips">
+        <div class="chip" style="background:#0F0F14;"></div>
+        <span class="chip-label">#0F0F14</span>
+        <div class="chip" style="background:#6366F1;"></div>
+        <span class="chip-label">#6366F1</span>
+      </div>
+      <span class="trust-tag" style="background:rgba(99,102,241,0.1); color:#6366F1;">Trust: Quiet Competence</span>
+      <div class="previews">
+        <div class="preview-card dark">
+          <img src="assets/logo/option-c1-icon.svg?v=1" loading="eager" width="96" height="96">
+        </div>
+        <div class="preview-card light">
+          <img src="assets/logo/option-c1-icon.svg?v=2" loading="eager" width="96" height="96">
+        </div>
+      </div>
+      <div class="sizes-row">
+        <div class="size-item"><img src="assets/logo/option-c1-icon.svg?v=3" loading="eager" width="64" height="64"><div class="size-label">64</div></div>
+        <div class="size-item"><img src="assets/logo/option-c1-icon.svg?v=4" loading="eager" width="32" height="32"><div class="size-label">32</div></div>
+        <div class="size-item"><img src="assets/logo/option-c1-icon.svg?v=5" loading="eager" width="16" height="16"><div class="size-label">16</div></div>
+      </div>
+    </div>
+
+    <div class="option">
+      <div class="option-header">
+        <span class="option-letter" style="color:#B8860B; background:rgba(184,134,11,0.1);">C2</span>
+        <span class="option-name">Slate + Amber</span>
+      </div>
+      <p class="option-desc">Premium paper feel. Gold signals earned expertise and prestige. Warm, established, trustworthy.</p>
+      <div class="color-chips">
+        <div class="chip" style="background:#FAFAF8; border-color:rgba(0,0,0,0.15);"></div>
+        <span class="chip-label">#FAFAF8</span>
+        <div class="chip" style="background:#B8860B;"></div>
+        <span class="chip-label">#B8860B</span>
+      </div>
+      <span class="trust-tag" style="background:rgba(184,134,11,0.1); color:#B8860B;">Trust: Earned Authority</span>
+      <div class="previews">
+        <div class="preview-card dark">
+          <img src="assets/logo/option-c2-icon.svg?v=1" loading="eager" width="96" height="96">
+        </div>
+        <div class="preview-card light">
+          <img src="assets/logo/option-c2-icon.svg?v=2" loading="eager" width="96" height="96">
+        </div>
+      </div>
+      <div class="sizes-row">
+        <div class="size-item"><img src="assets/logo/option-c2-icon.svg?v=3" loading="eager" width="64" height="64"><div class="size-label">64</div></div>
+        <div class="size-item"><img src="assets/logo/option-c2-icon.svg?v=4" loading="eager" width="32" height="32"><div class="size-label">32</div></div>
+        <div class="size-item"><img src="assets/logo/option-c2-icon.svg?v=5" loading="eager" width="16" height="16"><div class="size-label">16</div></div>
+      </div>
+    </div>
+
+    <div class="option">
+      <div class="option-header">
+        <span class="option-letter" style="color:#10B981; background:rgba(16,185,129,0.1);">C3</span>
+        <span class="option-name">Charcoal + Emerald</span>
+      </div>
+      <p class="option-desc">Growth, forward motion. Green = "go" — cases progressing, deadlines met, things moving.</p>
+      <div class="color-chips">
+        <div class="chip" style="background:#1A1D21;"></div>
+        <span class="chip-label">#1A1D21</span>
+        <div class="chip" style="background:#10B981;"></div>
+        <span class="chip-label">#10B981</span>
+      </div>
+      <span class="trust-tag" style="background:rgba(16,185,129,0.1); color:#10B981;">Trust: Reliable Progress</span>
+      <div class="previews">
+        <div class="preview-card dark">
+          <img src="assets/logo/option-c3-icon.svg?v=1" loading="eager" width="96" height="96">
+        </div>
+        <div class="preview-card light">
+          <img src="assets/logo/option-c3-icon.svg?v=2" loading="eager" width="96" height="96">
+        </div>
+      </div>
+      <div class="sizes-row">
+        <div class="size-item"><img src="assets/logo/option-c3-icon.svg?v=3" loading="eager" width="64" height="64"><div class="size-label">64</div></div>
+        <div class="size-item"><img src="assets/logo/option-c3-icon.svg?v=4" loading="eager" width="32" height="32"><div class="size-label">32</div></div>
+        <div class="size-item"><img src="assets/logo/option-c3-icon.svg?v=5" loading="eager" width="16" height="16"><div class="size-label">16</div></div>
+      </div>
+    </div>
+
+    <div class="option">
+      <div class="option-header">
+        <span class="option-letter" style="color:#8B5CF6; background:rgba(139,92,246,0.1);">C4</span>
+        <span class="option-name">Midnight + Violet</span>
+      </div>
+      <p class="option-desc">Wisdom meets innovation. Purple = judicial robes, academic regalia. Premium and forward-thinking.</p>
+      <div class="color-chips">
+        <div class="chip" style="background:#0D0D1A;"></div>
+        <span class="chip-label">#0D0D1A</span>
+        <div class="chip" style="background:#8B5CF6;"></div>
+        <span class="chip-label">#8B5CF6</span>
+      </div>
+      <span class="trust-tag" style="background:rgba(139,92,246,0.1); color:#8B5CF6;">Trust: Wisdom & Justice</span>
+      <div class="previews">
+        <div class="preview-card dark">
+          <img src="assets/logo/option-c4-icon.svg?v=1" loading="eager" width="96" height="96">
+        </div>
+        <div class="preview-card light">
+          <img src="assets/logo/option-c4-icon.svg?v=2" loading="eager" width="96" height="96">
+        </div>
+      </div>
+      <div class="sizes-row">
+        <div class="size-item"><img src="assets/logo/option-c4-icon.svg?v=3" loading="eager" width="64" height="64"><div class="size-label">64</div></div>
+        <div class="size-item"><img src="assets/logo/option-c4-icon.svg?v=4" loading="eager" width="32" height="32"><div class="size-label">32</div></div>
+        <div class="size-item"><img src="assets/logo/option-c4-icon.svg?v=5" loading="eager" width="16" height="16"><div class="size-label">16</div></div>
+      </div>
+    </div>
+
+    <div class="option">
+      <div class="option-header">
+        <span class="option-letter" style="color:#D4A533; background:rgba(212,165,51,0.1);">C5</span>
+        <span class="option-name">Forest Night + Gold</span>
+      </div>
+      <p class="option-desc">Courtroom authority reimagined. Green marble + gold leaf. Zero competitors use this. Totally ownable.</p>
+      <div class="color-chips">
+        <div class="chip" style="background:#0C1F17;"></div>
+        <span class="chip-label">#0C1F17</span>
+        <div class="chip" style="background:#D4A533;"></div>
+        <span class="chip-label">#D4A533</span>
+      </div>
+      <span class="trust-tag" style="background:rgba(212,165,51,0.1); color:#D4A533;">Trust: Institutional Prestige</span>
+      <div class="previews">
+        <div class="preview-card dark">
+          <img src="assets/logo/option-c5-icon.svg?v=1" loading="eager" width="96" height="96">
+        </div>
+        <div class="preview-card light">
+          <img src="assets/logo/option-c5-icon.svg?v=2" loading="eager" width="96" height="96">
+        </div>
+      </div>
+      <div class="sizes-row">
+        <div class="size-item"><img src="assets/logo/option-c5-icon.svg?v=3" loading="eager" width="64" height="64"><div class="size-label">64</div></div>
+        <div class="size-item"><img src="assets/logo/option-c5-icon.svg?v=4" loading="eager" width="32" height="32"><div class="size-label">32</div></div>
+        <div class="size-item"><img src="assets/logo/option-c5-icon.svg?v=5" loading="eager" width="16" height="16"><div class="size-label">16</div></div>
+      </div>
+    </div>
+
+    <div class="option" style="grid-column: span 2;">
+      <div class="option-header">
+        <span class="option-letter" style="color:#fff; background:rgba(255,255,255,0.15);">C6</span>
+        <span class="option-name">True Black + White</span>
+      </div>
+      <p class="option-desc">Radical confidence. No color needed. "Our product speaks for itself." Notion-level restraint.</p>
+      <div class="color-chips">
+        <div class="chip" style="background:#000000;"></div>
+        <span class="chip-label">#000000</span>
+        <div class="chip" style="background:#FFFFFF;"></div>
+        <span class="chip-label">#FFFFFF</span>
+      </div>
+      <span class="trust-tag" style="background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.6);">Trust: Absolute Confidence</span>
+      <div class="previews">
+        <div class="preview-card dark">
+          <img src="assets/logo/option-c6-icon.svg?v=1" loading="eager" width="96" height="96">
+        </div>
+        <div class="preview-card light">
+          <img src="assets/logo/option-c6-icon.svg?v=2" loading="eager" width="96" height="96">
+        </div>
+      </div>
+      <div class="sizes-row">
+        <div class="size-item"><img src="assets/logo/option-c6-icon.svg?v=3" loading="eager" width="64" height="64"><div class="size-label">64</div></div>
+        <div class="size-item"><img src="assets/logo/option-c6-icon.svg?v=4" loading="eager" width="32" height="32"><div class="size-label">32</div></div>
+        <div class="size-item"><img src="assets/logo/option-c6-icon.svg?v=5" loading="eager" width="16" height="16"><div class="size-label">16</div></div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

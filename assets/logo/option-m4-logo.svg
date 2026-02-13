@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 80" width="600" height="80">
+  <g transform="translate(4,4) scale(0.5625)">
+    <rect x="4" y="4" width="120" height="120" rx="24" ry="24" fill="#1e3a5f"/>
+    <polygon points="64,42 100,108 28,108" fill="#2dd4bf"/>
+    <path d="M 40,32 A 30,30 0 0,1 88,32" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <text x="92" y="50" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#1e3a5f"><tspan font-weight="400">Docket</tspan><tspan font-weight="700">Radar</tspan></text>
+</svg>

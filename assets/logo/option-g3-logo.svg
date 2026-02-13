@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="80" viewBox="0 0 600 80">
+  <svg x="4" y="4" width="72" height="72" viewBox="0 0 128 128">
+    <rect x="4" y="4" width="120" height="120" rx="24" ry="24" fill="#1e3a5f"/>
+    <defs>
+      <clipPath id="g3lc">
+        <rect x="4" y="4" width="120" height="120" rx="24" ry="24"/>
+      </clipPath>
+    </defs>
+    <g clip-path="url(#g3lc)">
+      <path d="M 20,72 A 56,56 0 0,1 56,16" fill="none" stroke="rgba(255,255,255,0.30)" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 27,65 A 42,42 0 0,1 53,27" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 34,58 A 28,28 0 0,1 50,38" fill="none" stroke="rgba(255,255,255,0.60)" stroke-width="4.5" stroke-linecap="round"/>
+      <g transform="translate(70,62) rotate(-40)">
+        <rect x="-22" y="-7" width="44" height="14" rx="7" fill="rgba(255,255,255,0.85)"/>
+        <rect x="-2.25" y="-40" width="4.5" height="33" rx="2.25" fill="rgba(255,255,255,0.55)"/>
+      </g>
+      <circle cx="84" cy="86" r="8" fill="#2dd4bf"/>
+    </g>
+  </svg>
+  <text x="92" y="50" font-family="Inter, system-ui, sans-serif" font-size="32" fill="#1e3a5f"><tspan font-weight="400">Docket</tspan><tspan font-weight="700">Radar</tspan></text>
+</svg>
