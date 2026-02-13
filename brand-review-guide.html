@@ -103,6 +103,7 @@
     .hero {
       position: relative;
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1032,6 +1033,29 @@
     .copy-toast.show {
       opacity: 1;
       transform: translateX(-50%) translateY(0);
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .topbar { padding: 0 16px; }
+      .topbar-nav { display: none; }
+      .hero { padding: 60px 20px; }
+      .hero h1 { font-size: 28px; }
+      .hero-sub { font-size: 14px; }
+      .content { padding: 0 16px; }
+      .part-header { padding: 40px 0 24px; }
+      .part-title { font-size: 24px; }
+      .part-number-bg { font-size: 80px; }
+      .sec { padding: 28px 0; }
+      .sec-title { font-size: 18px; }
+      .palette { grid-template-columns: 1fr 1fr; }
+      .voice-grid { grid-template-columns: 1fr; }
+      .persona-grid { grid-template-columns: 1fr; }
+      .trait-grid { grid-template-columns: 1fr 1fr; }
+      .tagline-card { font-size: 17px; padding: 18px 20px; }
+      table { font-size: 13px; }
+      th, td { padding: 8px 10px; }
+      .values-row { flex-direction: column; }
     }
   </style>
 </head>

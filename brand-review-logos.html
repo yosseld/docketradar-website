@@ -40,15 +40,17 @@
       overflow-x: hidden;
     }
 
-    /* Noise texture overlay */
-    body::after {
-      content: '';
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 10000;
-      opacity: 0.4;
+    /* Noise texture overlay — disabled on iOS/mobile for compatibility */
+    @supports not (-webkit-touch-callout: none) {
+      body::after {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 10000;
+        opacity: 0.4;
+      }
     }
 
     /* Sticky nav */
@@ -101,6 +103,7 @@
     .hero {
       position: relative;
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -961,6 +964,25 @@
     @keyframes blip-ping {
       0% { transform: scale(1); opacity: 0.6; }
       100% { transform: scale(2.5); opacity: 0; }
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .topbar { padding: 0 16px; }
+      .topbar-nav { display: none; }
+      .hero { padding: 60px 20px; }
+      .hero-logo { width: 80px; height: 80px; border-radius: 18px; }
+      .hero h1 { font-size: 32px; }
+      .hero-sub { font-size: 14px; }
+      .hero-radar { width: 400px; height: 400px; }
+      .page { padding: 32px 16px 60px; }
+      .sec-title { font-size: 24px; }
+      .sec-number { font-size: 60px; }
+      .showcase-grid { grid-template-columns: 1fr; }
+      .showcase-card .logo-area { height: 160px; padding: 24px; }
+      .size-ladder { gap: 16px; flex-wrap: wrap; justify-content: center; }
+      .toggle-bar { flex-wrap: wrap; }
+      .mockup-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
