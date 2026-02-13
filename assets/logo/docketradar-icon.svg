@@ -3,31 +3,31 @@
 
   <path d="M 48.5 98.2 A 34.6 34.6 0 0 0 26.7 77.1"
         fill="none"
-        stroke="rgba(255,255,255,0.50)"
-        stroke-width="3"
+        stroke="rgba(255,255,255,0.75)"
+        stroke-width="6"
         stroke-linecap="round"/>
 
   <path d="M 81.1 96.2 A 66.6 66.6 0 0 0 27.6 44.4"
         fill="none"
-        stroke="rgba(255,255,255,0.28)"
-        stroke-width="2.5"
+        stroke="rgba(255,255,255,0.60)"
+        stroke-width="5"
         stroke-linecap="round"/>
 
   <path d="M 100.4 98.1 A 85.2 85.2 0 0 0 24.9 25.2"
         fill="none"
-        stroke="rgba(255,255,255,0.14)"
-        stroke-width="2"
+        stroke="rgba(255,255,255,0.45)"
+        stroke-width="4.5"
         stroke-linecap="round"/>
 
-  <line x1="50" y1="34" x2="108" y2="34"
-        stroke="rgba(255,255,255,0.25)"
-        stroke-width="2.5"
+  <line x1="52" y1="34" x2="105" y2="34"
+        stroke="rgba(255,255,255,0.50)"
+        stroke-width="4"
         stroke-linecap="round"/>
-  <line x1="47" y1="47" x2="100" y2="47"
-        stroke="rgba(255,255,255,0.25)"
-        stroke-width="2.5"
+  <line x1="49" y1="47" x2="98" y2="47"
+        stroke="rgba(255,255,255,0.50)"
+        stroke-width="4"
         stroke-linecap="round"/>
 
-  <circle cx="60" cy="60" r="16" fill="rgba(45,212,191,0.14)"/>
-  <circle cx="60" cy="60" r="8.5" fill="#2dd4bf"/>
+  <circle cx="60" cy="60" r="18" fill="rgba(45,212,191,0.20)"/>
+  <circle cx="60" cy="60" r="10" fill="#2dd4bf"/>
 </svg>
