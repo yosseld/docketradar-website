@@ -1,66 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
-  <!--
-    DocketRadar Icon / Symbol Mark — Redesigned v2
-    Concept: "Radar scanning a document, highlighting a change."
+  
 
-    The rounded square IS the document. Three radar arcs emanate from
-    the bottom-left corner and sweep upward across the icon. Four
-    horizontal document lines sit INSIDE the swept region, being "scanned."
-    A teal blip sits ON the third document line at the exact point where
-    the middle arc radius intersects that line — the detected change.
-
-    One composition, one story: radar scanning a document and finding something.
-
-    Brand colors:
-      Navy (primary):  #1e3a5f
-      Teal (accent):   #2dd4bf (on dark bg) / #0d9488 (on light bg)
-
-    Geometry:
-      Container: 120x120 rounded square, rx=26, offset (4,4)
-      Radar origin: bottom-left at (20, 108)
-      Arc 1 (inner):  r=34, sweep ~15deg to ~82deg
-      Arc 2 (middle): r=56, sweep ~12deg to ~82deg
-      Arc 3 (outer):  r=78, sweep ~10deg to ~82deg
-      Document lines: 4 lines at y=38, 50, 62, 74
-      Blip: on line 3 (y=62), x where r=56 crosses y=62
-            distance from (20,108) at y=62 -> dy=46
-            dx = sqrt(56^2 - 46^2) = sqrt(3136-2116) = sqrt(1020) = 31.9
-            blip at (20+31.9, 62) = (52, 62) -- but shifted right for balance -> (56, 62)
-  -->
-
-  <!-- Navy rounded-square container — the "document" -->
+  
   <rect x="4" y="4" width="120" height="120" rx="26" ry="26" fill="#1e3a5f"/>
 
-  <!-- Radar arcs — three concentric arcs from bottom-left origin (20, 108) -->
+  
 
-  <!-- Arc 1 (inner, r=34): sweeps from ~15deg to ~80deg -->
+  
   <path d="M 52.8 99.2 A 34 34 0 0 0 25.9 74.5"
         fill="none"
         stroke="rgba(255,255,255,0.38)"
         stroke-width="2.5"
         stroke-linecap="round"/>
 
-  <!-- Arc 2 (middle, r=56): sweeps from ~12deg to ~80deg -->
+  
   <path d="M 74.8 96.4 A 56 56 0 0 0 29.7 52.9"
         fill="none"
         stroke="rgba(255,255,255,0.30)"
         stroke-width="2.5"
         stroke-linecap="round"/>
 
-  <!-- Arc 3 (outer, r=78): sweeps from ~10deg to ~80deg -->
+  
   <path d="M 96.8 94.5 A 78 78 0 0 0 33.5 31.2"
         fill="none"
         stroke="rgba(255,255,255,0.20)"
         stroke-width="2.5"
         stroke-linecap="round"/>
 
-  <!--
-    Document lines — horizontal text lines INSIDE the radar sweep.
-    These represent docket text being scanned. Each line sits between
-    the arcs at progressively different depths. Lines get shorter as
-    they go downward, echoing the arc curvature and creating a natural
-    tapering that ties the document concept to the radar concept.
-  -->
+  
   <line x1="42" y1="38" x2="102" y2="38"
         stroke="rgba(255,255,255,0.18)"
         stroke-width="2.5"
@@ -78,12 +45,9 @@
         stroke-width="2.5"
         stroke-linecap="round"/>
 
-  <!-- Blip glow — subtle radial halo behind the blip -->
+  
   <circle cx="62" cy="62" r="11" fill="rgba(45,212,191,0.15)"/>
 
-  <!-- Blip — the detected docket change.
-       Sits ON document line 3 (y=62), connecting radar to document.
-       Positioned at approximately where the middle arc's radius
-       intersects this line, creating one focal moment. -->
+  
   <circle cx="62" cy="62" r="6" fill="#2dd4bf"/>
 </svg>

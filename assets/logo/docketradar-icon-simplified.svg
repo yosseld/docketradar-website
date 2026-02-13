@@ -1,38 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <!--
-    DocketRadar Icon — Simplified (16-32px) — Redesigned
-    For Chrome toolbar icons, favicons, and small UI contexts.
+  
 
-    At small sizes, document lines are reduced to 2 (just enough to
-    suggest the document concept) and arcs are reduced to 2.
-    The blip is enlarged relative to icon size for visibility.
-    Stroke weights increased for legibility.
-
-    Origin: bottom-left at (5, 27)
-    Arc 1 (inner): r=9
-    Arc 2 (outer): r=17
-    Two document lines at y=10 and y=14
-    Blip on line 2 at y=14
-  -->
-
-  <!-- Container -->
+  
   <rect x="1" y="1" width="30" height="30" rx="7" ry="7" fill="#1e3a5f"/>
 
-  <!-- Arc 1 (inner, r=9): ~15deg to ~78deg -->
+  
   <path d="M 13.7 24.7 A 9 9 0 0 0 6.9 18.2"
         fill="none"
         stroke="rgba(255,255,255,0.42)"
         stroke-width="1.5"
         stroke-linecap="round"/>
 
-  <!-- Arc 2 (outer, r=17): ~12deg to ~78deg -->
+  
   <path d="M 21.6 23.5 A 17 17 0 0 0 8.5 10.4"
         fill="none"
         stroke="rgba(255,255,255,0.30)"
         stroke-width="1.5"
         stroke-linecap="round"/>
 
-  <!-- Simplified document lines (2 lines) -->
+  
   <line x1="11" y1="10" x2="25" y2="10"
         stroke="rgba(255,255,255,0.22)"
         stroke-width="1.5"
@@ -42,6 +28,6 @@
         stroke-width="1.5"
         stroke-linecap="round"/>
 
-  <!-- Blip — on line 2, larger for small-size visibility -->
+  
   <circle cx="15" cy="15" r="2.5" fill="#2dd4bf"/>
 </svg>

@@ -1,43 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 80" width="660" height="80">
-  <!--
-    DocketRadar Full Horizontal Lockup — Redesigned
-    Symbol + Wordmark, side by side.
+  
 
-    Layout:
-      Icon: 72x72 at (4, 4)
-      Gap: 54px (0.75x icon width)
-      Wordmark: starts at x=130, font-size 56
-
-    Font: Inter — "Docket" weight 500, "Radar" weight 600
-  -->
-
-  <!-- Embedded icon (72x72, centered in 80px height) -->
+  
   <svg x="4" y="4" width="72" height="72" viewBox="0 0 128 128" overflow="visible">
-    <!-- Navy rounded-square container -->
+    
     <rect x="4" y="4" width="120" height="120" rx="26" ry="26" fill="#1e3a5f"/>
 
-    <!-- Arc 1 (inner, r=34) -->
+    
     <path d="M 52.8 99.2 A 34 34 0 0 0 25.9 74.5"
           fill="none"
           stroke="rgba(255,255,255,0.38)"
           stroke-width="3"
           stroke-linecap="round"/>
 
-    <!-- Arc 2 (middle, r=56) -->
+    
     <path d="M 74.8 96.4 A 56 56 0 0 0 29.7 52.9"
           fill="none"
           stroke="rgba(255,255,255,0.30)"
           stroke-width="3"
           stroke-linecap="round"/>
 
-    <!-- Arc 3 (outer, r=78) -->
+    
     <path d="M 96.8 94.5 A 78 78 0 0 0 33.5 31.2"
           fill="none"
           stroke="rgba(255,255,255,0.20)"
           stroke-width="3"
           stroke-linecap="round"/>
 
-    <!-- Document lines inside the radar sweep -->
+    
     <line x1="42" y1="38" x2="102" y2="38"
           stroke="rgba(255,255,255,0.18)"
           stroke-width="2.5"
@@ -55,14 +45,14 @@
           stroke-width="2.5"
           stroke-linecap="round"/>
 
-    <!-- Blip glow -->
+    
     <circle cx="62" cy="62" r="11" fill="rgba(45,212,191,0.15)"/>
 
-    <!-- Blip -->
+    
     <circle cx="62" cy="62" r="6" fill="#2dd4bf"/>
   </svg>
 
-  <!-- Wordmark: "DocketRadar" — PascalCase, one word -->
+  
   <text y="40"
         dominant-baseline="central"
         font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
