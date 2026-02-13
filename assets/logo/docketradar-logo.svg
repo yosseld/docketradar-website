@@ -1,58 +1,48 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 80" width="660" height="80">
-  
 
-  
   <svg x="4" y="4" width="72" height="72" viewBox="0 0 128 128" overflow="visible">
-    
     <rect x="4" y="4" width="120" height="120" rx="26" ry="26" fill="#1e3a5f"/>
 
-    
     <path d="M 52.8 99.2 A 34 34 0 0 0 25.9 74.5"
           fill="none"
-          stroke="rgba(255,255,255,0.38)"
-          stroke-width="3"
+          stroke="rgba(255,255,255,0.65)"
+          stroke-width="4.5"
           stroke-linecap="round"/>
 
-    
     <path d="M 74.8 96.4 A 56 56 0 0 0 29.7 52.9"
           fill="none"
-          stroke="rgba(255,255,255,0.30)"
-          stroke-width="3"
+          stroke="rgba(255,255,255,0.55)"
+          stroke-width="4"
           stroke-linecap="round"/>
 
-    
     <path d="M 96.8 94.5 A 78 78 0 0 0 33.5 31.2"
           fill="none"
-          stroke="rgba(255,255,255,0.20)"
-          stroke-width="3"
+          stroke="rgba(255,255,255,0.45)"
+          stroke-width="3.5"
           stroke-linecap="round"/>
 
-    
     <line x1="42" y1="38" x2="102" y2="38"
-          stroke="rgba(255,255,255,0.18)"
-          stroke-width="2.5"
+          stroke="rgba(255,255,255,0.35)"
+          stroke-width="3.5"
           stroke-linecap="round"/>
     <line x1="40" y1="50" x2="98" y2="50"
-          stroke="rgba(255,255,255,0.18)"
-          stroke-width="2.5"
+          stroke="rgba(255,255,255,0.35)"
+          stroke-width="3.5"
           stroke-linecap="round"/>
     <line x1="38" y1="62" x2="90" y2="62"
-          stroke="rgba(255,255,255,0.18)"
-          stroke-width="2.5"
+          stroke="rgba(255,255,255,0.35)"
+          stroke-width="3.5"
           stroke-linecap="round"/>
     <line x1="36" y1="74" x2="76" y2="74"
-          stroke="rgba(255,255,255,0.18)"
-          stroke-width="2.5"
+          stroke="rgba(255,255,255,0.35)"
+          stroke-width="3.5"
           stroke-linecap="round"/>
 
-    
-    <circle cx="62" cy="62" r="11" fill="rgba(45,212,191,0.15)"/>
+    <circle cx="62" cy="62" r="13" fill="rgba(45,212,191,0.25)"/>
 
-    
-    <circle cx="62" cy="62" r="6" fill="#2dd4bf"/>
+    <circle cx="62" cy="62" r="7" fill="#2dd4bf"/>
   </svg>
 
-  
   <text y="40"
         dominant-baseline="central"
         font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
