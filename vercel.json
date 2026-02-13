@@ -3,6 +3,10 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/brand-review-logos", "destination": "/brand-review-logos.html" },
+    { "source": "/brand-review-guide", "destination": "/brand-review-guide.html" }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -14,6 +18,12 @@
       "source": "/styles/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     }
   ]
