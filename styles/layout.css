@@ -15,7 +15,7 @@ main {
 
 /* ========== Sections ========== */
 .section {
-  padding: var(--space-16) 0;
+  padding: 80px 0;
 }
 
 .section-sm {
@@ -49,8 +49,25 @@ main {
 }
 
 .section-dark {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+  background-color: var(--color-dark-bg, #0c0a09);
   color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-dark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.section-dark > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section-dark h2,
@@ -59,7 +76,13 @@ main {
 }
 
 .section-dark p {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.section-dark .text-secondary,
+.section-dark .text-caption,
+.section-dark .text-slate {
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* ========== Section Headers ========== */
@@ -90,22 +113,41 @@ main {
 
 /* ========== Hero ========== */
 .hero {
-  padding: var(--space-20) 0 var(--space-16);
-  background: linear-gradient(170deg, var(--color-navy) 0%, var(--color-navy-light) 55%, var(--color-accent-dark) 100%);
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 80px 0 var(--space-16);
+  background: linear-gradient(160deg, #0c0a09 0%, #292524 30%, #44403C 60%, #57534E 100%);
   color: #ffffff;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
+/* Gradient mesh orbs */
 .hero::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -25%;
-  width: 80%;
-  height: 200%;
-  background: radial-gradient(ellipse, rgba(184, 134, 11, 0.08) 0%, transparent 70%);
+  top: -30%;
+  left: -20%;
+  width: 160%;
+  height: 160%;
+  background:
+    radial-gradient(ellipse 600px 600px at 25% 60%, rgba(184, 134, 11, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 500px at 75% 30%, rgba(212, 165, 51, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 800px 400px at 50% 100%, rgba(68, 64, 60, 0.3) 0%, transparent 50%);
   pointer-events: none;
+}
+
+/* Noise texture overlay for hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.5;
 }
 
 .hero-inner {
@@ -114,7 +156,8 @@ main {
   gap: var(--space-16);
   align-items: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  width: 100%;
 }
 
 .hero-content {
@@ -123,21 +166,31 @@ main {
 
 .hero .display {
   color: #ffffff;
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
   margin-bottom: var(--space-6);
+  opacity: 0;
+  animation: fade-up 0.8s ease-out 0.3s forwards;
 }
 
 .hero-subtitle {
   font-size: 1.125rem;
+  font-weight: 300;
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.85);
   margin-bottom: var(--space-8);
   max-width: 480px;
+  opacity: 0;
+  animation: fade-up 0.8s ease-out 0.5s forwards;
 }
 
 .hero-actions {
   display: flex;
   gap: var(--space-4);
   flex-wrap: wrap;
+  opacity: 0;
+  animation: fade-up 0.8s ease-out 0.7s forwards;
 }
 
 .hero-image {
@@ -225,6 +278,8 @@ main {
 .cta-banner {
   text-align: center;
   padding: var(--space-16) var(--space-6);
+  position: relative;
+  z-index: 1;
 }
 
 .cta-banner h2 {
@@ -308,6 +363,7 @@ main {
   }
 
   .hero {
+    min-height: auto;
     padding: var(--space-16) 0 var(--space-12);
   }
 
@@ -372,7 +428,7 @@ main {
 @media (max-width: 640px) {
   :root {
     --text-display: 1.625rem;
-    --nav-height: 64px;
+    --nav-height: 56px;
   }
 
   .container {
@@ -380,6 +436,7 @@ main {
   }
 
   .hero {
+    min-height: auto;
     padding: var(--space-12) 0 var(--space-10);
   }
 

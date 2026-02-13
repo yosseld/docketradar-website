@@ -20,7 +20,7 @@
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/logo/docketradar-icon-simplified.svg">
@@ -30,6 +30,39 @@
   <link rel="stylesheet" href="styles/base.css">
   <link rel="stylesheet" href="styles/components.css">
   <link rel="stylesheet" href="styles/layout.css">
+
+  <!-- Page-specific brand styles -->
+  <style>
+    .section-divider {
+      text-align: center;
+      padding: 48px 24px 32px;
+      position: relative;
+    }
+    .section-divider::before {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(to right, #B8860B, #D4A533);
+      margin: 0 auto 20px;
+      border-radius: 1px;
+    }
+    .section-divider-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #B8860B;
+      margin-bottom: 8px;
+    }
+    .section-divider-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #1c1917;
+    }
+  </style>
 
   <!-- Structured Data -->
   <script type="application/ld+json">
@@ -48,6 +81,10 @@
   </script>
 </head>
 <body>
+
+  <svg style="position:absolute;width:0;height:0">
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter>
+  </svg>
 
   <!-- ========== Navigation ========== -->
   <header class="nav" role="banner">
@@ -80,9 +117,9 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div class="container hero-inner">
         <div class="hero-content">
-          <h1 id="hero-heading" class="display">Stop refreshing. Start practicing.</h1>
-          <p class="hero-subtitle">DocketRadar monitors court cases across eight Florida counties from a single Chrome sidebar — auto-checking every 15 minutes and notifying you the moment something changes.</p>
-          <div class="hero-actions">
+          <h1 id="hero-heading" class="display scroll-reveal" style="font-weight: 800; animation-delay: 0.3s;">Stop refreshing. Start practicing.</h1>
+          <p class="hero-subtitle scroll-reveal" style="font-weight: 300; animation-delay: 0.5s;">DocketRadar monitors court cases across eight Florida counties from a single Chrome sidebar — auto-checking every 15 minutes and notifying you the moment something changes.</p>
+          <div class="hero-actions scroll-reveal" style="animation-delay: 0.7s;">
             <a href="#" class="btn btn-primary btn-lg">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 12 L11 15 L16 9"></path></svg>
               Add to Chrome — Free to Start
@@ -157,7 +194,46 @@
           </svg>
         </div>
       </div>
+      <style>
+        .hero-scroll-indicator {
+          position: absolute;
+          bottom: 32px;
+          left: 50%;
+          transform: translateX(-50%);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+          z-index: 2;
+        }
+        .hero-scroll-indicator span {
+          font-size: 10px;
+          letter-spacing: 0.15em;
+          text-transform: uppercase;
+          color: rgba(255,255,255,0.25);
+        }
+        .hero-scroll-indicator .scroll-line {
+          width: 1px;
+          height: 28px;
+          background: linear-gradient(to bottom, rgba(255,255,255,0.25), transparent);
+          animation: scrollPulse 2s ease-in-out infinite;
+        }
+        @keyframes scrollPulse {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 1; }
+        }
+      </style>
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
     </section>
+
+    <!-- ========== Section Divider: Features ========== -->
+    <div class="section-divider">
+      <span class="section-divider-label">Features</span>
+      <h2 class="section-divider-title">Built for Legal Professionals</h2>
+    </div>
 
     <!-- ========== Feature Highlight Cards ========== -->
     <section class="section section-white" aria-labelledby="features-heading">
@@ -198,6 +274,12 @@
         </div>
       </div>
     </section>
+
+    <!-- ========== Section Divider: Coverage ========== -->
+    <div class="section-divider">
+      <span class="section-divider-label">Coverage</span>
+      <h2 class="section-divider-title">Florida Court Monitoring</h2>
+    </div>
 
     <!-- ========== County Coverage ========== -->
     <section class="section section-cloud" aria-labelledby="counties-heading">
@@ -253,6 +335,12 @@
       </div>
     </section>
 
+    <!-- ========== Section Divider: Testimonials ========== -->
+    <div class="section-divider">
+      <span class="section-divider-label">Testimonials</span>
+      <h2 class="section-divider-title">Trusted by Practitioners</h2>
+    </div>
+
     <!-- ========== Testimonials ========== -->
     <section class="section section-white" aria-labelledby="testimonials-heading">
       <div class="container">
@@ -302,6 +390,12 @@
       </div>
     </section>
 
+    <!-- ========== Section Divider: Privacy ========== -->
+    <div class="section-divider">
+      <span class="section-divider-label">Privacy</span>
+      <h2 class="section-divider-title">Your Data, Your Control</h2>
+    </div>
+
     <!-- ========== Privacy Section ========== -->
     <section class="section section-cloud" aria-labelledby="privacy-heading">
       <div class="container">
@@ -315,15 +409,15 @@
         </div>
         <div class="grid-3">
           <div class="text-center">
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-2);">No data collection</h4>
+            <h4 style="color: #44403C; margin-bottom: var(--space-2);">No data collection</h4>
             <p class="text-sm text-slate">We do not collect, store, or sell your data. Your case information stays between you, the court portal, and your Clio account.</p>
           </div>
           <div class="text-center">
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-2);">No accounts required</h4>
+            <h4 style="color: #44403C; margin-bottom: var(--space-2);">No accounts required</h4>
             <p class="text-sm text-slate">Core functionality works without creating an account. No sign-up forms, no email harvesting, no friction.</p>
           </div>
           <div class="text-center">
-            <h4 style="color: var(--color-navy); margin-bottom: var(--space-2);">Local-only storage</h4>
+            <h4 style="color: #44403C; margin-bottom: var(--space-2);">Local-only storage</h4>
             <p class="text-sm text-slate">All case data is stored locally in your browser. No telemetry, no third-party analytics scripts, no servers to worry about.</p>
           </div>
         </div>
@@ -331,7 +425,7 @@
     </section>
 
     <!-- ========== Bottom CTA ========== -->
-    <section class="section-dark" aria-labelledby="cta-heading">
+    <section class="section-dark" aria-labelledby="cta-heading" style="background: #0c0a09;">
       <div class="container cta-banner">
         <h2 id="cta-heading" class="display" style="color: #ffffff;">Every docket. Every county. Every time.</h2>
         <p>Stop refreshing clerk websites. Start practicing law. Install DocketRadar and get your mornings back.</p>
@@ -415,6 +509,26 @@
       toggle.setAttribute('aria-expanded', isOpen);
       toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
     }
+  </script>
+
+  <!-- Scroll-reveal animations -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.card, .feature-detail, .testimonial-card, .section-divider, .pricing-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(16px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  });
   </script>
 
 </body>
