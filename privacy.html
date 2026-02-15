@@ -341,10 +341,11 @@
                 Identity (OAuth)
               </h4>
               <p>
-                Used exclusively for the optional Clio integration. If you
-                choose to connect Clio, this permission enables the OAuth 2.0
-                authorization flow. It is never used for any other purpose, and
-                is not required for core functionality.
+                Used for the optional Clio, Google Calendar, and Outlook
+                Calendar integrations. If you choose to connect any of these
+                services, this permission enables the OAuth 2.0 authorization
+                flow. It is never used for any other purpose, and is not
+                required for core functionality.
               </p>
             </div>
 
@@ -371,6 +372,36 @@
               You can disconnect Clio at any time from DocketRadar's settings
               panel, which immediately revokes the stored tokens from your local
               storage.
+            </p>
+
+            <!-- Calendar Integration -->
+            <h2
+              style="
+                color: var(--color-primary);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+              "
+            >
+              Google Calendar &amp; Outlook Calendar Integration
+            </h2>
+            <p>
+              If you choose to connect DocketRadar to Google Calendar or Outlook
+              Calendar, the extension uses OAuth 2.0 to request
+              <strong>calendar event access only</strong>. DocketRadar cannot
+              read your email, contacts, files, or any other account data.
+            </p>
+            <p>
+              When connected, DocketRadar sends hearing dates and case metadata
+              (case number, hearing type, judge, location) directly from your
+              browser to the Google Calendar API or Microsoft Graph API to
+              create, update, and remove calendar events. Access tokens are
+              stored locally in your browser's extension storage and are never
+              transmitted to DocketRadar servers.
+            </p>
+            <p>
+              You can disconnect either calendar service at any time from
+              DocketRadar's settings panel, which removes the stored tokens from
+              your local storage.
             </p>
 
             <!-- Cookies -->
@@ -401,13 +432,35 @@
               Third-Party Services
             </h2>
             <p>
-              DocketRadar communicates with exactly one third-party service:
-              <strong>Clio</strong> (clio.com), and only when you explicitly opt
-              in by connecting your Clio account. When connected, DocketRadar
-              sends case data (hearings, docket entries, party information)
-              directly from your browser to Clio's API. No other third-party
-              services are used — no analytics providers, no advertising
-              networks, no crash reporting services, no CDNs for user data.
+              DocketRadar communicates with third-party services only when you
+              explicitly opt in. The optional integrations are:
+            </p>
+            <ul
+              style="
+                list-style: disc;
+                padding-left: var(--space-6);
+                margin-top: var(--space-3);
+                margin-bottom: var(--space-4);
+              "
+            >
+              <li style="margin-bottom: var(--space-2)">
+                <strong>Clio</strong> (clio.com) — case data sync for practice
+                management
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                <strong>Google Calendar</strong> (googleapis.com) — hearing date
+                sync to your Google Calendar
+              </li>
+              <li style="margin-bottom: var(--space-2)">
+                <strong>Microsoft Outlook Calendar</strong> (graph.microsoft.com)
+                — hearing date sync to your Outlook Calendar
+              </li>
+            </ul>
+            <p>
+              All communication with these services happens directly between
+              your browser and the service's API. No data is relayed through
+              DocketRadar servers. No analytics providers, advertising networks,
+              crash reporting services, or CDNs are used for user data.
             </p>
 
             <!-- Children's Privacy -->
