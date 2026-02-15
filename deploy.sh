@@ -26,7 +26,7 @@ FILES_JSON="["
 FIRST=true
 
 cd "$SCRIPT_DIR"
-for filepath in $(find . -type f -not -path './.git/*' -not -name 'deploy.sh' -not -name 'YQ7dR@' -not -name '.gitignore' | sort); do
+for filepath in $(find . -type f -not -path './.git/*' -not -name 'deploy.sh' -not -name 'YQ7dR@' -not -name '.gitignore' -not -name 'brand-review-guide.html' -not -name 'brand-review-logos.html' -not -name 'logo-comparison.html' | sort); do
     relpath="${filepath#./}"
     content=$(base64 -w0 "$filepath")
 
