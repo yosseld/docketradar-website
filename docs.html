@@ -6,14 +6,14 @@
     <title>Documentation — DocketRadar</title>
     <meta
       name="description"
-      content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, data export, supported counties, and troubleshooting."
+      content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, calendar sync, data export, supported counties, and troubleshooting."
     />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Documentation — DocketRadar" />
     <meta
       property="og:description"
-      content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, data export, supported counties, and troubleshooting."
+      content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, calendar sync, data export, supported counties, and troubleshooting."
     />
     <meta property="og:image" content="/assets/logo/docketradar-icon.svg" />
     <meta
@@ -25,7 +25,7 @@
     <meta name="twitter:title" content="Documentation — DocketRadar" />
     <meta
       name="twitter:description"
-      content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, data export, supported counties, and troubleshooting."
+      content="DocketRadar documentation: installation, quick start, adding cases, notifications, Clio integration, calendar sync, data export, supported counties, and troubleshooting."
     />
     <link rel="canonical" href="https://docketradar.com/docs" />
 
@@ -208,6 +208,11 @@
               href="#clio-integration"
               style="font-weight: 500; font-size: var(--text-body-sm)"
               >Clio Integration</a
+            >
+            <a
+              href="#calendar-sync"
+              style="font-weight: 500; font-size: var(--text-body-sm)"
+              >Calendar Sync</a
             >
             <a
               href="#export"
@@ -457,6 +462,92 @@
               "Connect Clio," authorize in the OAuth window, and you're syncing.
               Hearings, docket entries, and party information flow into Clio
               automatically.
+            </p>
+
+            <!-- Calendar Sync -->
+            <h2
+              id="calendar-sync"
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-4);
+                margin-top: var(--space-10);
+                padding-top: var(--space-6);
+              "
+            >
+              Calendar Sync
+            </h2>
+            <p>
+              DocketRadar can sync hearing dates directly to Google Calendar or
+              Outlook Calendar (Pro tier only). When a hearing is detected or
+              updated, calendar events are created, updated, or removed
+              automatically.
+            </p>
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              Google Calendar
+            </h4>
+            <ol
+              style="
+                list-style: decimal;
+                padding-left: var(--space-6);
+                margin-bottom: var(--space-6);
+              "
+            >
+              <li style="margin-bottom: var(--space-3)">
+                Open DocketRadar Settings and click
+                <strong>Connect Google Calendar</strong>.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Authorize DocketRadar in the Google OAuth window. Only calendar
+                event access is requested — DocketRadar cannot read your email or
+                other Google data.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Select which calendar to use for hearing events.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Optionally configure reminder times (e.g., 30 minutes before, 1
+                day before).
+              </li>
+            </ol>
+            <h4
+              style="
+                color: var(--color-navy);
+                margin-bottom: var(--space-2);
+                margin-top: var(--space-6);
+              "
+            >
+              Outlook Calendar
+            </h4>
+            <ol
+              style="
+                list-style: decimal;
+                padding-left: var(--space-6);
+                margin-bottom: var(--space-6);
+              "
+            >
+              <li style="margin-bottom: var(--space-3)">
+                Open DocketRadar Settings and click
+                <strong>Connect Outlook Calendar</strong>.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Sign in with your Microsoft account and grant calendar access.
+              </li>
+              <li style="margin-bottom: var(--space-3)">
+                Select your target calendar and set reminder preferences.
+              </li>
+            </ol>
+            <p>
+              Calendar events include the hearing type, case number, judge,
+              location, and case style. When a hearing is rescheduled or
+              cancelled, the calendar event updates automatically. You can use
+              Google Calendar, Outlook Calendar, or both simultaneously alongside
+              Clio sync.
             </p>
 
             <!-- Data Export -->
